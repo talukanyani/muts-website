@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Navbar.module.css'
+import styles from './navbar.module.css'
 import logo from './assets/Tmlab-Logo.svg'
 import home from './assets/icon-home.svg'
 import apps from './assets/icon-apps.svg'
@@ -21,36 +21,35 @@ function Navbar() {
 
 function Menu() {
     return (
-        <div className={styles.menu}>
-            <input type='checkbox' />
-            <span></span>
-            <span></span>
-            <span></span>
-            <nav>
-                <ul>
-                    <li>
-                        <a href='/'>
-                            Home <img src={home} alt='icon' />
-                        </a>
-                    </li>
-                    <li>
-                        <a href='/'>
-                            Apps <img src={apps} alt='icon' />
-                        </a>
-                    </li>
-                    <li>
-                        <a href='/'>
-                            Contact <img src={contact} alt='icon' />
-                        </a>
-                    </li>
-                    <li>
-                        <a href='/'>
-                            Connect <img src={connect} alt='icon' />
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        <nav className={styles.menu}>
+            <button>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li>
+                    <a href='/'>
+                        Home <img src={home} alt='icon' />
+                    </a>
+                </li>
+                <li>
+                    <a href='/'>
+                        Apps <img src={apps} alt='icon' />
+                    </a>
+                </li>
+                <li>
+                    <a href='/'>
+                        Contact <img src={contact} alt='icon' />
+                    </a>
+                </li>
+                <li>
+                    <a href='/'>
+                        Connect <img src={connect} alt='icon' />
+                    </a>
+                </li>
+            </ul>
+        </nav>
     )
 }
 

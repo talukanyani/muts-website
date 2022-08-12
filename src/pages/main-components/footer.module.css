@@ -1,0 +1,30 @@
+.footer {
+    font-size: smaller;
+    color: #768077;
+    padding: 1vw;
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.footer ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.footer a {
+    color: inherit;
+}
+
+.footer a:hover {
+    color: #551A8B;
+}
+
+.footer a:active {
+    color: #0000EE;
+}

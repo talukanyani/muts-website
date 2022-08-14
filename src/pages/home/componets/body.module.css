@@ -8,10 +8,18 @@
     padding: 2%;
     max-width: 1280px;
     margin: 0 auto 0 auto;
+    background-image: url(./assets/side-img2.png);
+    background-size: contain;
+    background-position: right center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 .container {
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
+    background: rgba(250, 250, 250, 0.8);
+    background: linear-gradient(90deg, rgba(250, 250, 250, 1) 40%, rgba(250, 250, 250, 0.5) 80%, rgba(250, 250, 250, 0) 100%);
+    width: auto;
     width: 600px;
     display: flex;
     flex-direction: column;
@@ -21,6 +29,49 @@
 .container h1 {
     margin: 0;
     font-weight: 600;
+}
+
+.container button {
+    color: #1F8327;
+    padding: 6px 10px;
+    background: transparent;
+    border: solid 1px rgba(31, 131, 39, 0.4);
+    border-radius: 4px;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.container button span {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.container button::after {
+    content: "»»";
+    letter-spacing: 2px;
+    margin-left: 5px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.container button:hover::after {
+    margin-left: 10px;
+}
+
+.container button:hover {
+    color: #000;
+    border-color: #dcdcdc;
+    transform: translate(4px, 0);
+}
+
+.container button:active {
+    background: rgba(31, 132, 39, 0.6);
+    transform: translate(16px, 0);
+    /* transform: scale(0.97); */
+    /* box-shadow: 7px 5px 56px -10px #C3D900; */
 }
 
 .container_apps {
@@ -37,23 +88,51 @@
     height: 200px;
     margin: 0 auto 0 auto;
     align-items: center;
+    width: auto;
+    background: linear-gradient(60deg, rgba(250, 250, 250, 1) 20%, rgba(250, 250, 250, 0) 60%, rgba(250, 250, 250, 0) 100%);
 }
 
 .container_connect section {
     display: flex;
-    gap: 30px;
+    gap: 32px;
 }
 
 .container_connect ul {
     margin: 0;
     padding: 0;
+    list-style: none;
     display: flex;
-    gap: 5px;
+    gap: 16px;
 }
 
-.container_connect li {
-    list-style: none;
+.container_connect form {
+    display: flex;
+    height: 28px;
 }
+
+.container_connect input[type='email'] {
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    background-color: transparent;
+    border: solid 1px rgba(31, 131, 39, 0.6);
+    border-radius: 6px 0 0 6px;
+    transition: all 1s ease;
+}
+
+.container_connect input[type='email']:focus {
+    outline: none;
+    width: 200px;
+    background-color: rgba(31, 131, 39, 0.1);
+}
+
+.container_connect input[type='submit'] {
+    background-color: rgba(31, 131, 39, 0.6);
+    border: none;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
 
 /* Screen <= 600px */
 /* .container {

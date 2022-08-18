@@ -22,11 +22,10 @@ function Navbar() {
 function Menu() {
     return (
         <nav className={styles.menu}>
-            <button>
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <input type='checkbox' />
+            <span></span>
+            <span></span>
+            <span></span>
             <ul>
                 <li>
                     <a href='/'>

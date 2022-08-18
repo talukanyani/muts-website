@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './body.module.css'
 import twitter from './assets/icon-twitter.svg'
 import instagram from './assets/icon-instagram.svg'
 
 function Body(props) {
+    const [isContBox, toogleContBox] = useState(true)
+    const box_class = isContBox ? styles.container_contact_box : 'undifined';
+
     return (
         <div className={styles.cover}>
             <div className={styles.body}>
@@ -14,12 +17,35 @@ function Body(props) {
                         <span>Show all apps</span>
                     </button>
                 </div>
-                <div id="talu" className={`${styles.container} ${styles.container_contact}`}>
-                    <h1>Contact</h1>
-                    <p>Get in touch with related information.</p>
-                    <button>
-                        <span>Contact us</span>
-                    </button>
+                <div
+                    className={`${styles.container} ${styles.container_contact} ${box_class}`}
+                >
+                    <div>
+                        <h1>Contact</h1>
+                        <p>Get in touch with related information.</p>
+                        <button
+                        //  onClick={() => toogleContBox(!isContBox)}
+                        >
+                            <span>Contact us</span>
+                        </button>
+                    </div>
+                    {/* <div>
+                        <form>
+                            <input type='text' id='names' required />
+                            <label for='names'>Names</label>
+                            <input type='email' id='email' required />
+                            <label for='email'>Email</label>
+                            <textarea id='message' rows='3' required></textarea>
+                            <label for='message'>Message</label>
+                            <input type='submit' value='Send' />
+                        </form>
+                        <p>
+                            You can either email us at{' '}
+                            <a href='mailto:1905talu@gmail.com'>
+                                hello@tmlab.tech
+                            </a>
+                        </p>
+                    </div> */}
                 </div>
                 <div className={`${styles.container} ${styles.container_connect}`}>
                     <h1>Connect with us</h1>

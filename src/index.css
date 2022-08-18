@@ -5,3 +5,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
+
+:root {
+  --main-color: #1F8327;
+  --main-color: hsl(125, 62%, 32%);
+
+  --main-hue: 125;
+  --main-saturation: 62%;
+  --main-lightness: 32%;
+
+  --main: hsl(var(--main-hue), var(--main-saturation), var(--main-lightness));
+  --text1: hsl(var(--main-hue), var(--main-saturation), 10%);
+  --text2: hsl(var(--main-hue), 40%, 10%);
+  --text3: hsl(var(--main-hue), 30%, 20%);
+  --text4: hsl(var(--main-hue), 10%, 30%);
+  --border1: hsl(var(--main-hue), 30%, 70%);
+  --border2: hsl(var(--main-hue), 20%, 75%);
+  --button: hsl(var(--main-hue), 30%, 60%);
+  --surface1: hsl(var(--main-hue), 25%, 90%);
+  --surface1-values: var(--main-hue), 25%, 90%;
+  --surface2: hsl(var(--main-hue), 20%, 99%);
+  --surface3: hsl(var(--main-hue), 20%, 92%);
+  --surface4: hsl(var(--main-hue), 20%, 85%);
+}

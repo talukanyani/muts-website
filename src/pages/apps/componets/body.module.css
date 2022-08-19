@@ -1,0 +1,41 @@
+.body_overlay {
+    background-color: var(--surface1);
+    padding-top: calc(64px + 4vh);
+    padding-bottom: 300px;
+}
+
+.body {
+    padding: 2%;
+    max-width: 1280px;
+    margin: 0 auto 0 auto;
+}
+
+.container {
+    width: 500px;
+    border: 1px solid var(--border1);
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.container h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text1);
+}
+
+.container p {
+    color: var(--text2);
+    letter-spacing: 1px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border2);
+}
+
+.container ul {
+    width: fit-content;
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 0 auto;
+    display: flex;
+    gap: 20px;
+}

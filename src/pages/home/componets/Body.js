@@ -3,6 +3,7 @@ import styles from './body.module.css'
 import twitter from './assets/icon-twitter.svg'
 import instagram from './assets/icon-instagram.svg'
 import ContModal from './ContModal';
+import Button from '../elements/Button';
 
 function Body(props) {
     const [isContModal, setIsContModal] = useState(false)
@@ -10,30 +11,31 @@ function Body(props) {
     return (
         <div className={styles.body_overlay}>
             <div className={styles.body}>
-                <div className={`${styles.container} ${styles.container_apps}`}>
-                    <h1>Apps</h1>
-                    <p>Explore apps engineered and developed for you.</p>
-                    <button>
-                        <span>Show all apps</span>
-                    </button>
+                <div className={styles.container_apps}>
+                    <h1>
+                        <span>Apps</span>
+                    </h1>
+                    <h2>Explore apps engineered and developed for you.</h2>
+                    <Button text='Show all apps' />
                 </div>
-                <div className={`${styles.container} ${styles.container_contact}`}>
+                <div className={styles.container_contact}>
                     <h1>Contact</h1>
                     <p>Get in touch with related information.</p>
-                    <button onClick={() => setIsContModal(true)}>
-                        <span>Contact us</span>
-                    </button>
+                    <Button
+                        text='Contact us'
+                        onClick={() => setIsContModal(true)}
+                    />
                     <ContModal
                         isContModal={isContModal}
                         close={() => setIsContModal(false)}
                     />
                 </div>
-                <div className={`${styles.container} ${styles.container_connect}`}>
+                <div className={styles.container_connect}>
                     <h1>Connect with us</h1>
                     <p>Never miss updates, subscribe to our newsletter or follow us in our social media.</p>
                     <section>
                         <form>
-                            <input type='email' placeholder='Email' />
+                            <input type='email' placeholder='Email' required />
                             <input type='submit' value='Subscribe' />
                         </form>
                         <ul>

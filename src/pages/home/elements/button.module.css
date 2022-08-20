@@ -1,0 +1,40 @@
+.button {
+    padding: 0.5rem 1rem;
+    background: var(--button);
+    border: solid 1px var(--border2);
+    border-radius: 0.3rem;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.button span {
+    font-size: 0.9rem;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+}
+
+.button::after {
+    content: "»»";
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    margin-left: 0.6rem;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.button:hover::after {
+    margin-left: 0.8rem;
+}
+
+.button:hover {
+    transform: translate(2px, 0);
+}
+
+.button:active {
+    color: var(--main);
+    border-color: var(--main);
+    background: transparent;
+    transform: translate(8px, 0);
+}

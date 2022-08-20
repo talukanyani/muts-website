@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     width: 96vw;
-    padding: 2vh 2vw;
+    padding: 1vh 2vw;
     background: var(--surface1);
     background: linear-gradient(180deg,
             hsla(var(--surface1-values), 1) 20%,

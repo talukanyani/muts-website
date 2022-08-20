@@ -1,102 +1,111 @@
 .body_overlay {
-    background-color: var(--surface1);
-    padding-top: calc(64px + 4vh);
+    background: var(--surface1);
+    background: linear-gradient(180deg, var(--surface1) 34vw, var(--surface2) 34vw);
+    /* 840px => 64vw
+    420px => 62vw*/
+    background-attachment: fixed;
+    padding-top: calc(64px + 2vh);
 }
 
 .body {
     padding: 2%;
     max-width: 1280px;
     margin: 0 auto 0 auto;
-    background-image: url(./assets/side-img2.png);
+    background-image: url(./assets/web_illustration-1280x560.png);
     background-size: contain;
-    background-position: right center;
+    background-position: top right;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
-.container {
-    /* border: 1px solid rgba(0, 0, 0, 0.2); */
-    background: hsla(var(--surface1-values), 0.8);
-    background: linear-gradient(90deg,
-            hsla(var(--surface1-values), 1) 40%,
-            hsla(var(--surface1-values), 0.5) 80%,
-            hsla(var(--surface1-values), 0) 100%);
-    width: auto;
+.container_apps {
     width: 600px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 100px;
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
 }
 
-.container h1 {
-    margin: 0;
-    font-weight: 600;
-    color: var(--text2);
-}
-
-.container p {
-    color: var(--text3);
-}
-
-.container button {
-    color: var(--main);
-    padding: 6px 10px;
-    background: transparent;
-    border: solid 1px var(--main);
-    border-radius: 4px;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
-
-.container button span {
-    font-size: 10px;
-    letter-spacing: 3px;
+.container_apps h1 {
+    font-size: 1rem;
+    font-weight: 500;
     text-transform: uppercase;
+    color: var(--text1);
+    margin: 0;
 }
 
-.container button::after {
-    content: "»»";
-    letter-spacing: 2px;
-    margin-left: 5px;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+.container_apps h1 span {
+    letter-spacing: 0.2rem;
 }
 
-.container button:hover::after {
-    margin-left: 10px;
+.container_apps h1::before {
+    content: "——";
+    margin-right: 0.8rem;
 }
 
-.container button:hover {
+.container_apps h2 {
+    font-size: 3rem;
     color: var(--text2);
-    border-color: var(--border2);
-    transform: translate(4px, 0);
-}
-
-.container button:active {
-    background: var(--button);
-    transform: translate(16px, 0);
-}
-
-.container_apps {
-    height: 400px;
-    align-items: center;
+    margin: 0 0 1.4rem 0;
 }
 
 .container_contact {
-    height: 300px;
+    width: 500px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
+}
+
+.container_contact h1 {
+    font-size: 2rem;
+    color: var(--text2);
+    margin: 0;
+}
+
+.container_contact p {
+    font-size: 1.2rem;
+    color: var(--text3);
+    margin-top: 0.3rem;
+}
+
+.container_contact button {
+    color: var(--main);
+    border-color: var(--main);
+    background: transparent;
+    padding: 0.4rem;
+}
+
+.container_contact button span {
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
 }
 
 .container_connect {
+    width: 600px;
     height: 200px;
-    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: auto;
-    background: linear-gradient(60deg,
-            hsla(var(--surface1-values), 1) 40%,
-            hsla(var(--surface1-values), 0) 50%);
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
+}
+
+.container_connect h1 {
+    font-size: 2rem;
+    color: var(--text2);
+    margin: 0;
+}
+
+.container_connect p {
+    font-size: 1.2rem;
+    color: var(--text3);
+    margin-top: 0.3rem;
 }
 
 .container_connect section {
@@ -128,7 +137,6 @@
 
 .container_connect input[type='email']:focus {
     outline: none;
-    width: 200px;
     background-color: var(--surface2);
 }
 

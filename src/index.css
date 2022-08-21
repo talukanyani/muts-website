@@ -19,6 +19,7 @@ body {
   --text2: hsl(var(--main-hue), 40%, 10%);
   --text3: hsl(var(--main-hue), 30%, 20%);
   --text4: hsl(var(--main-hue), 10%, 30%);
+  --text5: hsl(var(--main-hue), 10%, 50%);
   --border1: hsl(var(--main-hue), 30%, 70%);
   --border2: hsl(var(--main-hue), 20%, 75%);
   --button: hsl(var(--main-hue), 30%, 60%);

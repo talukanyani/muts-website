@@ -4,6 +4,7 @@ import twitter from './assets/icon-twitter.svg'
 import instagram from './assets/icon-instagram.svg'
 import ContModal from './ContModal';
 import Button from '../elements/Button';
+import SmallHeading from '../elements/SmallHeading';
 
 function Body(props) {
     const [isContModal, setIsContModal] = useState(false)
@@ -12,9 +13,7 @@ function Body(props) {
         <div className={styles.body_overlay}>
             <div className={styles.body}>
                 <div className={styles.container_apps}>
-                    <h1>
-                        <span>Apps</span>
-                    </h1>
+                    <SmallHeading text='Apps' />
                     <h2>Explore apps engineered and developed for you.</h2>
                     <Button text='Show all apps' />
                 </div>
@@ -25,11 +24,11 @@ function Body(props) {
                         text='Contact us'
                         onClick={() => setIsContModal(true)}
                     />
-                    <ContModal
-                        isContModal={isContModal}
-                        close={() => setIsContModal(false)}
-                    />
                 </div>
+                <ContModal
+                    isContModal={isContModal}
+                    close={() => setIsContModal(false)}
+                />
                 <div className={styles.container_connect}>
                     <h1>Connect with us</h1>
                     <p>Never miss updates, subscribe to our newsletter or follow us in our social media.</p>

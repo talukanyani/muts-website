@@ -1,37 +1,111 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './cont-modal.module.css'
 import closeimg from './assets/icon-close.svg'
+import emailicon from './assets/icon-email.svg'
+import SmallHeading from '../elements/SmallHeading'
 
 function ContModal(props) {
-    const class1 = props.isContModal
-        ? styles.modal_open
-        : 'undifined';
+    const [isChecked, setIsChecked] = useState(true)
 
     return (
-        <div className={`${styles.modal_overlay} ${class1}`}>
+        <div
+            className={
+                `${styles.modal_overlay}
+                 ${props.isContModal ? styles.modal_open : 'undifined'}`
+            }
+        >
             <div className={styles.modal}>
                 <img
+                    className={styles.closingicon}
                     src={closeimg}
                     alt='closing button-icon'
                     onClick={props.close}
                 />
-                <form>
-                    <input type='text' id='names' required />
-                    <label htmlFor='names'>Names</label>
-                    <input type='email' id='email' required />
-                    <label htmlFor='email'>Email</label>
-                    <textarea id='message' rows='3' required></textarea>
-                    <label htmlFor='message'>Message</label>
-                    <input type='submit' value='Send' />
-                </form>
-                <p>
-                    You can either email us at{' '}
-                    <a href='mailto:1905talu@gmail.com'>
-                        hello@tmlab.tech
-                    </a>
-                </p>
+                <SmallHeading text='Contact us' />
+                <div className={styles.tabs}>
+                    <input
+                        type='radio'
+                        name='tabs'
+                        id='sendhere'
+                        checked={isChecked}
+                        onChange={() => setIsChecked(!isChecked)}
+                    />
+                    <label htmlFor='sendhere'>Send here</label>
+                    <input
+                        type='radio'
+                        name='tabs'
+                        id='emails'
+                        checked={!isChecked}
+                        onChange={() => setIsChecked(!isChecked)}
+                    />
+                    <label htmlFor='emails'>Email</label>
+                    <span></span>
+                </div>
+                {isChecked &&
+                    <form className={styles.contact_form}>
+                        <section>
+                            <input
+                                type='text'
+                                id='names'
+                                required
+                                placeholder=' '
+                            />
+                            <label htmlFor='names'>Names</label>
+                        </section>
+                        <section>
+                            <input
+                                type='email'
+                                id='email'
+                                required
+                                placeholder=' '
+                            />
+                            <label htmlFor='email'>Email</label>
+                        </section>
+                        <section>
+                            <input
+                                type='text'
+                                id='names'
+                                required
+                                placeholder=' '
+                            />
+                            <label htmlFor='messagetitle'>Message Title</label>
+                        </section>
+                        <section>
+                            <textarea
+                                id='message'
+                                rows='3'
+                                required
+                                placeholder=' '
+                            ></textarea>
+                            <label htmlFor='message'>Message</label>
+                        </section>
+                        <input type='submit' value='Send' />
+                    </form>
+                }
+                {!isChecked &&
+                    <ul className={styles.emails}>
+                        <li>
+                            <img
+                                src={emailicon}
+                                alt='email icon'
+                            />
+                            <a href='mailto:1905talu@gmail.com'>
+                                hello@tmlab.tech
+                            </a>
+                        </li>
+                        <li>
+                            <img
+                                src={emailicon}
+                                alt='email icon'
+                            />
+                            <a href='mailto:1905talu@gmail.com'>
+                                support@tmlab.tech
+                            </a>
+                        </li>
+                    </ul>
+                }
             </div>
-        </div>
+        </div >
     );
 }
 

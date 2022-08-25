@@ -63,12 +63,26 @@
     transition-delay: 0.3s;
 }
 
-.menu ul {
+.menu nav {
     opacity: 0;
     pointer-events: none;
     position: absolute;
     top: 0;
     left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    transition: all 0.2s linear;
+}
+
+.menu nav div {
+    width: calc(95vw - 200px);
+    height: 100vh;
+    background: hsla(var(--surface1-values), 0.4)
+}
+
+.menu ul {
     width: calc(200px + 5vw);
     height: 100vh;
     margin: 0;
@@ -132,25 +146,25 @@
     transition-delay: 0.3;
 }
 
-.menu input:checked~ul {
+.menu input:checked~nav {
     opacity: 1;
     pointer-events: all;
     transform: translate(0);
 }
 
-.menu input:checked~ul li:nth-of-type(1) a {
+.menu input:checked~nav li:nth-of-type(1) a {
     transform: translate(0);
 }
 
-.menu input:checked~ul li:nth-of-type(2) a {
+.menu input:checked~nav li:nth-of-type(2) a {
     transform: translate(0);
 }
 
-.menu input:checked~ul li:nth-of-type(3) a {
+.menu input:checked~nav li:nth-of-type(3) a {
     transform: translate(0);
 }
 
-.menu input:checked~ul li:nth-of-type(4) a {
+.menu input:checked~nav li:nth-of-type(4) a {
     transform: translate(0);
 }
 

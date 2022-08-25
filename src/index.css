@@ -29,6 +29,7 @@ body {
   --surface2: hsl(var(--main-hue), 20%, 99%);
   --surface2-values: var(--main-hue), 20%, 99%;
   --surface3: hsl(var(--main-hue), 20%, 92%);
+  --surface3-values: var(--main-hue), 20%, 92%;
   --surface4: hsl(var(--main-hue), 20%, 85%);
   --surface5: hsl(var(--main-hue), 30%, 80%);
 

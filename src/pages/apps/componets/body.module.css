@@ -1,33 +1,45 @@
 .body_overlay {
-    background-color: var(--surface1);
-    padding-top: calc(64px + 4vh);
-    padding-bottom: 300px;
+    background: var(--surface1);
+    background: linear-gradient(180deg, var(--surface1) 34vw, var(--surface2) 34vw);
+    background-attachment: fixed;
+    padding-top: calc(64px + 2vh);
 }
 
 .body {
     padding: 2%;
     max-width: 1280px;
     margin: 0 auto 0 auto;
+    background-image: url(./assets/web_illustration-1280x560.png);
+    background-size: contain;
+    background-position: top right;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 .container {
     width: 500px;
+    padding: 2.4rem;
+    margin-top: 2rem;
     border: 1px solid var(--border1);
-    border-radius: 16px;
-    padding: 32px;
+    border-radius: 1.2rem;
+    background: hsla(var(--surface3-values), 0.9);
+    margin-bottom: 400px;
 }
 
 .container h1 {
     margin: 0;
-    font-size: 28px;
     font-weight: 600;
     color: var(--text1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .container p {
     color: var(--text2);
-    letter-spacing: 1px;
-    padding-bottom: 32px;
+    letter-spacing: 0.1rem;
+    padding-bottom: 2.6rem;
+    margin-bottom: 1.8rem;
     border-bottom: 1px solid var(--border2);
 }
 
@@ -37,5 +49,5 @@
     padding-left: 0;
     margin: 0 0 0 auto;
     display: flex;
-    gap: 20px;
+    gap: 1.4rem;
 }

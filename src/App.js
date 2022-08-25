@@ -4,8 +4,8 @@ import Apps from './pages/apps/Apps';
 function App() {
   return (
     <>
-      <Home />
-      {/* <Apps /> */}
+      {/* <Home /> */}
+      <Apps />
     </>
   );
 }

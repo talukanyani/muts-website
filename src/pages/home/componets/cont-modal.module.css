@@ -28,27 +28,27 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 350px;
-    height: 28rem;
-    padding: 2rem;
+    height: 26rem;
+    padding: 1.8rem;
     border-radius: 0.8rem;
     background: var(--surface4);
-    box-shadow: 0px 0px 60px 0px var(--surface2);
+    box-shadow: 0px 0px 60px 0px #ddd;
 }
 
 .closingicon {
     position: absolute;
     top: 0.6rem;
-    right: 1rem;
+    right: 0.6rem;
     cursor: pointer;
 }
 
 .modal h1 {
-    margin: 1rem 0 1.4rem;
+    margin: 1rem 0;
 }
 
 .tabs {
-    padding: 0.2rem;
-    border-radius: 0.4rem;
+    padding: 0.1rem;
+    border-radius: 0.3rem;
     background-color: var(--surface1);
     margin-bottom: 2rem;
     display: flex;
@@ -61,7 +61,7 @@
 
 .tabs label {
     width: calc(100% / 2);
-    padding: 0.4rem;
+    padding: 0.3rem;
     display: flex;
     justify-content: center;
     cursor: pointer;
@@ -101,7 +101,7 @@
 .emails a {
     color: inherit;
     font-size: 1rem;
-    letter-spacing: 0.15rem;
+    letter-spacing: 0.1rem;
     line-height: 1.4rem;
     text-decoration: none;
     transition: all 0.2s ease;
@@ -110,7 +110,7 @@
 .emails a:hover {
     color: var(--main);
     transform: translateX(0.1rem);
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.15rem;
 }
 
 .contact_form {
@@ -125,12 +125,12 @@
 
 .contact_form label {
     position: absolute;
-    top: 0.4rem;
-    left: 0.4rem;
+    top: 0.2rem;
+    left: 0.2rem;
     color: var(--text5);
-    letter-spacing: 0.1rem;
-    padding: 0.2rem 0.4rem;
-    border-radius: 0.5rem;
+    letter-spacing: 0.05rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.4rem;
     background-color: var(--surface3);
     pointer-events: none;
     transform-origin: 0 50%;
@@ -138,11 +138,11 @@
 }
 
 .contact_form :where(input[type='text'], input[type='email'], textarea) {
-    font-size: 1rem;
+    font-size: 0.9rem;
     letter-spacing: 0.1rem;
     width: 100%;
     box-sizing: border-box;
-    padding: 0.8rem 0.6rem 0.4rem;
+    padding: 0.8rem 0.5rem 0.3rem;
     border: none;
     border-radius: 0.4rem;
     background: var(--surface3);
@@ -161,13 +161,13 @@
 
 .contact_form input:focus~label,
 .contact_form input:not(:placeholder-shown)~label {
-    transform: translate(0.6rem, -1.2rem) scale(0.9);
+    transform: translate(0.6rem, -1rem) scale(0.9);
     letter-spacing: normal;
 }
 
 .contact_form textarea:focus~label,
 .contact_form textarea:not(:placeholder-shown)~label {
-    transform: translate(0.6rem, -1.2rem) scale(0.9);
+    transform: translate(0.6rem, -1rem) scale(0.9);
     letter-spacing: normal;
 }
 
@@ -187,10 +187,9 @@
     background-color: var(--button);
 }
 
-/* .modal a {
-    color: var(--text3);
+@media screen and (max-width: 440px) {
+    .modal {
+        width: 80vw;
+        padding: 1.2rem;
+    }
 }
-
-.modal a:hover {
-    color: var(--main);
-} */

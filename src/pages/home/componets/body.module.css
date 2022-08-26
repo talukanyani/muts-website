@@ -1,10 +1,10 @@
 .body_overlay {
-    background: var(--surface1);
-    background: linear-gradient(180deg, var(--surface1) 34vw, var(--surface2) 34vw);
-    /* 840px => 64vw
-    420px => 62vw*/
+    background-color: var(--surface2);
+    background-image: linear-gradient(180deg,
+            var(--surface1) 34vw,
+            var(--surface2) 34vw);
     background-attachment: fixed;
-    padding-top: calc(64px + 2vh);
+    padding-top: 4.4rem;
 }
 
 .body {
@@ -20,24 +20,23 @@
 
 .container_apps {
     width: 600px;
-    height: 400px;
+    height: calc(200px + 30vh);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin-bottom: 100px;
     /* border: 1px solid rgba(0, 0, 0, 0.2); */
 }
 
 .container_apps h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--text2);
-    margin: 0 0 1.4rem 0;
+    margin: 0 0 1.2rem 0;
 }
 
 .container_contact {
     width: 500px;
-    height: 200px;
+    height: calc(50px + 20vh);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,33 +44,26 @@
     /* border: 1px solid rgba(0, 0, 0, 0.2); */
 }
 
-.container_contact h1 {
-    font-size: 2rem;
-    color: var(--text2);
-    margin: 0;
-}
-
 .container_contact p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--text3);
-    margin-top: 0.3rem;
+    margin-top: 0.2rem;
 }
 
 .container_contact button {
     color: var(--main);
     border-color: var(--main);
     background: transparent;
-    padding: 0.4rem;
+    padding: 0.3rem 0.6rem;
 }
 
 .container_contact button span {
-    font-size: 0.8rem;
-    letter-spacing: 0.2rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.1rem;
 }
 
 .container_connect {
-    width: 600px;
-    height: 200px;
+    height: calc(50px + 20vh);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -79,21 +71,16 @@
     /* border: 1px solid rgba(0, 0, 0, 0.2); */
 }
 
-.container_connect h1 {
-    font-size: 2rem;
-    color: var(--text2);
-    margin: 0;
-}
-
 .container_connect p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--text3);
-    margin-top: 0.3rem;
+    text-align: center;
+    margin-top: 0.2rem;
 }
 
 .container_connect section {
     display: flex;
-    gap: 32px;
+    gap: 2rem;
 }
 
 .container_connect ul {
@@ -101,7 +88,7 @@
     padding: 0;
     list-style: none;
     display: flex;
-    gap: 16px;
+    gap: 1rem;
 }
 
 .container_connect form {
@@ -110,11 +97,11 @@
 }
 
 .container_connect input[type='email'] {
-    letter-spacing: 1px;
-    padding: 2px 8px;
+    letter-spacing: 0.05rem;
+    padding: 0.1rem 0.5rem;
     background-color: transparent;
     border: solid 1px var(--button);
-    border-radius: 6px 0 0 6px;
+    border-radius: 0.4rem 0 0 0.4rem;
     transition: all 1s ease;
 }
 
@@ -126,13 +113,50 @@
 .container_connect input[type='submit'] {
     background-color: var(--button);
     border: none;
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 0.4rem 0.4rem 0;
     cursor: pointer;
     transition: all 0.5s ease;
 }
 
+@media screen and (min-width: 1280px) {
+    .body_overlay {
+        background-image: linear-gradient(180deg,
+                var(--surface1) 446px,
+                var(--surface2) 446px);
+    }
 
-/* Screen <= 600px */
-/* .container {
-    width: auto;
-} */
+    .body {
+        background-size: 1280px 560px;
+        background-position: top;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .body {
+        background-image: url(./assets/web_illustration-840x480.png);
+    }
+
+    .container_apps {
+        width: 75vw;
+    }
+
+    .container_contact {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .container_apps {
+        width: auto;
+    }
+
+    .container_connect section {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .container_connect ul {
+        margin: 0 auto 0 auto;
+        gap: 1.5rem;
+    }
+}

@@ -24,7 +24,7 @@ function Body(props) {
                     </Link>
                 </div>
                 <div className={styles.container_contact}>
-                    <h1>Contact</h1>
+                    <SmallHeading text='Contact us' />
                     <p>Get in touch with related information.</p>
                     <Button
                         text='Contact us'
@@ -39,7 +39,7 @@ function Body(props) {
                     className={styles.container_connect}
                     id='connect'
                 >
-                    <h1>Connect with us</h1>
+                    <SmallHeading text='Connect with us' />
                     <p>Never miss updates, subscribe to our newsletter or follow us in our social media.</p>
                     <section>
                         <form>

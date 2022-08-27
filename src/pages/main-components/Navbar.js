@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './navbar.module.css'
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+import ContModal from '../home/componets/ContModal';
 
 import logo from './assets/Tmlab-Logo.svg'
 import home from './assets/icon-home.svg'
@@ -23,55 +25,101 @@ function Navbar() {
 
 function Menu() {
     const [isChecked, setIsChecked] = useState(false)
+    const [isContModal, setIsContModal] = useState(false)
+
+    let navigate = useNavigate()
+
+    const closeMenu = () => {
+        setIsChecked(false)
+    }
+
+    const goToHome = () => {
+        closeMenu()
+        navigate('/')
+        window.scrollTo(0, 0)
+    }
+
+    const goToApps = () => {
+        closeMenu()
+        navigate('/apps')
+        window.scrollTo(0, 0)
+    }
+
+    const goToConnect = () => {
+        closeMenu()
+
+        var pathname = window.location.pathname
+
+        if (pathname === '/') {
+            document.getElementById('subsInput').focus()
+        } else {
+            navigate('/')
+
+            setTimeout(() => {
+                document.getElementById('subsInput').focus()
+            }, 500)
+        }
+    }
+
+    const openContModal = () => {
+        closeMenu()
+        setIsContModal(true)
+    }
+
+    useEffect(() => {
+        if (isChecked) {
+            document.body.style.overflowY = 'hidden'
+        } else {
+            document.body.style.overflowY = 'visible'
+        }
+    }, [isChecked])
 
     return (
-        <div className={styles.menu}>
-            <input
-                type='checkbox'
-                checked={isChecked}
-                onChange={() => setIsChecked(!isChecked)}
+        <>
+            <div className={styles.menu}>
+                <input
+                    type='checkbox'
+                    checked={isChecked}
+                    onChange={() => setIsChecked(!isChecked)}
+                />
+                <span></span>
+                <span></span>
+                <span></span>
+                <nav>
+                    <ul>
+                        <li>
+                            <a onClick={goToHome}>
+                                Home
+                                <img src={home} alt='home icon' />
+                            </a>
+                        </li>
+                        <li>
+                            <a onClick={goToApps} >
+                                Apps
+                                <img src={apps} alt='apps icon' />
+                            </a>
+                        </li>
+                        <li>
+                            <a onClick={openContModal}>
+                                Contact
+                                <img src={contact} alt='contact icon' />
+                            </a>
+                        </li>
+                        <li>
+                            <a onClick={goToConnect}>
+                                Connect
+                                <img src={connect} alt='connect icon' />
+                            </a>
+                        </li>
+                    </ul>
+                    <div onClick={closeMenu}></div>
+                </nav>
+            </div>
+            <ContModal
+                isContModal={isContModal}
+                close={() => setIsContModal(false)}
             />
-            <span></span>
-            <span></span>
-            <span></span>
-            <nav>
-                <ul>
-                    <li>
-                        <a
-                            href='/'
-                            onClick={() => setIsChecked(false)}
-                        >
-                            Home <img src={home} alt='icon' />
-                        </a>
-                    </li>
-                    <li>
-                        <Link
-                            to='/apps'
-                            onClick={() => setIsChecked(false)}
-                        >
-                            Apps <img src={apps} alt='icon' />
-                        </Link>
-                    </li>
-                    <li>
-                        <a
-                            href='/#contact'
-                            onClick={() => setIsChecked(false)}
-                        >
-                            Contact <img src={contact} alt='icon' />
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href='/#connect'
-                            onClick={() => setIsChecked(false)}
-                        >
-                            Connect <img src={connect} alt='icon' />
-                        </a>
-                    </li>
-                </ul>
-                <div onClick={() => setIsChecked(false)}></div>
-            </nav>
-        </div>
+        </>
     )
 }
 

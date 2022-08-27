@@ -5,8 +5,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar {
+  background-color: #e3e8e3;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #c2d6c4;
+  box-shadow: inset 1px 0.5px 3px #9cc99f;
+}
+
 :root {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 @media screen and (max-width: 840px) {

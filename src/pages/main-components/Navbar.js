@@ -35,14 +35,14 @@ function Menu() {
 
     const goToHome = () => {
         closeMenu()
-        navigate('/')
         window.scrollTo(0, 0)
+        setTimeout(() => navigate('/'), 500)
     }
 
     const goToApps = () => {
         closeMenu()
-        navigate('/apps')
         window.scrollTo(0, 0)
+        setTimeout(() => navigate('/apps'), 500)
     }
 
     const goToConnect = () => {
@@ -112,7 +112,6 @@ function Menu() {
                             </a>
                         </li>
                     </ul>
-                    <div onClick={closeMenu}></div>
                 </nav>
             </div>
             <ContModal

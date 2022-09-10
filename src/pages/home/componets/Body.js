@@ -16,8 +16,8 @@ function Body() {
     let navigate = useNavigate()
 
     const goToApps = () => {
-        navigate('/apps')
         window.scrollTo(0, 0)
+        navigate('/apps')
     }
 
     useEffect(() => {

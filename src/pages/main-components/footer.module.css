@@ -1,8 +1,8 @@
 .footer {
     font-size: small;
-    color: var(--text4);
+    color: var(--text3);
     padding: 1vw;
-    background-color: var(--surface2);
+    background-color: var(--surface1);
     display: flex;
     flex-direction: row;
     gap: 1.2rem;
@@ -23,9 +23,9 @@
 }
 
 .footer a:hover {
-    color: var(--main);
+    color: var(--brand);
 }
 
 .footer a:active {
-    color: var(--main);
+    color: var(--brand);
 }

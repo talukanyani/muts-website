@@ -6,7 +6,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 body::-webkit-scrollbar {
@@ -17,6 +17,14 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #c2d6c4;
   box-shadow: inset 1px 0.5px 3px #9cc99f;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #a3c2a6;
+}
+
+body::-webkit-scrollbar-thumb:active {
+  background-color: #7ab880;
 }
 
 :root {
@@ -37,29 +45,28 @@ body::-webkit-scrollbar-thumb {
 }
 
 :root {
-  --main-color: #1F8327;
-  --main-color: hsl(125, 62%, 32%);
+  --brand: #1f8327;
+  --brand-hsl: hsl(125, 62%, 32%);
+  --white1: hsl(125, 10%, 98%);
+  --white2: hsl(125, 10%, 92%);
+  --white3: hsl(125, 10%, 86%);
+  --black1: hsl(125, 10%, 2%);
+  --black2: hsl(125, 10%, 8%);
+  --black3: hsl(125, 10%, 14%);
 
-  --main-hue: 125;
-  --main-saturation: 62%;
-  --main-lightness: 32%;
-
-  --main: hsl(var(--main-hue), var(--main-saturation), var(--main-lightness));
-  --text1: hsl(var(--main-hue), var(--main-saturation), 10%);
-  --text2: hsl(var(--main-hue), 40%, 10%);
-  --text3: hsl(var(--main-hue), 30%, 20%);
-  --text4: hsl(var(--main-hue), 10%, 30%);
-  --text5: hsl(var(--main-hue), 10%, 50%);
-  --border1: hsl(var(--main-hue), 30%, 70%);
-  --border2: hsl(var(--main-hue), 20%, 75%);
-  --button: hsl(var(--main-hue), 30%, 60%);
-  --button-hover: hsl(var(--main-hue), 30%, 70%);
-  --surface1: hsl(var(--main-hue), 25%, 90%);
-  --surface1-values: var(--main-hue), 25%, 90%;
-  --surface2: hsl(var(--main-hue), 20%, 99%);
-  --surface2-values: var(--main-hue), 20%, 99%;
-  --surface3: hsl(var(--main-hue), 20%, 92%);
-  --surface3-values: var(--main-hue), 20%, 92%;
-  --surface4: hsl(var(--main-hue), 20%, 85%);
-  --surface5: hsl(var(--main-hue), 30%, 80%);
+  --text1: var(--black2);
+  --text2: var(--black3);
+  --text3: hsl(125, 10%, 28%);
+  --surface1: var(--white1);
+  --surface2: var(--white2);
+  --surface3: var(--white3);
+  --surface4: hsl(125, 22%, 92%);
+  --surface5: hsl(125, 22%, 86%);
+  --surface6: hsl(125, 42%, 92%);
+  --surface2-values: 125, 10%, 92%;
+  --surface6-values: 125, 42%, 92%;
+  --border1: hsl(125, 20%, 78%);
+  --border2: hsl(125, 20%, 86%);
+  --button1: hsl(125, 42%, 60%);
+  --button2: hsl(125, 42%, 70%);
 }

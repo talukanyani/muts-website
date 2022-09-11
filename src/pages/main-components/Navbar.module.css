@@ -15,6 +15,12 @@
     user-select: none;
 }
 
+.white_bg {
+    background: linear-gradient(180deg,
+            hsla(var(--surface1-values), 1) 30%,
+            hsla(var(--surface1-values), 0.8) 100%);
+}
+
 .logo {
     margin-right: calc(50% - 3.5rem);
     z-index: 1;

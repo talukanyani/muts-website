@@ -10,9 +10,13 @@ import apps from './assets/icon-apps.svg'
 import contact from './assets/icon-contact.svg'
 import connect from './assets/icon-connect.svg'
 
-function Navbar() {
+function Navbar(props) {
+    const whiteBg = props.whiteBg
+        ? styles.white_bg
+        : 'undifined';
+
     return (
-        <div className={styles.navbar}>
+        <div className={`${styles.navbar} ${whiteBg}`}>
             <Menu />
             <div className={styles.logo}>
                 <a href='/'>

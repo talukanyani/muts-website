@@ -63,6 +63,7 @@ body::-webkit-scrollbar-thumb:active {
   --surface4: hsl(125, 22%, 90%);
   --surface5: hsl(125, 22%, 84%);
   --surface6: hsl(125, 42%, 92%);
+  --surface1-values: 125, 10%, 98%;
   --surface2-values: 125, 10%, 92%;
   --surface6-values: 125, 42%, 92%;
   --border1: hsl(125, 20%, 78%);

@@ -6,7 +6,7 @@ import Body from './componets/Body';
 function Home(props) {
     return (
         <>
-            <Navbar />
+            <Navbar whiteBg={false} />
             <Body />
             <Footer />
         </>

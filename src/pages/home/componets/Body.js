@@ -17,7 +17,7 @@ function Body() {
 
     const goToApps = () => {
         window.scrollTo(0, 0)
-        navigate('/apps')
+        setTimeout(() => navigate('/apps'), 500)
     }
 
     useEffect(() => {

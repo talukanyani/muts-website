@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './small-heading.module.css'
+import styles from './SmallHeading.module.css'
 
 function SmallHeading(props) {
     return (

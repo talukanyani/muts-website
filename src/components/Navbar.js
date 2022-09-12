@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import styles from './navbar.module.css'
+import styles from './Navbar.module.css'
 import { useNavigate } from 'react-router-dom';
 
-import ContModal from '../home/componets/ContModal';
+import ContModal from '../components/ContModal';
 
-import logo from './assets/Tmlab-Logo.svg'
-import home from './assets/icon-home.svg'
-import apps from './assets/icon-apps.svg'
-import contact from './assets/icon-contact.svg'
-import connect from './assets/icon-connect.svg'
+import logo from '../assets/Tmlab-Logo.svg'
+import home from '../assets/icon-home.svg'
+import apps from '../assets/icon-apps.svg'
+import contact from '../assets/icon-contact.svg'
+import connect from '../assets/icon-connect.svg'
 
 function Navbar(props) {
     const whiteBg = props.whiteBg
@@ -38,15 +38,15 @@ function Menu() {
     }
 
     const goToHome = () => {
-        closeMenu()
         window.scrollTo(0, 0)
-        setTimeout(() => navigate('/'), 500)
+        closeMenu()
+        navigate('/')
     }
 
     const goToApps = () => {
-        closeMenu()
         window.scrollTo(0, 0)
-        setTimeout(() => navigate('/apps'), 500)
+        closeMenu()
+        navigate('/apps')
     }
 
     const goToConnect = () => {
@@ -61,7 +61,7 @@ function Menu() {
 
             setTimeout(() => {
                 document.getElementById('subsInput').focus()
-            }, 500)
+            }, 300)
         }
     }
 
@@ -89,31 +89,31 @@ function Menu() {
                 <span></span>
                 <span></span>
                 <span></span>
-                <nav>
-                    <ul>
+                <nav onClick={closeMenu}>
+                    <ul onClick={e => e.stopPropagation()}>
                         <li>
-                            <a onClick={goToHome}>
+                            <i onClick={goToHome}>
                                 Home
                                 <img src={home} alt='home icon' />
-                            </a>
+                            </i>
                         </li>
                         <li>
-                            <a onClick={goToApps} >
+                            <i onClick={goToApps} >
                                 Apps
                                 <img src={apps} alt='apps icon' />
-                            </a>
+                            </i>
                         </li>
                         <li>
-                            <a onClick={openContModal}>
+                            <i onClick={openContModal}>
                                 Contact
                                 <img src={contact} alt='contact icon' />
-                            </a>
+                            </i>
                         </li>
                         <li>
-                            <a onClick={goToConnect}>
+                            <i onClick={goToConnect}>
                                 Connect
                                 <img src={connect} alt='connect icon' />
-                            </a>
+                            </i>
                         </li>
                     </ul>
                 </nav>

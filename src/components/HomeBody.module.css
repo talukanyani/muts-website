@@ -11,7 +11,7 @@
     padding: 2%;
     max-width: 1280px;
     margin: 0 auto 0 auto;
-    background-image: url(./assets/web_illustration-1280x560.png);
+    background-image: url(../assets/web_illustration-1280x560.png);
     background-size: contain;
     background-position: top right;
     background-attachment: fixed;
@@ -146,7 +146,7 @@
 
 @media screen and (max-width: 840px) {
     .body {
-        background-image: url(./assets/web_illustration-840x480.png);
+        background-image: url(../assets/web_illustration-840x480.png);
     }
 
     .container_apps {

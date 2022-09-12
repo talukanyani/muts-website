@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
-import styles from './body.module.css'
+import React, { useState, useEffect } from 'react';
+import styles from './HomeBody.module.css'
 import { useNavigate } from 'react-router-dom';
 
-import ContModal from './ContModal';
+import ContModal from '../components/ContModal';
 
-import Button from '../elements/Button';
+import Button from '../elements/Button1';
 import SmallHeading from '../elements/SmallHeading';
 
-import twitter from './assets/icon-twitter.svg'
-import instagram from './assets/icon-instagram.svg'
+import twitter from '../assets/icon-twitter.svg'
+import instagram from '../assets/icon-instagram.svg'
 
 function Body() {
     const [isContModal, setIsContModal] = useState(false)
@@ -17,7 +17,7 @@ function Body() {
 
     const goToApps = () => {
         window.scrollTo(0, 0)
-        setTimeout(() => navigate('/apps'), 500)
+        navigate('/apps')
     }
 
     useEffect(() => {
@@ -47,10 +47,6 @@ function Body() {
                         onClick={() => setIsContModal(true)}
                     />
                 </div>
-                <ContModal
-                    isContModal={isContModal}
-                    close={() => setIsContModal(false)}
-                />
                 <div className={styles.container_connect}>
                     <SmallHeading text='Connect with us' />
                     <p>Never miss updates, subscribe to our newsletter or follow us in our social media.</p>
@@ -71,6 +67,7 @@ function Body() {
                             <li>
                                 <a
                                     target='_blank'
+                                    rel='noreferrer'
                                     href='https://twitter.com/tmlab_dot_app'
                                 >
                                     <img
@@ -81,6 +78,7 @@ function Body() {
                             <li>
                                 <a
                                     target='_blank'
+                                    rel='noreferrer'
                                     href='https://instagram.com/tmlab.app'
                                 >
                                     <img
@@ -92,6 +90,10 @@ function Body() {
                         </ul>
                     </section>
                 </div>
+                <ContModal
+                    isContModal={isContModal}
+                    close={() => setIsContModal(false)}
+                />
             </div>
         </div>
     );

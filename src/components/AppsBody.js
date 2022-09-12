@@ -1,13 +1,13 @@
 import React, { useRef } from 'react';
-import styles from './body.module.css'
+import styles from './AppsBody.module.css'
 
 import SmallHeading from '../elements/SmallHeading'
 
-import sclogo from './assets/sc-logo.svg'
-import appstore from './assets/appstore.svg'
-import googleplay from './assets/googleplay.svg'
-import appgallery from './assets/appgallery.svg'
-import sc_app_illustration from './assets/sc_app_illustration.png'
+import sclogo from '../assets/sc-logo.svg'
+import appstore from '../assets/appstore.svg'
+import googleplay from '../assets/googleplay.svg'
+import appgallery from '../assets/appgallery.svg'
+import sc_app_illustration from '../assets/sc_app_illustration.png'
 
 function Body(props) {
     const emailInput = useRef(null)

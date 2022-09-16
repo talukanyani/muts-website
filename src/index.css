@@ -70,4 +70,6 @@ body::-webkit-scrollbar-thumb:active {
   --border2: hsl(125, 20%, 86%);
   --button1: hsl(125, 42%, 60%);
   --button2: hsl(125, 42%, 70%);
+  --error-text: hsl(0, 98%, 44%);
+  --error-surface: hsl(0, 98%, 86%);
 }

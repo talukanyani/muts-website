@@ -87,6 +87,7 @@
     height: 28px;
     margin: 0 auto;
     display: flex;
+    position: relative;
 }
 
 .app_download section input[type='email'] {
@@ -114,6 +115,17 @@
     border-radius: 0 0.4rem 0.4rem 0;
     cursor: pointer;
     transition: all 0.2s ease;
+}
+
+.app_download section form span {
+    color: var(--error-text);
+    position: absolute;
+    top: 28px;
+    left: 8px;
+}
+
+.error_input {
+    background-color: var(--error-surface) !important;
 }
 
 @keyframes fadeAndMove {

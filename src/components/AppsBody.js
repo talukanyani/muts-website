@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from './AppsBody.module.css'
 
 import SmallHeading from '../elements/SmallHeading'
@@ -11,6 +11,27 @@ import sc_app_illustration from '../assets/sc_app_illustration.png'
 
 function Body(props) {
     const emailInput = useRef(null)
+    const [email, setEmail] = useState('');
+    const [emailError, setEmailError] = useState(null);
+
+    const handleSubmit = event => {
+        var emailRegEx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,5})+$/
+
+        if (emailRegEx.test(email)) {
+            return
+        } else {
+            event.preventDefault()
+            showEmailError()
+        }
+    }
+
+    const showEmailError = () => {
+        if (/^$/.test(email)) {
+            setEmailError('Enter email!')
+        } else {
+            setEmailError('Enter valid email!')
+        }
+    }
 
     return (
         <div className={styles.body_overlay}>
@@ -69,15 +90,25 @@ function Body(props) {
                                     <abbr title='Student Calender'>SC</abbr> is not yet available,
                                     leave your email below to get notified when it's available.
                                 </p>
-                                <form>
+                                <form
+                                    onSubmit={handleSubmit}
+                                    onBlur={() => setEmailError(null)}
+                                >
                                     <input
                                         type='email'
                                         placeholder='Email Address'
-                                        name='queemail'
-                                        required
+                                        id='sc_email'
+                                        name='sc_email'
                                         ref={emailInput}
+                                        className={
+                                            emailError !== null
+                                                ? styles.error_input
+                                                : undefined
+                                        }
+                                        onChange={e => setEmail(e.target.value)}
                                     />
                                     <input type='submit' value='Notify me' />
+                                    <span>{emailError}</span>
                                 </form>
                             </section>
                         </div>

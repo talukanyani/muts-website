@@ -97,6 +97,7 @@
 .container_connect form {
     display: flex;
     height: 28px;
+    position: relative;
 }
 
 .container_connect input[type='email'] {
@@ -106,7 +107,7 @@
     border: solid 1px var(--button1);
     border-radius: 0.4rem 0 0 0.4rem;
     outline: none;
-    transition: all 1s ease;
+    transition: all 0.2s ease;
 }
 
 .container_connect input[type='submit'] {
@@ -115,6 +116,17 @@
     border-radius: 0 0.4rem 0.4rem 0;
     cursor: pointer;
     transition: all 0.5s ease;
+}
+
+.container_connect form span {
+    color: var(--error-text);
+    position: absolute;
+    top: 28px;
+    left: 8px;
+}
+
+.error_input {
+    background-color: var(--error-surface) !important;
 }
 
 @keyframes fadeAndMove {

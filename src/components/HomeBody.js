@@ -12,6 +12,27 @@ import instagram from '../assets/icon-instagram.svg'
 
 function Body() {
     const [isContModal, setIsContModal] = useState(false)
+    const [email, setEmail] = useState('');
+    const [emailError, setEmailError] = useState(null);
+
+    const handleSubmit = event => {
+        var emailRegEx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,5})+$/
+
+        if (emailRegEx.test(email)) {
+            return
+        } else {
+            event.preventDefault()
+            showEmailError()
+        }
+    }
+
+    const showEmailError = () => {
+        if (/^$/.test(email)) {
+            setEmailError('Enter email!')
+        } else {
+            setEmailError('Enter valid email!')
+        }
+    }
 
     let navigate = useNavigate()
 
@@ -49,19 +70,32 @@ function Body() {
                 </div>
                 <div className={styles.container_connect}>
                     <SmallHeading text='Connect with us' />
-                    <p>Never miss updates, subscribe to our newsletter or follow us in our social media.</p>
+                    <p>
+                        Never miss updates, subscribe to our newsletter or
+                        follow us in our social media.
+                    </p>
                     <section>
-                        <form>
+                        <form
+                            onSubmit={handleSubmit}
+                            onBlur={() => setEmailError(null)}
+                        >
                             <input
                                 type='email'
                                 placeholder='Email'
-                                required
-                                id='subsInput'
+                                id='subs_email'
+                                name='subs_email'
+                                className={
+                                    emailError !== null
+                                        ? styles.error_input
+                                        : undefined
+                                }
+                                onChange={e => setEmail(e.target.value)}
                             />
                             <input
                                 type='submit'
                                 value='Subscribe'
                             />
+                            <span>{emailError}</span>
                         </form>
                         <ul>
                             <li>

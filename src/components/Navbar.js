@@ -11,12 +11,14 @@ import contact from '../assets/icon-contact.svg'
 import connect from '../assets/icon-connect.svg'
 
 function Navbar(props) {
-    const whiteBg = props.whiteBg
-        ? styles.white_bg
-        : 'undifined';
-
     return (
-        <div className={`${styles.navbar} ${whiteBg}`}>
+        <div className={[
+            styles.navbar,
+            props.color === 'white'
+                ? styles.white_bg
+                : undefined
+        ].join(' ')}
+        >
             <Menu />
             <div className={styles.logo}>
                 <a href='/'>
@@ -28,14 +30,12 @@ function Navbar(props) {
 }
 
 function Menu() {
-    const [isChecked, setIsChecked] = useState(false)
+    const [isMenu, setIsMenu] = useState(false)
     const [isContModal, setIsContModal] = useState(false)
 
     let navigate = useNavigate()
 
-    const closeMenu = () => {
-        setIsChecked(false)
-    }
+    const closeMenu = () => setIsMenu(false);
 
     const goToHome = () => {
         window.scrollTo(0, 0)
@@ -71,26 +71,26 @@ function Menu() {
     }
 
     useEffect(() => {
-        if (isChecked) {
+        if (isMenu || isContModal) {
             document.body.style.overflowY = 'hidden'
         } else {
             document.body.style.overflowY = 'visible'
         }
-    }, [isChecked])
+    }, [isMenu, isContModal])
 
     return (
         <>
             <div className={styles.menu}>
                 <input
                     type='checkbox'
-                    checked={isChecked}
-                    onChange={() => setIsChecked(!isChecked)}
+                    checked={isMenu}
+                    onChange={() => setIsMenu(!isMenu)}
                 />
                 <span></span>
                 <span></span>
                 <span></span>
                 <nav onClick={closeMenu}>
-                    <ul onClick={e => e.stopPropagation()}>
+                    <ul onClick={event => event.stopPropagation()}>
                         <li>
                             <i onClick={goToHome}>
                                 Home

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styles from './ContModal.module.css'
+import Alert from './Alert';
 
 import SmallHeading from '../elements/SmallHeading'
+import Modal from '../elements/Modal';
 
 import closeimg from '../assets/icon-close.svg'
 import emailicon from '../assets/icon-email.svg'
@@ -16,6 +18,21 @@ function ContModal(props) {
     const [nameError, setNameError] = useState(null)
     const [emailError, setEmailError] = useState(null)
     const [messageError, setMessageError] = useState(null)
+
+    const [isLoading, setIsLoading] = useState(false)
+    const [isAlert, setIsAlert] = useState(false)
+    const [alertTitle, setAlertTitle] = useState('')
+    const [alertBody, setAlertBody] = useState('')
+
+    const handleResponse = resData => {
+        setAlertTitle(resData.title)
+        setAlertBody(resData.message)
+        setIsAlert(true)
+        setIsLoading(false)
+        setName('')
+        setEmail('')
+        setMessage('')
+    }
 
     const validateName = value => {
         var nameRegEx = /^[a-zA-Z]{2,20}(\s[a-zA-Z]{2,20})?$/
@@ -98,13 +115,9 @@ function ContModal(props) {
     }
 
     return (
-        <div
-            className={[
-                styles.modal_overlay,
-                props.isContModal ? styles.modal_open : undefined
-            ].join(' ')}
-        >
-            <div className={styles.modal}>
+        <Modal open={props.isContModal}>
+            {/* <Modal open={props.isContModal} close={props.close}> */}
+            <div className={styles.cont_modal}>
                 <img
                     className={styles.closingicon}
                     src={closeimg}
@@ -211,7 +224,15 @@ function ContModal(props) {
                         </label>
                         <p>{messageError}</p>
                     </section>
-                    <input type='submit' value='Send' />
+                    <input
+                        type='submit'
+                        value={
+                            isLoading
+                                ? 'Sending...'
+                                : 'Send'
+                        }
+                        disabled={isLoading}
+                    />
                 </form>
                 <ul
                     className={[
@@ -241,7 +262,16 @@ function ContModal(props) {
                     </li>
                 </ul>
             </div>
-        </div >
+            <Alert
+                isAlert={isAlert}
+                close={() => {
+                    setIsAlert(false)
+                    props.close()
+                }}
+                alertTitle={alertTitle}
+                alertBody={alertBody}
+            />
+        </Modal>
     );
 }
 

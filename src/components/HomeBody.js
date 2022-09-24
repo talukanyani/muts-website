@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styles from './HomeBody.module.css'
 import { useNavigate } from 'react-router-dom';
 
-import ContModal from '../components/ContModal';
+import ContModal from './ContModal';
+import Alert from './Alert';
 
 import Button from '../elements/Button1';
 import SmallHeading from '../elements/SmallHeading';
@@ -12,8 +13,22 @@ import instagram from '../assets/icon-instagram.svg'
 
 function Body() {
     const [isContModal, setIsContModal] = useState(false)
+    const [isAlert, setIsAlert] = useState(false)
+
     const [email, setEmail] = useState('');
     const [emailError, setEmailError] = useState(null);
+
+    const [isLoading, setIsLoading] = useState(false)
+    const [alertTitle, setAlertTitle] = useState('')
+    const [alertBody, setAlertBody] = useState('')
+
+    const handleResponse = resData => {
+        setAlertTitle(resData.title)
+        setAlertBody(resData.message)
+        setIsAlert(true)
+        setIsLoading(false)
+        setEmail('')
+    }
 
     const handleSubmit = event => {
         var emailRegEx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,5})+$/
@@ -42,12 +57,12 @@ function Body() {
     }
 
     useEffect(() => {
-        if (isContModal) {
+        if (isContModal || isAlert) {
             document.body.style.overflowY = 'hidden'
         } else {
             document.body.style.overflowY = 'visible'
         }
-    }, [isContModal])
+    }, [isContModal, isAlert])
 
     return (
         <div className={styles.body_overlay}>
@@ -93,7 +108,10 @@ function Body() {
                             />
                             <input
                                 type='submit'
-                                value='Subscribe'
+                                value={
+                                    isLoading ? 'Subscribing...' : 'Subscribe'
+                                }
+                                disabled={isLoading}
                             />
                             <span>{emailError}</span>
                         </form>
@@ -127,6 +145,12 @@ function Body() {
                 <ContModal
                     isContModal={isContModal}
                     close={() => setIsContModal(false)}
+                />
+                <Alert
+                    isAlert={isAlert}
+                    close={() => setIsAlert(false)}
+                    alertTitle={alertTitle}
+                    alertBody={alertBody}
                 />
             </div>
         </div>

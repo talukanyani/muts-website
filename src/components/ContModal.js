@@ -34,6 +34,15 @@ function ContModal(props) {
         setMessage('')
     }
 
+    const handleError = error => {
+        console.error(error)
+        setAlertTitle("Something Went Wrong")
+        setAlertBody("There was an error while processing your request, try again.")
+        setIsAlert(true)
+        setIsLoading(false)
+        setEmail('')
+    }
+
     const validateName = value => {
         var nameRegEx = /^[a-zA-Z]{2,20}(\s[a-zA-Z]{2,20})?$/
         return nameRegEx.test(value)

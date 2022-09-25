@@ -6,7 +6,7 @@ import Body from '../components/AppsBody';
 function Apps() {
     return (
         <>
-            <Navbar whiteBg={true} />
+            <Navbar color='white' />
             <Body />
             <Footer />
         </>

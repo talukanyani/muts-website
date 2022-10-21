@@ -26,7 +26,7 @@ function Alert(props) {
                         src={getIcon()}
                         alt='icon'
                     />
-                    {props.alertTitle}
+                    {title}
                 </h1>
                 <p>{props.alertBody}</p>
                 <button onClick={props.close}>OK</button>

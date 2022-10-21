@@ -23,9 +23,9 @@
 }
 
 .footer a:hover {
-    color: var(--brand);
+    color: var(--link);
 }
 
 .footer a:active {
-    color: var(--brand);
+    color: var(--link);
 }

@@ -2,8 +2,8 @@
     width: 350px;
     padding: 1.8rem;
     border-radius: 0.8rem;
-    background: var(--surface5);
-    box-shadow: 0px 0px 30px 0px #ddd;
+    background: var(--surface4);
+    box-shadow: 0px 0px 30px 0px var(--shadow1);
 }
 
 .closingicon {
@@ -13,14 +13,14 @@
     cursor: pointer;
 }
 
-.cont h1 {
+.cont_modal h1 {
     margin: 1rem 0;
 }
 
 .tabs {
     padding: 0.1rem;
-    border-radius: 0.3rem;
-    background-color: var(--surface4);
+    border-radius: 0.5rem;
+    background-color: var(--surface5);
     margin-bottom: 2.2rem;
     display: flex;
     position: relative;
@@ -41,7 +41,7 @@
 
 .tabs span {
     width: calc((100% - 0.5rem) / 2);
-    border-radius: 0.6rem;
+    border-radius: 0.5rem;
     background-color: var(--button2);
     position: absolute;
     top: 0.2rem;
@@ -93,7 +93,7 @@
 }
 
 .emails a:hover {
-    color: var(--brand);
+    color: var(--link);
     transform: translateX(0.1rem);
     letter-spacing: 0.15rem;
 }
@@ -134,7 +134,7 @@
 }
 
 .contact_form p {
-    color: var(--error-text);
+    color: var(--error1);
     margin: 0;
     position: absolute;
     bottom: -1.1rem;
@@ -149,12 +149,12 @@
 .textarea_label span {
     padding: 0.1rem 0.4rem;
     border-radius: 0.4rem;
-    background-color: var(--button2);
+    background-color: var(--surface4);
     border-radius: 0.4rem;
 }
 
 .textarea_label_error span {
-    background-color: var(--error-surface);
+    background-color: var(--error2);
 }
 
 .contact_form :where(input[type='text'], input[type='email'], textarea) {
@@ -195,21 +195,20 @@
 .contact_form input[type='submit'] {
     font-size: 1rem;
     letter-spacing: 0.1rem;
-    color: var(--surface2);
     padding: 0.4rem;
-    background-color: var(--brand);
+    background-color: var(--button1);
     border: none;
     border-radius: 0.4rem;
     cursor: pointer;
-    transition: all 0.3s linear;
+    transition: all 0.1s;
 }
 
 .contact_form input[type='submit']:active {
-    background-color: var(--button1);
+    box-shadow: 0px 0px 4px 1px var(--button1);
 }
 
 .error_input {
-    outline: 2px dashed var(--error-surface)
+    outline: 2px dashed var(--error2)
 }
 
 @media screen and (max-width: 440px) {

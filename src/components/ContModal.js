@@ -40,7 +40,9 @@ function ContModal(props) {
         setAlertBody("There was an error while processing your request, try again.")
         setIsAlert(true)
         setIsLoading(false)
+        setName('')
         setEmail('')
+        setMessage('')
     }
 
     const validateName = value => {

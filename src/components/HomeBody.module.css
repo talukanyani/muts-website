@@ -1,7 +1,7 @@
 .body_overlay {
     background-color: var(--surface1);
     background-image: linear-gradient(180deg,
-            var(--surface6) 34vw,
+            var(--surface4) 34vw,
             var(--surface1) 34vw);
     background-attachment: fixed;
     padding-top: 4.4rem;
@@ -53,8 +53,8 @@
 }
 
 .container_contact button {
-    color: var(--brand);
-    border-color: var(--brand);
+    color: var(--button1);
+    border-color: var(--button1);
     background: transparent;
     padding: 0.3rem 0.6rem;
 }
@@ -119,14 +119,14 @@
 }
 
 .container_connect form span {
-    color: var(--error-text);
+    color: var(--error1);
     position: absolute;
     top: 28px;
     left: 8px;
 }
 
 .error_input {
-    background-color: var(--error-surface) !important;
+    background-color: var(--error2) !important;
 }
 
 @keyframes fadeAndMove {
@@ -146,8 +146,8 @@
 @media screen and (min-width: 1280px) {
     .body_overlay {
         background-image: linear-gradient(180deg,
-                var(--surface6) 446px,
-                var(--surface1) 446px);
+                var(--surface4) 438px,
+                var(--surface1) 438px);
     }
 
     .body {
@@ -157,6 +157,12 @@
 }
 
 @media screen and (max-width: 840px) {
+    .body_overlay {
+        background-image: linear-gradient(180deg,
+                var(--surface4) 50vw,
+                var(--surface1) 50vw);
+    }
+
     .body {
         background-image: url(../assets/web_illustration-840x480.png);
     }

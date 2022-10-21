@@ -94,7 +94,7 @@
     letter-spacing: 0.04rem;
     padding: 0.1rem 0.5rem;
     background-color: #fff;
-    border: solid 1px var(--black1);
+    border: solid 1px var(--text1);
     border-radius: 0.4rem 0 0 0.4rem;
     outline: none;
     transition: all 0.2s ease;
@@ -110,7 +110,7 @@
 
 .app_download section input[type='submit'] {
     color: #fff;
-    background-color: var(--black1);
+    background-color: var(--text1);
     border: none;
     border-radius: 0 0.4rem 0.4rem 0;
     cursor: pointer;
@@ -118,14 +118,14 @@
 }
 
 .app_download section form span {
-    color: var(--error-text);
+    color: var(--error1);
     position: absolute;
     top: 28px;
     left: 8px;
 }
 
 .error_input {
-    background-color: var(--error-surface) !important;
+    background-color: var(--error2) !important;
 }
 
 @keyframes fadeAndMove {

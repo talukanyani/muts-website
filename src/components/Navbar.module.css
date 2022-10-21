@@ -4,10 +4,10 @@
     z-index: 1;
     width: 96vw;
     padding: 0 2vw;
-    background: var(--surface6);
+    background: var(--surface4);
     background: linear-gradient(180deg,
-            hsla(var(--surface6-values), 1) 30%,
-            hsla(var(--surface6-values), 0.8) 100%);
+            rgba(var(--surface4_rgb), 1) 30%,
+            rgba(var(--surface4_rgb), 0.8) 100%);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -18,8 +18,8 @@
 
 .white_bg {
     background: linear-gradient(180deg,
-            hsla(var(--surface1-values), 1) 30%,
-            hsla(var(--surface1-values), 0.8) 100%);
+            rgba(var(--surface1_rgb), 1) 30%,
+            rgba(var(--surface1_rgb), 0.8) 100%);
 }
 
 .logo {
@@ -77,8 +77,9 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(120deg, var(--surface6) 22rem,
-            hsla(var(--surface2-values), 0.6) 28rem);
+    background: linear-gradient(120deg,
+            var(--surface4) 20rem,
+            rgba(var(--surface1_rgb), 0.6) 40rem);
     transition: all 0.2s linear;
 }
 
@@ -95,7 +96,7 @@
 
 .menu li {
     padding: 0.4rem 0.6rem;
-    border: #000 1px solid;
+    border: 1px solid var(--text1);
     border-radius: 0.4rem;
     transition: all 0.2s linear;
 }

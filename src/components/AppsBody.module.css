@@ -10,10 +10,11 @@
 }
 
 .container {
-    width: 840px;
+    width: 800px;
     padding: 2rem;
-    border: 1px solid var(--border1);
     border-radius: 0.5rem;
+    background-color: var(--white2);
+    box-shadow: inset 0 1px 1px var(--shadow2), 0 2px 3px var(--shadow3);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -24,10 +25,6 @@
 
 .container abbr {
     text-decoration: none;
-}
-
-.app_photos img {
-    height: 32rem;
 }
 
 .app_content {
@@ -44,7 +41,7 @@
 }
 
 .app_heading img {
-    width: 5rem;
+    width: 4rem;
 }
 
 .app_heading h1 {
@@ -62,7 +59,7 @@
     margin: 1.8rem 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    justify-content: space-between;
 }
 
 .app_download ul img {

@@ -2,13 +2,14 @@ import React, { useRef, useState, useEffect } from 'react';
 import styles from './AppsBody.module.css'
 
 import Alert from './Alert';
+import Phone from './PhoneDrawing';
+
 import SmallHeading from '../elements/SmallHeading'
 
-import sclogo from '../assets/sc-logo.svg'
+import sc_app_icon from '../assets/sc_app_icon.svg'
 import appstore from '../assets/appstore.svg'
 import googleplay from '../assets/googleplay.svg'
 import appgallery from '../assets/appgallery.svg'
-import sc_app_illustration from '../assets/sc_app_illustration.png'
 
 function Body(props) {
     const emailInput = useRef(null)
@@ -71,15 +72,12 @@ function Body(props) {
                 <SmallHeading text='Apps' />
                 <div className={styles.container}>
                     <div className={styles.app_photos}>
-                        <img
-                            src={sc_app_illustration}
-                            alt='illustration'
-                        />
+                        <Phone />
                     </div>
                     <div className={styles.app_content}>
                         <div className={styles.app_heading}>
                             <img
-                                src={sclogo}
+                                src={sc_app_icon}
                                 alt="SC App logo"
                             />
                             <section>

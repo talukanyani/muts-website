@@ -53,13 +53,14 @@ body::-webkit-scrollbar-thumb:active {
   --black2: #141414;
   --black3: #1e1e1e;
 
-  --grey1: #646464;
-  --grey2: #8c8c8c;
-  --grey3: #b4b4b4;
-  --grey4: #dcdcdc;
+  --grey1: #3c3c3c;
+  --grey2: #646464;
+  --grey3: #8c8c8c;
+  --grey4: #b4b4b4;
+  --grey5: #dcdcdc;
 
   --red1: #af0000;
-  --red2: #af5050;
+  --red2: #d77878;
 
   --primary: #6ec475;
   --primary_lighten: #c5e7c8;
@@ -85,11 +86,11 @@ body::-webkit-scrollbar-thumb:active {
   --surface5: var(--primary_lighten2);
 
   --shadow1: var(--white3);
-  --shadow2: var(--grey4);
-  --shadow3: var(--grey3);
+  --shadow2: var(--grey5);
+  --shadow3: var(--grey4);
 
-  --border1: var(--grey2);
-  --border2: var(--grey3);
+  --border1: var(--grey3);
+  --border2: var(--grey4);
 
   --button1: var(--primary);
   --button2: var(--primary_lighten);

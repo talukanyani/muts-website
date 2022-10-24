@@ -1,18 +1,20 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.css'
 
 function Footer() {
     var date = new Date()
+
+    const scrollTop = () => window.scrollTo(0, 0);
 
     return (
         <div className={styles.footer}>
             <p> &copy; {date.getFullYear()} Tmlab. All rights reserved.</p>
             <ul>
                 <li>
-                    <a href='/'>Terms</a>
+                    <Link to='/terms' onClick={scrollTop}>Terms</Link>
                 </li>
                 <li>
-                    <a href='/'>Privacy</a>
+                    <Link to='/privacy' onClick={scrollTop}>Privacy</Link>
                 </li>
             </ul>
         </div>

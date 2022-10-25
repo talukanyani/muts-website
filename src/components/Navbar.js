@@ -50,18 +50,21 @@ function Menu() {
     }
 
     const goToConnect = () => {
+        window.scrollTo(0, 0);
         closeMenu()
 
         var pathname = window.location.pathname
 
         if (pathname === '/') {
-            document.getElementById('subsInput').focus()
+            setTimeout(() => {
+                document.getElementById('subs_email').focus()
+            }, 300)
         } else {
             navigate('/')
 
             setTimeout(() => {
-                document.getElementById('subsInput').focus()
-            }, 300)
+                document.getElementById('subs_email').focus()
+            }, 500)
         }
     }
 
@@ -91,29 +94,17 @@ function Menu() {
                 <span></span>
                 <nav onClick={closeMenu}>
                     <ul onClick={event => event.stopPropagation()}>
-                        <li>
-                            <i onClick={goToHome}>
-                                Home
-                                <img src={home} alt='home icon' />
-                            </i>
+                        <li onClick={goToHome}>
+                            Home <img src={home} alt='home icon' />
                         </li>
-                        <li>
-                            <i onClick={goToApps} >
-                                Apps
-                                <img src={apps} alt='apps icon' />
-                            </i>
+                        <li onClick={goToApps}>
+                            Apps <img src={apps} alt='apps icon' />
                         </li>
-                        <li>
-                            <i onClick={openContModal}>
-                                Contact
-                                <img src={contact} alt='contact icon' />
-                            </i>
+                        <li onClick={openContModal}>
+                            Contact <img src={contact} alt='contact icon' />
                         </li>
-                        <li>
-                            <i onClick={goToConnect}>
-                                Connect
-                                <img src={connect} alt='connect icon' />
-                            </i>
+                        <li onClick={goToConnect}>
+                            Connect <img src={connect} alt='connect icon' />
                         </li>
                     </ul>
                 </nav>

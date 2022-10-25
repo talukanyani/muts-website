@@ -40,14 +40,28 @@ function Body() {
     }
 
     const handleSubmit = event => {
+        event.preventDefault()
+
         var emailRegEx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,5})+$/
 
-        if (emailRegEx.test(email)) {
-            return
-        } else {
-            event.preventDefault()
+        if (!emailRegEx.test(email)) {
             showEmailError()
+            return
         }
+
+        setIsLoading(true)
+
+        fetch('/newsletter', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: email })
+        })
+            .then(res => res.json())
+            .then(resData => handleResponse(resData))
+            .catch(error => handleError(error))
     }
 
     const showEmailError = () => {
@@ -108,6 +122,7 @@ function Body() {
                                 placeholder='Email'
                                 id='subs_email'
                                 name='subs_email'
+                                value={email}
                                 className={
                                     emailError !== null
                                         ? styles.error_input

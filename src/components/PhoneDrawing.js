@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from './PhoneDrawing.module.css';
 import sc_app_icon from '../assets/sc_app_icon.svg'
 
 function Phone() {
-    var date = new Date();
+    const [date, setDate] = useState(new Date());
+
+    var pad = n => ((n < 10) && '0') + n;
+
+    useEffect(() => {
+        const changeTime = setInterval(() => {
+            setDate(new Date());
+        }, 5000);
+
+        return () => clearInterval(changeTime);
+    })
 
     return (
         <div className={styles.phone}>
             <div className={styles.screen}>
                 <div className={styles.system_status_bar}>
                     <span className={styles.time}>
-                        {date.getHours()}:{date.getMinutes()}
+                        {pad(date.getHours())}:{pad(date.getMinutes())}
                     </span>
                     <span className={styles.camera}></span>
                     <section className={styles.network_bar}>

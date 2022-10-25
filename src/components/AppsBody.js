@@ -40,14 +40,28 @@ function Body(props) {
     }
 
     const handleSubmit = event => {
+        event.preventDefault()
+
         var emailRegEx = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,5})+$/
 
-        if (emailRegEx.test(email)) {
-            return
-        } else {
-            event.preventDefault()
+        if (!emailRegEx.test(email)) {
             showEmailError()
+            return
         }
+
+        setIsLoading(true)
+
+        fetch('/sc/notify_me', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: email })
+        })
+            .then(res => res.json())
+            .then(resData => handleResponse(resData))
+            .catch(error => handleError(error))
     }
 
     const showEmailError = () => {
@@ -130,6 +144,7 @@ function Body(props) {
                                         id='sc_email'
                                         name='sc_email'
                                         ref={emailInput}
+                                        value={email}
                                         className={
                                             emailError !== null
                                                 ? styles.error_input

@@ -6,8 +6,8 @@
     padding: 0 2vw;
     background: var(--surface4);
     background: linear-gradient(180deg,
-            rgba(var(--surface4_rgb), 1) 30%,
-            rgba(var(--surface4_rgb), 0.8) 100%);
+            var(--surface4) 60%,
+            var(--primary_lighten_p8_opacity) 100%);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -18,8 +18,8 @@
 
 .white_bg {
     background: linear-gradient(180deg,
-            rgba(var(--surface1_rgb), 1) 30%,
-            rgba(var(--surface1_rgb), 0.8) 100%);
+            var(--white1) 60%,
+            var(--white1_p8_opacity) 100%);
 }
 
 .logo {
@@ -79,7 +79,7 @@
     height: 100vh;
     background: linear-gradient(120deg,
             var(--surface4) 20rem,
-            rgba(var(--surface1_rgb), 0.6) 40rem);
+            var(--white1_p8_opacity) 40rem);
     transition: all 0.2s linear;
 }
 
@@ -95,9 +95,15 @@
 }
 
 .menu li {
-    padding: 0.4rem 0.6rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text1);
+    padding: 0.4rem 0.8rem;
     border: 1px solid var(--text1);
     border-radius: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     transition: all 0.2s linear;
 }
 
@@ -107,17 +113,6 @@
 
 .menu li:active {
     translate: 0 18px;
-}
-
-.menu nav i {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--text1);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-style: normal;
 }
 
 .menu li:nth-of-type(1) {

@@ -26,7 +26,6 @@
     justify-content: center;
     align-items: flex-start;
     animation: fadeAndMove 0.6s ease;
-    /* border: 1px solid rgba(0, 0, 0, 0.2); */
 }
 
 .container_apps h2 {
@@ -43,7 +42,6 @@
     justify-content: center;
     align-items: flex-start;
     animation: fadeAndMove 0.6s ease;
-    /* border: 1px solid rgba(0, 0, 0, 0.2); */
 }
 
 .container_contact p {
@@ -53,8 +51,8 @@
 }
 
 .container_contact button {
-    color: var(--button1);
-    border-color: var(--button1);
+    color: var(--button3);
+    border-color: var(--button3);
     background: transparent;
     padding: 0.3rem 0.6rem;
 }
@@ -71,7 +69,6 @@
     justify-content: center;
     align-items: center;
     animation: fadeAndMove 0.6s ease;
-    /* border: 1px solid rgba(0, 0, 0, 0.2); */
 }
 
 .container_connect p {

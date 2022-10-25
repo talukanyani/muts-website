@@ -23,7 +23,6 @@
 
 .footer a:hover {
     color: var(--link);
-    text-decoration: underline;
 }
 
 .footer a:active {

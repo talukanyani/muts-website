@@ -3,7 +3,7 @@
     padding: 1.8rem;
     border-radius: 0.8rem;
     background: var(--surface4);
-    box-shadow: 0px 0px 30px 0px var(--shadow1);
+    box-shadow: 0px 0px 30px 0px var(--shadow2);
 }
 
 .closingicon {
@@ -212,7 +212,7 @@
 }
 
 @media screen and (max-width: 440px) {
-    .modal {
+    .cont_modal {
         width: 80vw;
         padding: 1.2rem;
     }

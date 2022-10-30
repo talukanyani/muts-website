@@ -144,7 +144,7 @@ function Body() {
                                 <a
                                     target='_blank'
                                     rel='noreferrer'
-                                    href='https://twitter.com/tmlab_dot_app'
+                                    href='https://twitter.com/tmlab_dot_tech'
                                 >
                                     <img
                                         src={twitter}
@@ -155,7 +155,7 @@ function Body() {
                                 <a
                                     target='_blank'
                                     rel='noreferrer'
-                                    href='https://instagram.com/tmlab.app'
+                                    href='https://instagram.com/tmlab.tech'
                                 >
                                     <img
                                         src={instagram}

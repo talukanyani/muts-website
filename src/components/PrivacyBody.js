@@ -133,7 +133,7 @@ function Body() {
                     We aim to take reasonable steps to allow you to correct, amend, delete, or limit the use of your Personal Data.
                 </p>
                 <p>
-                    If you wish to be informed what Personal Data we hold about you and if you want it to be removed from our systems, please email us at <a href="mailto:support@tmlab.tech">support@tmlab.tech</a>.
+                    If you wish to be informed what Personal Data we hold about you and if you want it to be removed from our systems, please email us at <a href="mailto:tmlabtech@hotmail.com">tmlabtech@hotmail.com</a>.
                 </p>
                 <p>
                     In certain circumstances, you have the following data protection rights:
@@ -181,7 +181,7 @@ function Body() {
                         Users will be notified of any privacy policy changes on our Privacy Policy Page.
                     </li>
                     <li>
-                        Users are able to change their personal information by emailing us at <a href="mailto:support@tmlab.tech">support@tmlab.tech</a>
+                        Users are able to change their personal information by emailing us at <a href="mailto:tmlabtech@hotmail.com">tmlabtech@hotmail.com</a>
                     </li>
                     <li>Our Policy on “Do Not Track” Signals:</li>
                     <li>
@@ -209,7 +209,7 @@ function Body() {
                     </li>
                 </ul>
                 <p>
-                    To exercise your California data protection rights described above, please send your request(s) by email: <a href="mailto:support@tmlab.tech">support@tmlab.tech</a><br />
+                    To exercise your California data protection rights described above, please send your request(s) by email: <a href="mailto:tmlabtech@hotmail.com">tmlabtech@hotmail.com</a><br />
                     Your data protection rights, described above, are covered by the CCPA, short for the California Consumer Privacy Act. To find out more, visit the official California Legislative Information website. The CCPA took effect on 01/01/2020.
                 </p>
 

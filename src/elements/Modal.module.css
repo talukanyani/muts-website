@@ -8,12 +8,16 @@
     background-color: var(--grey5_p5_opacity);
     opacity: 0;
     visibility: hidden;
-    transition: visibility 0s linear 0.2s, opacity 0.2s ease,
+    -webkit-transition: visibility 0s linear 0.2s, opacity 0.2s ease;
+    -o-transition: visibility 0s linear 0.2s, opacity 0.2s ease;
+    transition: visibility 0s linear 0.2s, opacity 0.2s ease
 }
 
 .modal_open {
     opacity: 1;
     visibility: visible;
+    -webkit-transition: visibility 0s linear, opacity 0.3s ease;
+    -o-transition: visibility 0s linear, opacity 0.3s ease;
     transition: visibility 0s linear, opacity 0.3s ease;
 }
 
@@ -23,10 +27,14 @@
     left: 50%;
     translate: -50% -50%;
     scale: 0.9;
+    -webkit-transition: scale 0.2s ease;
+    -o-transition: scale 0.2s ease;
     transition: scale 0.2s ease;
 }
 
 .modal_grow {
     scale: 1;
+    -webkit-transition: scale 0.3s ease;
+    -o-transition: scale 0.3s ease;
     transition: scale 0.3s ease;
 }

@@ -16,6 +16,7 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #c2d6c4;
+  -webkit-box-shadow: inset 1px 0.5px 3px #9cc99f;
   box-shadow: inset 1px 0.5px 3px #9cc99f;
 }
 
@@ -62,22 +63,22 @@ body::-webkit-scrollbar-thumb:active {
   --red1: #af0000;
   --red2: #d77878;
 
-  --primary: #6ec475;
-  --primary_lighten: #c5e7c8;
-  --primary_lighten2: #e2f3e3;
-  --primary_darken: #235728;
-  --primary_saturated_darken: #27a531;
+  --primary: #78ba7e;
+  --primary_lighten: #c9e3cb;
+  --primary_lighten2: #e4f1e5;
+  --primary_darken: #2a512d;
+  --primary_saturated_darken: #639c68;
 
-  --secondary: #c46ebd;
-  --secondary_lighten: #e7c5e4;
-  --secondary_darken: #572353;
+  --secondary: #ba78b4;
+  --secondary_lighten: #e3c9e1;
+  --secondary_darken: #512a4e;
 
   --white1_p8_opacity: rgba(250, 250, 250, 0.8);
   --grey5_p5_opacity: rgba(220, 220, 220, 0.5);
-  --primary_lighten_p8_opacity: rgba(197, 231, 200, 0.8);
+  --primary_lighten_p8_opacity: rgba(201, 227, 203, 0.8);
+}
 
-  /* ------------------------------- */
-
+:root {
   --text1: var(--black1);
   --text2: var(--black2);
   --text3: var(--black3);
@@ -103,5 +104,4 @@ body::-webkit-scrollbar-thumb:active {
 
   --error1: var(--red1);
   --error2: var(--red2);
-
 }

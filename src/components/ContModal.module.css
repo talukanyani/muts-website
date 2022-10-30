@@ -3,6 +3,7 @@
     padding: 1.8rem;
     border-radius: 0.8rem;
     background: var(--surface4);
+    -webkit-box-shadow: 0px 0px 30px 0px var(--shadow2);
     box-shadow: 0px 0px 30px 0px var(--shadow2);
 }
 
@@ -22,6 +23,8 @@
     border-radius: 0.5rem;
     background-color: var(--surface5);
     margin-bottom: 2.2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: relative;
 }
@@ -33,7 +36,11 @@
 .tabs section {
     width: calc(100% / 2);
     padding: 0.3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     cursor: pointer;
     z-index: 1;
@@ -46,27 +53,42 @@
     position: absolute;
     top: 0.2rem;
     bottom: 0.2rem;
+    -webkit-transition: 0.15s ease, -webkit-transform 0.25s ease-out;
+    transition: 0.15s ease, -webkit-transform 0.25s ease-out;
+    -o-transition: 0.15s ease, transform 0.25s ease-out;
     transition: 0.15s ease, transform 0.25s ease-out;
+    transition: 0.15s ease, transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
 }
 
 .tabs input:nth-of-type(1):checked~span {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
     transform: translateX(0);
 }
 
 .tabs input:nth-of-type(2):checked~span {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
     transform: translateX(100%);
 }
 
 .emails {
     position: absolute;
     top: 8rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 1rem;
     opacity: 1;
     pointer-events: all;
     scale: 1;
     translate: 0;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
@@ -78,8 +100,12 @@
 }
 
 .emails li {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 0.8rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -89,23 +115,34 @@
     letter-spacing: 0.1rem;
     line-height: 1.4rem;
     text-decoration: none;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
 
 .emails a:hover {
     color: var(--link);
+    -webkit-transform: translateX(0.1rem);
+    -ms-transform: translateX(0.1rem);
     transform: translateX(0.1rem);
     letter-spacing: 0.15rem;
 }
 
 .contact_form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 1.6rem;
     opacity: 1;
     pointer-events: all;
     scale: 1;
     translate: 0;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
 
@@ -129,7 +166,11 @@
     border-radius: 0.4rem;
     background-color: var(--surface2);
     pointer-events: none;
+    -webkit-transform-origin: 0 50%;
+    -ms-transform-origin: 0 50%;
     transform-origin: 0 50%;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
 
@@ -142,6 +183,8 @@
 }
 
 .textarea_label {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 0.6rem;
 }
@@ -161,6 +204,7 @@
     font-size: 0.9rem;
     letter-spacing: 0.1rem;
     width: 100%;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0.8rem 0.5rem 0.3rem;
     border: none;
@@ -180,14 +224,40 @@
     resize: none;
 }
 
+.contact_form input:not(:-moz-placeholder-shown)~label {
+    transform: translate(0.6rem, -1rem) scale(0.9);
+    letter-spacing: normal;
+}
+
+.contact_form input:not(:-ms-input-placeholder)~label {
+    -ms-transform: translate(0.6rem, -1rem) scale(0.9);
+    transform: translate(0.6rem, -1rem) scale(0.9);
+    letter-spacing: normal;
+}
+
 .contact_form input:focus~label,
 .contact_form input:not(:placeholder-shown)~label {
+    -webkit-transform: translate(0.6rem, -1rem) scale(0.9);
+    -ms-transform: translate(0.6rem, -1rem) scale(0.9);
+    transform: translate(0.6rem, -1rem) scale(0.9);
+    letter-spacing: normal;
+}
+
+.contact_form textarea:not(:-moz-placeholder-shown)~label {
+    transform: translate(0.6rem, -1rem) scale(0.9);
+    letter-spacing: normal;
+}
+
+.contact_form textarea:not(:-ms-input-placeholder)~label {
+    -ms-transform: translate(0.6rem, -1rem) scale(0.9);
     transform: translate(0.6rem, -1rem) scale(0.9);
     letter-spacing: normal;
 }
 
 .contact_form textarea:focus~label,
 .contact_form textarea:not(:placeholder-shown)~label {
+    -webkit-transform: translate(0.6rem, -1rem) scale(0.9);
+    -ms-transform: translate(0.6rem, -1rem) scale(0.9);
     transform: translate(0.6rem, -1rem) scale(0.9);
     letter-spacing: normal;
 }
@@ -200,10 +270,13 @@
     border: none;
     border-radius: 0.4rem;
     cursor: pointer;
+    -webkit-transition: all 0.1s;
+    -o-transition: all 0.1s;
     transition: all 0.1s;
 }
 
 .contact_form input[type='submit']:active {
+    -webkit-box-shadow: 0px 0px 4px 1px var(--button1);
     box-shadow: 0px 0px 4px 1px var(--button1);
 }
 

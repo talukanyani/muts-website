@@ -92,9 +92,9 @@ function ContModal(props) {
         if (!isValidEmail) showEmailError(email)
         if (!isValidMessage) showMessageError(message)
 
-        setIsLoading(true)
-
         if (isValidName & isValidEmail & isValidMessage) {
+            setIsLoading(true);
+
             fetch('/contact', {
                 method: 'POST',
                 headers: {
@@ -276,17 +276,8 @@ function ContModal(props) {
                             src={emailicon}
                             alt='email icon'
                         />
-                        <a href='mailto:1905talu@gmail.com'>
-                            hello@tmlab.tech
-                        </a>
-                    </li>
-                    <li>
-                        <img
-                            src={emailicon}
-                            alt='email icon'
-                        />
-                        <a href='mailto:1905talu@gmail.com'>
-                            support@tmlab.tech
+                        <a href='mailto:tmlabtech@hotmail.com'>
+                            tmlabtech@hotmail.com
                         </a>
                     </li>
                 </ul>

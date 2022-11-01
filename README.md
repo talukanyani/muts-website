@@ -1,14 +1,13 @@
 # Tmlab Website
 
 ## About The Project
-The is a website to show apps of Tmlab(Talukanyani Mutshaeni's Laboratry). Users can find
-links to downlod specific app in Play Store or App Store. Users can also send messages to
-Tmlab and also subscribe to their newsletter.
+The is a website to show apps of Tmlab(Talukanyani Mutshaeni's Laboratry).
+Users can find links to downlod specific app in Play Store or App Store. Users can also send messages to Tmlab and also subscribe to their newsletter.
 
 ## Folder Structure
-This website contains 5 pages you can find under [pages folder](/tree/master/src/pages/). 
-Each page file holds 3 or 4 components which can be found under [components folder](/tree/master/src/components). 
-Some of componets files hold small componets which can be found in [elements folder](/tree/master/src/elements).
+This website contains 5 pages you can find under [pages folder](https://github.com/Talukanyani/tmlab-website-client/tree/master/src/pages). 
+Each page file holds 3 or 4 components which can be found under [components folder](https://github.com/Talukanyani/tmlab-website-client/tree/master/src/components). 
+Some of componets files hold small componets which can be found in [elements folder](https://github.com/Talukanyani/tmlab-website-client/tree/master/src/elements).
 
 ## Technologies Used
 - React

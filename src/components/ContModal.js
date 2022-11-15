@@ -9,7 +9,7 @@ import closeimg from '../assets/icon-close.svg'
 import emailicon from '../assets/icon-email.svg'
 
 function ContModal(props) {
-    const [radioBtnValue, setRadioBtnValue] = useState('sendhere')
+    const [radioBtnValue, setRadioBtnValue] = useState('message')
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -155,13 +155,13 @@ function ContModal(props) {
                 />
                 <SmallHeading text='Contact us' />
                 <div className={styles.tabs}>
-                    <section onClick={() => setRadioBtnValue('sendhere')}>
-                        Send here
+                    <section onClick={() => setRadioBtnValue('message')}>
+                        Message
                     </section>
                     <input
                         type='radio'
                         name='tabs'
-                        value='sendhere'
+                        value='message'
                         checked={radioBtnValue === 'emails'}
                         readOnly
                     />
@@ -229,7 +229,7 @@ function ContModal(props) {
                             placeholder=' '
                             className={
                                 messageError !== null
-                                    ? styles.error_input
+                                    ? styles.contact_form_input_error
                                     : undefined
                             }
                             value={message}
@@ -266,7 +266,7 @@ function ContModal(props) {
                 <ul
                     className={[
                         styles.emails,
-                        radioBtnValue === 'sendhere'
+                        radioBtnValue === 'message'
                             ? styles.emails_hide
                             : undefined
                     ].join(' ')}

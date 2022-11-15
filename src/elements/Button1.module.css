@@ -1,12 +1,13 @@
 .button {
+    color: var(--text4);
     padding: 0.4rem 0.6rem;
     background: var(--button1);
     border: solid 1px var(--border2);
     border-radius: 0.3rem;
     -webkit-user-select: none;
     user-select: none;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .button span {
@@ -20,8 +21,8 @@
     font-size: 1rem;
     letter-spacing: 0.1rem;
     margin-left: 0.5rem;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
 }
 
 .button:hover::after {
@@ -30,6 +31,7 @@
 
 .button:hover {
     transform: translate(2px, 0);
+    background: var(--button2);
 }
 
 .button:active {

@@ -8,13 +8,13 @@
     background: -webkit-gradient(linear,
             left top, left bottom,
             color-stop(60%, var(--surface4)),
-            to(var(--primary_lighten_p8_opacity)));
+            to(var(--primary_light_p8_opacity)));
     background: -o-linear-gradient(top,
             var(--surface4) 60%,
-            var(--primary_lighten_p8_opacity) 100%);
+            var(--primary_light_p8_opacity) 100%);
     background: linear-gradient(180deg,
             var(--surface4) 60%,
-            var(--primary_lighten_p8_opacity) 100%);
+            var(--primary_light_p8_opacity) 100%);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -37,14 +37,14 @@
 .white_bg {
     background: -webkit-gradient(linear,
             left top, left bottom,
-            color-stop(60%, var(--white1)),
-            to(var(--white1_p8_opacity)));
+            color-stop(60%, var(--white250)),
+            to(var(--white250_p8_opacity)));
     background: -o-linear-gradient(top,
-            var(--white1) 60%,
+            var(--white250) 60%,
             var(--white1_p8_opacity) 100%);
     background: linear-gradient(180deg,
-            var(--white1) 60%,
-            var(--white1_p8_opacity) 100%);
+            var(--white250) 60%,
+            var(--white250_p8_opacity) 100%);
 }
 
 .logo {
@@ -116,10 +116,10 @@
     height: 100vh;
     background: -o-linear-gradient(330deg,
             var(--surface4) 20rem,
-            var(--white1_p8_opacity) 40rem);
+            var(--white250_p8_opacity) 40rem);
     background: linear-gradient(120deg,
             var(--surface4) 20rem,
-            var(--white1_p8_opacity) 40rem);
+            var(--white250_p8_opacity) 40rem);
     -webkit-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
     transition: all 0.2s linear;
@@ -128,7 +128,7 @@
 .menu ul {
     width: 10rem;
     margin: 0;
-    padding: 5rem 5rem 5rem 2vw;
+    padding: 5rem 8rem 8rem 2vw;
     list-style: none;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -169,7 +169,7 @@
 }
 
 .menu li:active {
-    translate: 0 18px;
+    translate: 16px 4px;
 }
 
 .menu li:nth-of-type(1) {
@@ -190,24 +190,6 @@
     transition: all 0.7s ease 0.05s;
 }
 
-.menu li:nth-of-type(3) {
-    -webkit-transform: translate(-400px, 0);
-    -ms-transform: translate(-400px, 0);
-    transform: translate(-400px, 0);
-    -webkit-transition: all 0.8s ease 0.1s;
-    -o-transition: all 0.8s ease 0.1s;
-    transition: all 0.8s ease 0.1s;
-}
-
-.menu li:nth-of-type(4) {
-    -webkit-transform: translate(-400px, 0);
-    -ms-transform: translate(-400px, 0);
-    transform: translate(-400px, 0);
-    -webkit-transition: all 0.9s ease 0.15s;
-    -o-transition: all 0.9s ease 0.15s;
-    transition: all 0.9s ease 0.15s;
-}
-
 .menu input:checked~nav {
     opacity: 1;
     pointer-events: all;
@@ -216,25 +198,7 @@
     transform: translate(0);
 }
 
-.menu input:checked~nav li:nth-of-type(1) {
-    -webkit-transform: translate(0);
-    -ms-transform: translate(0);
-    transform: translate(0);
-}
-
-.menu input:checked~nav li:nth-of-type(2) {
-    -webkit-transform: translate(0);
-    -ms-transform: translate(0);
-    transform: translate(0);
-}
-
-.menu input:checked~nav li:nth-of-type(3) {
-    -webkit-transform: translate(0);
-    -ms-transform: translate(0);
-    transform: translate(0);
-}
-
-.menu input:checked~nav li:nth-of-type(4) {
+.menu input:checked~nav li {
     -webkit-transform: translate(0);
     -ms-transform: translate(0);
     transform: translate(0);

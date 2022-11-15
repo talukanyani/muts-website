@@ -3,8 +3,8 @@
     padding: 1.8rem;
     border-radius: 0.8rem;
     background: var(--surface4);
-    -webkit-box-shadow: 0px 0px 30px 0px var(--shadow2);
-    box-shadow: 0px 0px 30px 0px var(--shadow2);
+    -webkit-box-shadow: 0px 0px 2rem 0px var(--shadow2);
+    box-shadow: 0px 0px 2rem 0px var(--shadow2);
 }
 
 .closingicon {
@@ -21,12 +21,16 @@
 .tabs {
     padding: 0.1rem;
     border-radius: 0.5rem;
-    background-color: var(--surface5);
+    background-color: var(--surface3);
     margin-bottom: 2.2rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .tabs input {
@@ -49,7 +53,7 @@
 .tabs span {
     width: calc((100% - 0.5rem) / 2);
     border-radius: 0.5rem;
-    background-color: var(--button2);
+    background-color: var(--button3);
     position: absolute;
     top: 0.2rem;
     bottom: 0.2rem;
@@ -74,7 +78,7 @@
 
 .emails {
     position: absolute;
-    top: 8rem;
+    top: 10rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -264,9 +268,10 @@
 
 .contact_form input[type='submit'] {
     font-size: 1rem;
+    color: var(--text4);
     letter-spacing: 0.1rem;
     padding: 0.4rem;
-    background-color: var(--button1);
+    background-color: var(--button2);
     border: none;
     border-radius: 0.4rem;
     cursor: pointer;
@@ -280,7 +285,7 @@
     box-shadow: 0px 0px 4px 1px var(--button1);
 }
 
-.error_input {
+.contact_form_input_error {
     outline: 2px dashed var(--error2)
 }
 

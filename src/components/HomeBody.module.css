@@ -2,14 +2,14 @@
     background-color: var(--surface1);
     background-image: -webkit-gradient(linear,
             left top, left bottom,
-            color-stop(34vw, var(--surface4)),
-            color-stop(34vw, var(--surface1)));
+            color-stop(35.5vw, var(--surface4)),
+            color-stop(35.5vw, var(--surface1)));
     background-image: -o-linear-gradient(top,
-            var(--surface4) 34vw,
-            var(--surface1) 34vw);
+            var(--surface4) 35.5vw,
+            var(--surface1) 35.5vw);
     background-image: linear-gradient(180deg,
-            var(--surface4) 34vw,
-            var(--surface1) 34vw);
+            var(--surface4) 35.5vw,
+            var(--surface1) 35.5vw);
     background-attachment: fixed;
     padding-top: 4.4rem;
 }
@@ -28,6 +28,7 @@
 .container_apps {
     width: 600px;
     height: calc(200px + 30vh);
+    margin-bottom: 5rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -41,174 +42,22 @@
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
-    -webkit-animation: fadeAndMove 0.6s ease;
-    animation: fadeAndMove 0.6s ease;
 }
 
 .container_apps h2 {
     font-size: 2.5rem;
-    color: var(--text3);
+    color: var(--text2);
     margin: 0 0 1.2rem 0;
-}
-
-.container_contact {
-    width: 500px;
-    height: calc(50px + 20vh);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    -webkit-animation: fadeAndMove 0.6s ease;
-    animation: fadeAndMove 0.6s ease;
-}
-
-.container_contact p {
-    font-size: 1rem;
-    color: var(--text2);
-    margin-top: 0.2rem;
-}
-
-.container_contact button {
-    color: var(--button3);
-    border-color: var(--button3);
-    background: transparent;
-    padding: 0.3rem 0.6rem;
-}
-
-.container_contact button span {
-    font-size: 0.7rem;
-    letter-spacing: 0.1rem;
-}
-
-.container_connect {
-    height: calc(50px + 20vh);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-animation: fadeAndMove 0.6s ease;
-    animation: fadeAndMove 0.6s ease;
-}
-
-.container_connect p {
-    font-size: 1rem;
-    color: var(--text2);
-    text-align: center;
-    margin-top: 0.2rem;
-}
-
-.container_connect section {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 2rem;
-}
-
-.container_connect ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 1rem;
-}
-
-.container_connect form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 28px;
-    position: relative;
-}
-
-.container_connect input[type='email'] {
-    letter-spacing: 0.05rem;
-    padding: 0.1rem 0.5rem;
-    background-color: transparent;
-    border: solid 1px var(--button1);
-    border-radius: 0.4rem 0 0 0.4rem;
-    outline: none;
-    -webkit-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
-
-.container_connect input[type='submit'] {
-    background-color: var(--button1);
-    border: none;
-    border-radius: 0 0.4rem 0.4rem 0;
-    cursor: pointer;
-    -webkit-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-.container_connect form span {
-    color: var(--error1);
-    position: absolute;
-    top: 28px;
-    left: 8px;
-}
-
-.error_input {
-    background-color: var(--error2) !important;
-}
-
-@-webkit-keyframes fadeAndMove {
-    from {
-        opacity: 0;
-        translate: -100px;
-        scale: 1.2;
-    }
-
-    to {
-        opacity: 1;
-        translate: 0;
-        scale: 1;
-    }
-}
-
-@keyframes fadeAndMove {
-    from {
-        opacity: 0;
-        translate: -100px;
-        scale: 1.2;
-    }
-
-    to {
-        opacity: 1;
-        translate: 0;
-        scale: 1;
-    }
 }
 
 @media screen and (min-width: 1280px) {
     .body_overlay {
         background-image: -o-linear-gradient(top,
-                var(--surface4) 438px,
-                var(--surface1) 438px);
+                var(--surface4) 455px,
+                var(--surface1) 455px);
         background-image: linear-gradient(180deg,
-                var(--surface4) 438px,
-                var(--surface1) 438px);
+                var(--surface4) 455px,
+                var(--surface1) 455px);
     }
 
     .body {
@@ -221,14 +70,14 @@
     .body_overlay {
         background-image: -webkit-gradient(linear,
                 left top, left bottom,
-                color-stop(50vw, var(--surface4)),
-                color-stop(50vw, var(--surface1)));
+                color-stop(50.3vw, var(--surface4)),
+                color-stop(50.3vw, var(--surface1)));
         background-image: -o-linear-gradient(top,
-                var(--surface4) 50vw,
-                var(--surface1) 50vw);
+                var(--surface4) 50.3vw,
+                var(--surface1) 50.3vw);
         background-image: linear-gradient(180deg,
-                var(--surface4) 50vw,
-                var(--surface1) 50vw);
+                var(--surface4) 50.3vw,
+                var(--surface1) 50.3vw);
     }
 
     .body {
@@ -238,27 +87,10 @@
     .container_apps {
         width: 75vw;
     }
-
-    .container_contact {
-        width: auto;
-    }
 }
 
 @media screen and (max-width: 440px) {
     .container_apps {
         width: auto;
-    }
-
-    .container_connect section {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .container_connect ul {
-        margin: 0 auto 0 auto;
-        gap: 1.5rem;
     }
 }

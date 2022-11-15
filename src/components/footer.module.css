@@ -1,40 +1,150 @@
+.footer_overlay {
+    background-image: -o-linear-gradient(top,
+            #ffffff 0%,
+            var(--surface2) 50%,
+            var(--surface1) 100%);
+    background-image: linear-gradient(0deg,
+            #ffffff 0%,
+            var(--surface2) 50%,
+            var(--surface1) 100%);
+}
+
 .footer {
-    font-size: smaller;
-    color: var(--text3);
-    padding: 1vw;
-    background-color: var(--surface1);
+    padding: 1% 2%;
+    max-width: 1280px;
+    margin: 0 auto 0 auto;
+}
+
+.connect {
+    padding-bottom: 0.75rem;
+    border-bottom: 0.05rem solid var(--border3);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    gap: 0.8rem;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
-.footer ul {
+.connect ul {
+    margin: 0;
     padding: 0;
     list-style: none;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    gap: 2rem;
+}
+
+
+.connect ul a {
+    display: flex;
+}
+
+.connect ul img {
+    width: 1.75rem;
+}
+
+.connect form {
+    height: 1.75rem;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.connect input[type='email'] {
+    letter-spacing: 0.05rem;
+    padding: 0.1rem 0.4rem;
+    background-color: transparent;
+    border: solid 1px var(--button1);
+    border-radius: 0.4rem 0 0 0.4rem;
+    outline: none;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.connect input[type='email']:focus {
+    background-color: var(--surface1);
+}
+
+.connect input[type='submit'] {
+    font-size: 0.8rem;
+    color: var(--text4);
+    background-color: var(--button1);
+    border: none;
+    border-radius: 0 0.4rem 0.4rem 0;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.connect form span {
+    color: var(--error1);
+    position: absolute;
+    top: 28px;
+    left: 8px;
+}
+
+.error_input {
+    background-color: var(--error2) !important;
+}
+
+/* .footer ul {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    gap: 0.8rem;
+} */
+
+.links {
+    font-size: smaller;
+    color: var(--text3);
+    padding-top: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.footer a {
+.links ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem;
+}
+
+.links p {
+    margin: 0;
+}
+
+.links a {
     color: inherit;
     text-decoration: none;
+    cursor: pointer;
 }
 
-.footer a:hover {
+.links a:hover {
     color: var(--link);
 }
 
-.footer a:active {
+.links a:active {
     color: var(--link);
+}
+
+@media screen and (max-width: 380px) {
+    .connect {
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
 }

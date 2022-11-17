@@ -97,7 +97,7 @@ function Connect() {
                     type='email'
                     placeholder='Email'
                     id='subs_email'
-                    name='subs_email'
+                    name='email'
                     value={email}
                     className={
                         emailError !== null
@@ -121,7 +121,7 @@ function Connect() {
                 <li>
                     <a
                         target='_blank'
-                        rel='noreferrer'
+                        rel="noopener noreferrer"
                         href='https://twitter.com/tmlab_dot_tech'
                     >
                         <img
@@ -133,7 +133,7 @@ function Connect() {
                 <li>
                     <a
                         target='_blank'
-                        rel='noreferrer'
+                        rel="noopener noreferrer"
                         href='https://instagram.com/tmlab.tech'
                     >
                         <img
@@ -186,9 +186,9 @@ function Links() {
                         </Link>
                     </li>
                     <li>
-                        <a onClick={() => setIsContModal(true)}>
+                        <span onClick={() => setIsContModal(true)}>
                             Contact
-                        </a>
+                        </span>
                     </li>
                 </ul>
             </div>

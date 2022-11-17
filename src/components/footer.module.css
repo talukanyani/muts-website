@@ -131,7 +131,6 @@
 .links a {
     color: inherit;
     text-decoration: none;
-    cursor: pointer;
 }
 
 .links a:hover {
@@ -140,6 +139,11 @@
 
 .links a:active {
     color: var(--link);
+}
+
+.links li span:hover {
+    color: var(--link);
+    cursor: pointer;
 }
 
 @media screen and (max-width: 380px) {

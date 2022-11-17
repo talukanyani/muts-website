@@ -1,4 +1,6 @@
+import React from 'react';
 import styles from './HomeBody.module.css'
+
 import { useNavigate } from 'react-router-dom';
 
 import Button from '../elements/Button1';

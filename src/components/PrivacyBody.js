@@ -1,7 +1,8 @@
+import React from "react";
 import styles from "./TermsPrivacy.module.css";
 import { Link } from "react-router-dom";
 
-function Body() {
+export default function Body() {
     return (
         <div className={styles.body_overlay}>
             <div className={styles.body}>
@@ -239,5 +240,3 @@ function Body() {
         </div>
     );
 }
-
-export default Body;

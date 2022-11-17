@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from './PhoneDrawing.module.css';
 import sc_app_icon from '../assets/sc_app_icon.svg'
 
-function Phone() {
+export default function Phone() {
     const [date, setDate] = useState(new Date());
 
     var pad = n => ((n < 10) && '0') + n;
@@ -44,5 +44,3 @@ function Phone() {
         </div>
     );
 }
-
-export default Phone;

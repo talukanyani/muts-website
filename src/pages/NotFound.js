@@ -1,7 +1,9 @@
-import Body from "../components/404Body";
+import React from "react";
+
+import Body from "../components/NotFoundBody";
 import Navbar from "../components/Navbar";
 
-function Page() {
+export default function NotFound() {
     return (
         <>
             <Navbar color='white' />
@@ -9,5 +11,3 @@ function Page() {
         </>
     )
 }
-
-export default Page

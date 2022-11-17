@@ -1,4 +1,6 @@
+import React from 'react';
 import styles from './AppsBody.module.css'
+
 import SCapp from './SCapp';
 
 export default function Body() {

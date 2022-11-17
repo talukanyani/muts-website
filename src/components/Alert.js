@@ -1,11 +1,13 @@
+import React from "react"
 import styles from "./Alert.module.css"
+
 import Modal from "../elements/Modal"
 
 import done_icon from "../assets/icon-done.svg"
 import info_icon from "../assets/icon-info.svg"
 import error_icon from "../assets/icon-error.svg"
 
-function Alert(props) {
+export default function Alert(props) {
     var title = props.alertTitle
 
     const getIcon = () => {
@@ -34,5 +36,3 @@ function Alert(props) {
         </Modal>
     )
 }
-
-export default Alert

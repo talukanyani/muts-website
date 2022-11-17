@@ -1,6 +1,7 @@
+import React from 'react'
 import styles from './Modal.module.css'
 
-function Modal(props) {
+export default function Modal(props) {
     return (
         <div
             className={[
@@ -21,5 +22,3 @@ function Modal(props) {
         </div>
     )
 }
-
-export default Modal

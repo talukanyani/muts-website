@@ -1,6 +1,7 @@
-import styles from './404Body.module.css'
+import React from 'react'
+import styles from './NotFoundBody.module.css'
 
-function Body() {
+export default function Body() {
     return (
         <div className={styles.body}>
             <div className={styles.illustration}></div>
@@ -15,5 +16,3 @@ function Body() {
         </div>
     )
 }
-
-export default Body

@@ -10,7 +10,7 @@
 }
 
 .body header {
-    height: 15rem;
+    height: 10rem;
     border-radius: 1rem;
     background: url(../assets/apps_illustration.svg), var(--surface4);
     background-repeat: no-repeat;

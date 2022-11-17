@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styles from './SCapp.module.css'
 
 import Phone from './PhoneDrawing';

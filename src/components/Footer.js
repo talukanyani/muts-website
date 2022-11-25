@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './Footer.module.css'
 
 import ContModal from './ContModal';
-import Alert from './Alert';
+import Banner from './Banner';
 
 import twitter from '../assets/icon-twitter.svg'
 import instagram from '../assets/icon-instagram.svg'
@@ -20,28 +20,31 @@ export default function Footer() {
 }
 
 function Connect() {
-    const [isAlert, setIsAlert] = useState(false)
+    const [isBanner, setIsBanner] = useState(false)
 
     const [email, setEmail] = useState('');
     const [emailError, setEmailError] = useState(null);
 
     const [isLoading, setIsLoading] = useState(false)
-    const [alertTitle, setAlertTitle] = useState('')
-    const [alertBody, setAlertBody] = useState('')
+    const [bannerType, setBannerType] = useState('')
+    const [bannerTitle, setBannerTitle] = useState('')
+    const [bannerBody, setBannerBody] = useState('')
 
     const handleResponse = resData => {
-        setAlertTitle(resData.title)
-        setAlertBody(resData.message)
-        setIsAlert(true)
+        setBannerType(resData.type)
+        setBannerTitle(resData.title)
+        setBannerBody(resData.message)
+        setIsBanner(true)
         setIsLoading(false)
         setEmail('')
     }
 
     const handleError = error => {
         console.error(error)
-        setAlertTitle("Something Went Wrong")
-        setAlertBody("There was an error while processing your request, try again.")
-        setIsAlert(true)
+        setBannerType("error")
+        setBannerTitle("Something Went Wrong")
+        setBannerBody("There was an error while processing your request, try again.")
+        setIsBanner(true)
         setIsLoading(false)
         setEmail('')
     }
@@ -80,12 +83,12 @@ function Connect() {
     }
 
     useEffect(() => {
-        if (isAlert) {
-            document.body.style.overflowY = 'hidden'
-        } else {
-            document.body.style.overflowY = 'visible'
-        }
-    }, [isAlert])
+        const dismissBanner = setTimeout(() => {
+            setIsBanner(false)
+        }, 10000)
+
+        return () => clearTimeout(dismissBanner);
+    }, [isBanner])
 
     return (
         <div className={styles.connect}>
@@ -143,11 +146,12 @@ function Connect() {
                     </a>
                 </li>
             </ul>
-            <Alert
-                isAlert={isAlert}
-                close={() => setIsAlert(false)}
-                alertTitle={alertTitle}
-                alertBody={alertBody}
+            <Banner
+                open={isBanner}
+                close={() => setIsBanner(false)}
+                bannerType={bannerType}
+                bannerTitle={bannerTitle}
+                bannerBody={bannerBody}
             />
         </div>
     )

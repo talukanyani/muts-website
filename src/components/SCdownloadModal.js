@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './SCdownloadModal.module.css'
 
-import Alert from './Alert';
+import Banner from './Banner';
 import Modal from '../elements/Modal';
 
 import closeimg from '../assets/icon-close.svg'
@@ -11,23 +11,26 @@ export default function SCdownloadModal({ isDownloadModal, close }) {
     const [emailError, setEmailError] = useState(null);
 
     const [isLoading, setIsLoading] = useState(false)
-    const [isAlert, setIsAlert] = useState(false)
-    const [alertTitle, setAlertTitle] = useState('')
-    const [alertBody, setAlertBody] = useState('')
+    const [isBanner, setIsBanner] = useState(false)
+    const [bannerType, setBannerType] = useState('')
+    const [bannerTitle, setBannerTitle] = useState('')
+    const [bannerBody, setBannerBody] = useState('')
 
     const handleResponse = resData => {
-        setAlertTitle(resData.title)
-        setAlertBody(resData.message)
-        setIsAlert(true)
+        setBannerType(resData.type)
+        setBannerTitle(resData.title)
+        setBannerBody(resData.message)
+        setIsBanner(true)
         setIsLoading(false)
         setEmail('')
     }
 
     const handleError = error => {
         console.error(error)
-        setAlertTitle("Something Went Wrong")
-        setAlertBody("There was an error while processing your request, try again.")
-        setIsAlert(true)
+        setBannerType("error")
+        setBannerTitle("Something Went Wrong")
+        setBannerBody("There was an error while processing your request, try again.")
+        setIsBanner(true)
         setIsLoading(false)
         setEmail('')
     }
@@ -66,12 +69,20 @@ export default function SCdownloadModal({ isDownloadModal, close }) {
     }
 
     useEffect(() => {
-        if (isAlert || isDownloadModal) {
+        if (isDownloadModal) {
             document.body.style.overflowY = 'hidden'
         } else {
             document.body.style.overflowY = 'visible'
         }
-    }, [isAlert, isDownloadModal])
+    }, [isDownloadModal])
+
+    useEffect(() => {
+        const dismissBanner = setTimeout(() => {
+            setIsBanner(false)
+        }, 10000)
+
+        return () => clearTimeout(dismissBanner);
+    }, [isBanner])
 
     return (
         <>
@@ -117,14 +128,12 @@ export default function SCdownloadModal({ isDownloadModal, close }) {
                     </form>
                 </div>
             </Modal>
-            <Alert
-                isAlert={isAlert}
-                close={() => {
-                    setIsAlert(false)
-                    close()
-                }}
-                alertTitle={alertTitle}
-                alertBody={alertBody}
+            <Banner
+                open={isBanner}
+                close={() => setIsBanner(false)}
+                bannerType={bannerType}
+                bannerTitle={bannerTitle}
+                bannerBody={bannerBody}
             />
         </>
     )

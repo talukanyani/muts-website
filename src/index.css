@@ -1,32 +1,12 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body::-webkit-scrollbar {
-  width: 0.5rem;
-  height: 0.5rem;
-}
-
-body::-webkit-scrollbar {
-  background-color: var(--white240);
-}
-
-body::-webkit-scrollbar-thumb {
-  border-radius: 0.2rem;
-  background-color: var(--primary_light);
-  -webkit-box-shadow: inset 0.1rem 0.05rem 0.2rem var(--grey200);
-  box-shadow: inset 0.1rem 0.05rem 0.2rem var(--grey200);
-}
-
-body::-webkit-scrollbar-thumb:active {
-  background-color: var(--primary);
+:root {
+  --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
+  --font-sans: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 :root {
   font-size: 16px;
+  color: var(--text1);
   scroll-behavior: smooth;
 }
 
@@ -55,8 +35,14 @@ body::-webkit-scrollbar-thumb:active {
   --grey160: #a0a0a0;
   --grey200: #c8c8c8;
 
-  --red1: #af0000;
-  --red2: #d77878;
+  --red1: #bf4040;
+  --red2: #f6c1c1;
+
+  --green1: #40bf40;
+  --green2: #c1f6c1;
+
+  --yellow1: #bfbf40;
+  --yellow2: #f6f6c1;
 
   --primary: #71995f;
   --primary_dark: #497137;
@@ -98,4 +84,42 @@ body::-webkit-scrollbar-thumb:active {
 
   --error1: var(--red1);
   --error2: var(--red2);
+
+  --success1: var(--green1);
+  --success2: var(--green2);
+
+  --warning1: var(--yellow1);
+  --warning2: var(--yellow2);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-system);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+body::-webkit-scrollbar {
+  background-color: var(--white240);
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 0.2rem;
+  background-color: var(--primary_light);
+  -webkit-box-shadow: inset 0.1rem 0.05rem 0.2rem var(--grey200);
+  box-shadow: inset 0.1rem 0.05rem 0.2rem var(--grey200);
+}
+
+body::-webkit-scrollbar-thumb:active {
+  background-color: var(--primary);
+}
+
+::selection {
+  background-color: var(--primary);
+  color: var(--text1);
 }

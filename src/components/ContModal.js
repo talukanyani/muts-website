@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './ContModal.module.css'
-import Alert from './Alert';
+import Banner from './Banner';
 
 import SmallHeading from '../elements/SmallHeading'
 import Modal from '../elements/Modal';
@@ -8,7 +8,7 @@ import Modal from '../elements/Modal';
 import closeimg from '../assets/icon-close.svg'
 import emailicon from '../assets/icon-email.svg'
 
-function ContModal(props) {
+export default function ContModal(props) {
     const [radioBtnValue, setRadioBtnValue] = useState('message')
 
     const [name, setName] = useState('')
@@ -20,14 +20,16 @@ function ContModal(props) {
     const [messageError, setMessageError] = useState(null)
 
     const [isLoading, setIsLoading] = useState(false)
-    const [isAlert, setIsAlert] = useState(false)
-    const [alertTitle, setAlertTitle] = useState('')
-    const [alertBody, setAlertBody] = useState('')
+    const [isBanner, setIsBanner] = useState(false)
+    const [bannerType, setBannerType] = useState('')
+    const [bannerTitle, setBannerTitle] = useState('')
+    const [bannerBody, setBannerBody] = useState('')
 
     const handleResponse = resData => {
-        setAlertTitle(resData.title)
-        setAlertBody(resData.message)
-        setIsAlert(true)
+        setBannerType(resData.type)
+        setBannerTitle(resData.title)
+        setBannerBody(resData.message)
+        setIsBanner(true)
         setIsLoading(false)
         setName('')
         setEmail('')
@@ -36,9 +38,10 @@ function ContModal(props) {
 
     const handleError = error => {
         console.error(error)
-        setAlertTitle("Something Went Wrong")
-        setAlertBody("There was an error while processing your request, try again.")
-        setIsAlert(true)
+        setBannerType('error')
+        setBannerTitle("Something Went Wrong")
+        setBannerBody("There was an error while processing your request, try again.")
+        setIsBanner(true)
         setIsLoading(false)
         setName('')
         setEmail('')
@@ -143,6 +146,14 @@ function ContModal(props) {
         }
     }
 
+    useEffect(() => {
+        const dismissBanner = setTimeout(() => {
+            setIsBanner(false)
+        }, 10000)
+
+        return () => clearTimeout(dismissBanner);
+    }, [isBanner])
+
     return (
         <Modal open={props.isContModal}>
             {/* <Modal open={props.isContModal} close={props.close}> */}
@@ -162,7 +173,7 @@ function ContModal(props) {
                         type='radio'
                         name='tabs'
                         value='message'
-                        checked={radioBtnValue === 'emails'}
+                        checked={radioBtnValue === 'message'}
                         readOnly
                     />
                     <section onClick={() => setRadioBtnValue('emails')}>
@@ -276,23 +287,19 @@ function ContModal(props) {
                             src={emailicon}
                             alt='email icon'
                         />
-                        <a href='mailto:tmlabtech@hotmail.com'>
-                            tmlabtech@hotmail.com
+                        <a href='mailto:tmlab.tech@outlook.com'>
+                            tmlab.tech@outlook.com
                         </a>
                     </li>
                 </ul>
             </div>
-            <Alert
-                isAlert={isAlert}
-                close={() => {
-                    setIsAlert(false)
-                    props.close()
-                }}
-                alertTitle={alertTitle}
-                alertBody={alertBody}
+            <Banner
+                open={isBanner}
+                close={() => setIsBanner(false)}
+                bannerType={bannerType}
+                bannerTitle={bannerTitle}
+                bannerBody={bannerBody}
             />
         </Modal>
     );
 }
-
-export default ContModal;

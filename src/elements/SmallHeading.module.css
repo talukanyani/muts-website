@@ -12,5 +12,6 @@
 
 .heading::before {
     content: "——";
+    font-family: sans-serif;
     margin-right: 0.6rem;
 }

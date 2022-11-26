@@ -26,7 +26,6 @@
 }
 
 .content h1 {
-    color: var(--text1);
     margin: 1rem;
 }
 
@@ -52,7 +51,7 @@
 }
 
 .content button a {
-    color: inherit;
+    color: var(--text4);
     text-decoration: none;
     padding: 0.4rem 1rem;
 }

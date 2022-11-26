@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Body from '../components/AppsBody';
 
-function Apps() {
+export default function Apps() {
+    useEffect(() => {
+        document.title = 'Tmlab - Apps'
+    }, [])
+
     return (
         <>
             <Navbar color='white' />
@@ -12,5 +17,3 @@ function Apps() {
         </>
     );
 }
-
-export default Apps;

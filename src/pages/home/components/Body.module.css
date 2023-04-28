@@ -1,96 +1,69 @@
-.body_overlay {
-    background-color: var(--surface1);
-    background-image: -webkit-gradient(linear,
-            left top, left bottom,
-            color-stop(35.5vw, var(--surface4)),
-            color-stop(35.5vw, var(--surface1)));
-    background-image: -o-linear-gradient(top,
-            var(--surface4) 35.5vw,
-            var(--surface1) 35.5vw);
-    background-image: linear-gradient(180deg,
-            var(--surface4) 35.5vw,
-            var(--surface1) 35.5vw);
-    background-attachment: fixed;
-    padding-top: 4.4rem;
+.body {
+    background-color: var(--background_color1);
 }
 
-.body {
-    padding: 2%;
+.body_content {
+    padding: 4rem 2rem 2rem;
     max-width: 1280px;
     margin: 0 auto 0 auto;
-    background-image: url(../assets/home_page_illustration_1280x560.svg);
-    background-size: contain;
-    background-position: top right;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
 }
 
-.container_apps {
-    width: 600px;
-    height: calc(200px + 30vh);
-    margin-bottom: 5rem;
+.sc_app_card {
+    height: 32rem;
+    margin: 2rem 0;
+    border-radius: 1rem;
+    background: url(../../../assets/images/student_home_desk_illustration.png),
+        -webkit-gradient(linear, left top, left bottom, color-stop(24.7rem, var(--sc_app_on_primary_color)), color-stop(24.7rem, var(--background_color2)));
+    background: url(../../../assets/images/student_home_desk_illustration.png),
+        -o-linear-gradient(top, var(--sc_app_on_primary_color) 24.7rem, var(--background_color2) 24.7rem);
+    background: url(../../../assets/images/student_home_desk_illustration.png),
+        linear-gradient(180deg, var(--sc_app_on_primary_color) 24.7rem, var(--background_color2) 24.7rem);
+    background-size: contain;
+    background-position: center right;
+    background-repeat: no-repeat;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
-.container_apps h2 {
+.sc_app_card_content {
+    padding: 2rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    background: -webkit-gradient(linear, left top, right top, from(var(--sc_app_on_primary_color)), to(transparent));
+    background: -o-linear-gradient(left, var(--sc_app_on_primary_color), transparent);
+    background: linear-gradient(90deg, var(--sc_app_on_primary_color), transparent);
+}
+
+.sc_app_card h1 {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.sc_app_card h1 span {
+    letter-spacing: 0.2rem;
+    word-spacing: 0.3rem;
+}
+
+.sc_app_card h1::before {
+    content: "——";
+    margin-right: 1rem;
+}
+
+.sc_app_card h2 {
     font-size: 2.5rem;
-    color: var(--text2);
-    margin: 0 0 1.2rem 0;
+    margin: 0.5rem 0 1.5rem;
 }
 
-@media screen and (min-width: 1280px) {
-    .body_overlay {
-        background-image: -o-linear-gradient(top,
-                var(--surface4) 455px,
-                var(--surface1) 455px);
-        background-image: linear-gradient(180deg,
-                var(--surface4) 455px,
-                var(--surface1) 455px);
-    }
 
-    .body {
-        background-size: 1280px 560px;
-        background-position: top;
-    }
-}
-
-@media screen and (max-width: 840px) {
-    .body_overlay {
-        background-image: -webkit-gradient(linear,
-                left top, left bottom,
-                color-stop(50.3vw, var(--surface4)),
-                color-stop(50.3vw, var(--surface1)));
-        background-image: -o-linear-gradient(top,
-                var(--surface4) 50.3vw,
-                var(--surface1) 50.3vw);
-        background-image: linear-gradient(180deg,
-                var(--surface4) 50.3vw,
-                var(--surface1) 50.3vw);
-    }
-
-    .body {
-        background-image: url(../assets/home_page_illustration_840x480.svg);
-    }
-
-    .container_apps {
-        width: 75vw;
-    }
-}
-
-@media screen and (max-width: 440px) {
-    .container_apps {
-        width: auto;
+@media screen and (max-width: 600px) {
+    .sc_app_card {
+        background-position: bottom right;
     }
 }

@@ -1,12 +1,13 @@
 :root {
-  --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   --font-mono: 'Courier New', Courier, monospace;
   --font-sans: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 :root {
   font-size: 16px;
-  color: var(--text1);
+  color: var(--foreground_color2);
   scroll-behavior: smooth;
 }
 
@@ -23,73 +24,67 @@
 }
 
 :root {
-  --white250: #fafafa;
-  --white245: #f5f5f5;
-  --white240: #f0f0f0;
+  --black0: rgb(0, 0, 0);
+  --black20: rgb(20, 20, 20);
+  --black40: rgb(40, 40, 40);
 
-  --black20: #141414;
-  --black40: #282828;
-  --black60: #3c3c3c;
+  --white255: rgb(255, 255, 255);
+  --white245: rgb(245, 245, 245);
+  --white235: rgb(235, 235, 235);
 
-  --grey120: #787878;
-  --grey160: #a0a0a0;
-  --grey200: #c8c8c8;
+  --grey80: rgb(80, 80, 80);
+  --grey120: rgb(120, 120, 120);
+  --grey160: rgb(160, 160, 160);
+  --grey200: rgb(200, 200, 200);
 
-  --red1: #bf4040;
-  --red2: #f6c1c1;
+  --error_red: #bf4040;
+  --error_red_light: #f6c1c1;
+  --success_green: #40bf40;
+  --success_green_light: #c1f6c1;
+  --warning_yellow: #bfbf40;
+  --warning_yellow_light: #f6f6c1;
 
-  --green1: #40bf40;
-  --green2: #c1f6c1;
+  --alpine_green: rgb(27, 84, 72);
+  --alpine_green_dark: rgb(0, 44, 32);
+  --alpine_green_light: rgb(107, 164, 152);
+  --alpine_green_white: rgb(187, 244, 232);
 
-  --yellow1: #bfbf40;
-  --yellow2: #f6f6c1;
+  --cafe_au_lait_brown_white: rgb(234, 229, 217);
 
-  --primary: #71995f;
-  --primary_dark: #497137;
-  --primary_light: #c1e9af;
-
-  --secondary: #6c3c2c;
-  --secondary_light: #ecbcac;
-  --secondary_dark: #4c1c0c;
-
-  --white250_p8_opacity: rgba(250, 250, 250, 0.8);
-  --grey200_p5_opacity: rgba(200, 200, 200, 0.5);
-  --primary_light_p8_opacity: rgba(193, 233, 175, 0.8);
+  --grey160_opacity50: rgba(160, 160, 160, 0.5);
+  --white245_opacity50: rgba(245, 245, 245, 0.8);
 }
 
 :root {
-  --text1: var(--black20);
-  --text2: var(--black40);
-  --text3: var(--black60);
-  --text4: var(--white250);
+  --background_color1: var(--white255);
+  --background_color2: var(--white245);
+  --background_color3: var(--white235);
 
-  --surface1: var(--white250);
-  --surface2: var(--white245);
-  --surface3: var(--white240);
-  --surface4: var(--primary_light);
+  --foreground_color1: var(--black0);
+  --foreground_color2: var(--black20);
+  --foreground_color3: var(--black40);
 
-  --shadow1: var(--white240);
-  --shadow2: var(--grey200);
-  --shadow3: var(--grey120);
+  --grey1: var(--grey80);
+  --grey2: var(--grey120);
+  --grey3: var(--grey160);
+  --grey4: var(--grey200);
 
-  --border1: var(--grey120);
-  --border2: var(--grey160);
-  --border3: var(--grey200);
+  --error_color: var(--error_red);
+  --error_container_color: var(--error_red_light);
+  --success_color: var(--success_green);
+  --success_container_color: var(--success_green_light);
+  --warning_color: var(--warning_yellow);
+  --warning_container_color: var(--warning_yellow_light);
 
-  --button1: var(--primary);
-  --button2: var(--primary_dark);
-  --button3: var(--primary_light);
+  --primary_color: var(--alpine_green);
+  --on_primary_color: var(--alpine_green_white);
+  --primary_container_color: var(--alpine_green_light);
+  --on_primary_container_color: var(--alpine_green_dark);
 
-  --link: var(--primary);
+  --sc_app_on_primary_color: var(--cafe_au_lait_brown_white);
 
-  --error1: var(--red1);
-  --error2: var(--red2);
-
-  --success1: var(--green1);
-  --success2: var(--green2);
-
-  --warning1: var(--yellow1);
-  --warning2: var(--yellow2);
+  --modal_barrier_color: var(--grey160_opacity50);
+  --card_background_color: var(--white245_opacity50);
 }
 
 body {
@@ -102,24 +97,31 @@ body {
 body::-webkit-scrollbar {
   width: 0.5rem;
   height: 0.5rem;
-}
-
-body::-webkit-scrollbar {
-  background-color: var(--white240);
+  background-color: var(--background_color2);
 }
 
 body::-webkit-scrollbar-thumb {
   border-radius: 0.2rem;
-  background-color: var(--primary_light);
-  -webkit-box-shadow: inset 0.1rem 0.05rem 0.2rem var(--grey200);
-  box-shadow: inset 0.1rem 0.05rem 0.2rem var(--grey200);
+  background-color: var(--grey4);
+  -webkit-box-shadow: inset 0.1rem 0.05rem 0.2rem var(--background_color3);
+  box-shadow: inset 0.1rem 0.05rem 0.2rem var(--background_color3);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--grey3);
 }
 
 body::-webkit-scrollbar-thumb:active {
-  background-color: var(--primary);
+  -webkit-box-shadow: inset 0.1rem 0.05rem 0.2rem var(--grey4);
+  box-shadow: inset 0.1rem 0.05rem 0.2rem var(--grey4);
+}
+
+::-moz-selection {
+  background-color: var(--primary_light_color2);
+  color: var(--foreground_color2);
 }
 
 ::selection {
-  background-color: var(--primary);
-  color: var(--text1);
+  background-color: var(--primary_light_color2);
+  color: var(--foreground_color2);
 }

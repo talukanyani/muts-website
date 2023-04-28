@@ -1,29 +1,22 @@
 import React from 'react';
-import styles from './HomeBody.module.css'
-
-import { useNavigate } from 'react-router-dom';
-
-import Button from '../elements/Button1';
-import SmallHeading from '../elements/SmallHeading';
+import styles from './Body.module.css'
+import FilledButton from '../../../components/FilledButton';
 
 export default function Body() {
-    let navigate = useNavigate()
-
-    const goToApps = () => {
-        window.scrollTo(0, 0)
-        navigate('/apps')
-    }
-
     return (
-        <div className={styles.body_overlay}>
-            <div className={styles.body}>
-                <div className={styles.container_apps}>
-                    <SmallHeading text='Apps' />
-                    <h2>Explore apps engineered and developed for you.</h2>
-                    <Button
-                        text='Show all apps'
-                        onClick={goToApps}
-                    />
+        <div className={styles.body}>
+            <div className={styles.body_content}>
+                <div className={styles.sc_app_card}>
+                    <div className={styles.sc_app_card_content}>
+                        <h1>
+                            <span>Mobile App</span>
+                        </h1>
+                        <h2>Student Calendar</h2>
+                        <FilledButton
+                            text='Show More'
+                            link='/student_calendar'
+                        />
+                    </div>
                 </div>
             </div>
         </div>

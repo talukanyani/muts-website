@@ -1,42 +1,31 @@
 .button {
-    color: var(--text4);
-    padding: 0.4rem 0.6rem;
-    background: var(--button1);
-    border: solid 1px var(--border2);
-    border-radius: 0.3rem;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-
-.button span {
     font-size: 0.8rem;
-    letter-spacing: 0.2rem;
-    text-transform: uppercase;
-}
-
-.button::after {
-    content: "»»";
-    font-size: 1rem;
     letter-spacing: 0.1rem;
-    margin-left: 0.5rem;
-    -webkit-transition: all 0.25s ease;
-    transition: all 0.25s ease;
-}
-
-.button:hover::after {
-    margin-left: 0.7rem;
+    word-spacing: 0.2rem;
+    color: var(--background_color1);
+    background-color: var(--primary_color);
+    border: none;
+    padding: 0.5rem 4rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
 }
 
 .button:hover {
-    transform: translate(2px, 0);
-    background: var(--button2);
+    -webkit-box-shadow: 0.1rem 0.25rem 4rem -0.75rem var(--primary_color);
+    box-shadow: 0.1rem 0.25rem 4rem -0.75rem var(--primary_color);
 }
 
 .button:active {
-    color: var(--button1);
-    border-color: var(--button1);
-    background: transparent;
-    transform: translate(8px, 0);
+    -webkit-box-shadow: 0.1rem 0.25rem 4rem 0 var(--primary_color);
+    box-shadow: 0.1rem 0.25rem 4rem 0 var(--primary_color);
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
 }

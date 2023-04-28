@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 // import Navbar from '../../components/Navbar';
 // import Footer from '../../components/Footer';
-// import Body from './components/Body';
+import Body from './components/Body';
 
 export default function HomePage() {
     useEffect(() => {
@@ -11,9 +11,8 @@ export default function HomePage() {
     return (
         <>
             {/* <Navbar /> */}
-            {/* <Body /> */}
+            <Body />
             {/* <Footer /> */}
-            <h1>Home</h1>
         </>
     );
 }

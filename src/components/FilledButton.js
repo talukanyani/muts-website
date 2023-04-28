@@ -1,15 +1,24 @@
 import React from 'react';
-import styles from './Button1.module.css'
+import styles from './FilledButton.module.css'
+import { Link } from 'react-router-dom'
 
-function Button(props) {
+export default function Button({ text, onClick, link }) {
+    if (link) {
+        return (
+            <Link to={link}>
+                <button className={styles.button}>
+                    {text}
+                </button>
+            </Link>
+        )
+    }
+
     return (
         <button
             className={styles.button}
-            onClick={props.onClick}
+            onClick={onClick}
         >
-            <span>{props.text}</span>
+            {text}
         </button>
     );
 }
-
-export default Button;

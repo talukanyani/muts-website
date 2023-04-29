@@ -1,25 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Navbar.module.css'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import logo from '../assets/images/logo.svg'
+import expandIcon from '../assets/icons/expand_down.svg'
 
-import logo from '../assets/Tmlab-Logo.svg'
-import home from '../assets/icon-home.svg'
-import apps from '../assets/icon-apps.svg'
-
-export default function Navbar(props) {
+export default function Navbar() {
     return (
-        <div className={[
-            styles.navbar,
-            props.color === 'white'
-                ? styles.white_bg
-                : undefined
-        ].join(' ')}
-        >
+        <div className={styles.navbar}>
             <Menu />
             <div className={styles.logo}>
-                <a href='/'>
+                <Link to='/'>
                     <img src={logo} alt='Tmlab Logo' />
-                </a>
+                </Link>
             </div>
         </div>
     );
@@ -27,21 +19,14 @@ export default function Navbar(props) {
 
 function Menu() {
     const [isMenu, setIsMenu] = useState(false)
+    const [isAppsExpand, setIsAppsExpand] = useState(false)
 
     let navigate = useNavigate()
 
-    const closeMenu = () => setIsMenu(false);
-
-    const goToHome = () => {
+    const navigateTo = (url) => {
         window.scrollTo(0, 0)
-        closeMenu()
-        navigate('/')
-    }
-
-    const goToApps = () => {
-        window.scrollTo(0, 0)
-        closeMenu()
-        navigate('/apps')
+        setIsMenu(false)
+        navigate(url)
     }
 
     useEffect(() => {
@@ -49,29 +34,43 @@ function Menu() {
             document.body.style.overflowY = 'hidden'
         } else {
             document.body.style.overflowY = 'visible'
+            setIsAppsExpand(false)
         }
     }, [isMenu])
 
     return (
-        <div className={styles.menu}>
-            <input
-                type='checkbox'
-                checked={isMenu}
-                onChange={() => setIsMenu(!isMenu)}
-            />
-            <span></span>
-            <span></span>
-            <span></span>
-            <nav onClick={closeMenu}>
+        <>
+            <div
+                onClick={() => setIsMenu(!isMenu)}
+                className={[
+                    styles.menu_toggle_button,
+                    isMenu ? styles.menu_toggle_button_cross : undefined,
+                ].join(' ')}
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav
+                onClick={() => setIsMenu(false)}
+                className={[
+                    styles.navigations,
+                    isMenu ? styles.navigations_visible : undefined,
+                    isAppsExpand ? styles.navigations_apps_visible : undefined,
+                ].join(' ')}
+            >
                 <ul onClick={event => event.stopPropagation()}>
-                    <li onClick={goToHome}>
-                        Home <img src={home} alt='home icon' />
+                    <li onClick={() => navigateTo('/')}>Home</li>
+                    <li onClick={() => setIsAppsExpand(!isAppsExpand)}>
+                        Apps <img src={expandIcon} alt='expond icon' />
                     </li>
-                    <li onClick={goToApps}>
-                        Apps <img src={apps} alt='apps icon' />
-                    </li>
+                    <ul>
+                        <li onClick={() => navigateTo('/student_calendar')}>
+                            Student Calendar
+                        </li>
+                    </ul>
                 </ul>
             </nav>
-        </div>
+        </>
     )
 }

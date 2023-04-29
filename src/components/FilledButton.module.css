@@ -1,5 +1,6 @@
 .button {
     font-size: 0.8rem;
+    font-family: var(--font-bruno);
     letter-spacing: 0.1rem;
     word-spacing: 0.2rem;
     color: var(--background_color1);

@@ -1,8 +1,30 @@
+@font-face {
+  font-family: 'Bruno Ace';
+  src: url('./assets/fonts/BrunoAce-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Cantarell';
+  src: local('Cantarell'), url('./assets/fonts/Cantarell-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Cantarell';
+  src: local('Cantarell'), url('./assets/fonts/Cantarell-Bold.ttf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Cantarell';
+  src: local('Cantarell'), url('./assets/fonts/Cantarell-Italic.ttf');
+  font-style: italic;
+}
+
 :root {
-  --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  --font-mono: 'Courier New', Courier, monospace;
-  --font-sans: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  --font-cantarell: 'Cantarell', var(--font-fallback);
+  --font-bruno: 'Bruno Ace', var(--font-fallback);
+  --font-fallback: 'Gill Sans', 'Gill Sans MT',
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 :root {
@@ -87,9 +109,18 @@
   --card_background_color: var(--white245_opacity50);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-bruno);
+}
+
 body {
   margin: 0;
-  font-family: var(--font-system);
+  font-family: var(--font-cantarell);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

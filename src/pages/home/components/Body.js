@@ -12,10 +12,9 @@ export default function Body() {
                             <span>Mobile App</span>
                         </h1>
                         <h2>Student Calendar</h2>
-                        <FilledButton
-                            text='Show More'
-                            link='/student_calendar'
-                        />
+                        <FilledButton link='/student_calendar'>
+                            Show More
+                        </FilledButton>
                     </div>
                 </div>
             </div>

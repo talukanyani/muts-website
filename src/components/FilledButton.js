@@ -2,12 +2,12 @@ import React from 'react';
 import styles from './FilledButton.module.css'
 import { Link } from 'react-router-dom'
 
-export default function Button({ text, onClick, link }) {
+export default function Button({ children, link, onClick, type }) {
     if (link) {
         return (
             <Link to={link}>
                 <button className={styles.button}>
-                    {text}
+                    {children}
                 </button>
             </Link>
         )
@@ -17,8 +17,9 @@ export default function Button({ text, onClick, link }) {
         <button
             className={styles.button}
             onClick={onClick}
+            type={type ? type : 'button'}
         >
-            {text}
+            {children}
         </button>
     );
 }

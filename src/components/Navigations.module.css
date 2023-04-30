@@ -1,0 +1,145 @@
+.navigations {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: -o-linear-gradient(left, var(--background_color2) 16rem, transparent);
+    background: -webkit-gradient(linear, left top, right top, color-stop(16rem, var(--background_color2)), to(transparent));
+    background: linear-gradient(90deg, var(--background_color2) 16rem, transparent);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: opacity .3s linear;
+    -o-transition: opacity .3s linear;
+    transition: opacity .3s linear;
+}
+
+.navigations_visible {
+    opacity: 1;
+}
+
+.navigations>ul {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: 100%;
+    padding: 6rem 8rem 0 2rem;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.navigations>ul>ul {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    padding-left: 1rem;
+    list-style: none;
+}
+
+.navigations>ul>li {
+    font-size: 1.5rem;
+}
+
+.navigations>ul>ul>li {
+    font-size: 1rem;
+}
+
+.navigations ul li {
+    font-family: var(--font-goldman);
+    text-transform: uppercase;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    cursor: pointer;
+    translate: -24rem 0;
+}
+
+.navigations ul li::before {
+    content: "";
+    position: absolute;
+    bottom: -0.1em;
+    width: 100%;
+    height: 0.1em;
+    background-color: var(--foreground_color2);
+    scale: 0 1;
+    -webkit-transition: scale .3s ease-out;
+    -o-transition: scale .3s ease-out;
+    transition: scale .3s ease-out;
+}
+
+.navigations ul li:hover::before {
+    -webkit-transform-origin: left;
+    -ms-transform-origin: left;
+    transform-origin: left;
+    scale: 1;
+}
+
+.navigations ul li:active::before {
+    -webkit-transform-origin: right;
+    -ms-transform-origin: right;
+    transform-origin: right;
+    scale: 0 1;
+}
+
+.navigations>ul>li:nth-of-type(2) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.navigations>ul>li:nth-of-type(2) img {
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+.navigations_apps_visible>ul>li:nth-of-type(2) img {
+    rotate: -180deg;
+}
+
+.navigations ul li:nth-of-type(1) {
+    -webkit-transition: all 500ms;
+    -o-transition: all 500ms;
+    transition: all 500ms;
+}
+
+.navigations ul li:nth-of-type(2) {
+    -webkit-transition: all 550ms 50ms;
+    -o-transition: all 550ms 50ms;
+    transition: all 550ms 50ms;
+}
+
+.navigations ul li:nth-of-type(3) {
+    -webkit-transition: all 600ms 100ms;
+    -o-transition: all 600ms 100ms;
+    transition: all 600ms 100ms;
+}
+
+.navigations_visible>ul>li {
+    translate: 0;
+}
+
+.navigations_apps_visible>ul>ul:nth-of-type(1) {
+    opacity: 1;
+    pointer-events: all;
+    position: relative;
+}
+
+.navigations_apps_visible>ul>ul:nth-of-type(1) li {
+    translate: 0;
+}

@@ -3,14 +3,14 @@
 }
 
 .body_content {
-    padding: 4rem 2rem 2rem;
     max-width: 1280px;
     margin: 0 auto 0 auto;
+    padding: 5rem 2rem 2rem;
 }
 
 .sc_app_card {
     height: 32rem;
-    margin: 2rem 0;
+    margin: 1rem 0;
     border-radius: 1rem;
     background: url(../../../assets/images/student_home_desk_illustration.png),
         -webkit-gradient(linear, left top, left bottom, color-stop(24.7rem, var(--sc_app_on_primary_color)), color-stop(24.7rem, var(--background_color2)));
@@ -41,7 +41,7 @@
 
 .sc_app_card h1 {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: normal;
     text-transform: uppercase;
     margin: 0;
 }

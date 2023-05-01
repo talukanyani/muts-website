@@ -12,11 +12,11 @@
     height: 32rem;
     margin: 1rem 0;
     border-radius: 1rem;
-    background: url(../../../assets/images/student_home_desk_illustration.png),
+    background: url(../../../assets/images/student_home_desk.png),
         -webkit-gradient(linear, left top, left bottom, color-stop(24.7rem, var(--sc_app_on_primary_color)), color-stop(24.7rem, var(--background_color2)));
-    background: url(../../../assets/images/student_home_desk_illustration.png),
+    background: url(../../../assets/images/student_home_desk.png),
         -o-linear-gradient(top, var(--sc_app_on_primary_color) 24.7rem, var(--background_color2) 24.7rem);
-    background: url(../../../assets/images/student_home_desk_illustration.png),
+    background: url(../../../assets/images/student_home_desk.png),
         linear-gradient(180deg, var(--sc_app_on_primary_color) 24.7rem, var(--background_color2) 24.7rem);
     background-size: contain;
     background-position: center right;

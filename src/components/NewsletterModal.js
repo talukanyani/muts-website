@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './NewsletterModal.module.css'
 import FilledButton from './FilledButton'
-import Modal from '../layouts/Modal'
+import Modal from './Modal'
 import closeIcon from '../assets/icons/close.svg'
 
 export default function NewsLetterModal({ isOpen, close }) {

@@ -1,40 +1,99 @@
-.body_overlay {
-    background-color: var(--surface1);
-    padding-top: 4.4rem;
+.body {
+    background-color: var(--background_color1);
 }
 
-.body {
-    padding: 2%;
+.body_content {
     max-width: 1280px;
     margin: 0 auto 0 auto;
+    padding: 5rem 2rem 2rem;
 }
 
 .body header {
-    height: 12rem;
+    height: 32rem;
+    margin: 1rem 0;
+    padding: 2rem;
     border-radius: 1rem;
-    background: url(../assets/apps_illustration.svg), var(--surface4);
-    background-repeat: no-repeat;
+    background: url(../../../assets/images/student_room.png), var(--background_color2);
+    background-size: 32rem 18rem;
     background-position: top right;
-    background-size: contain;
+    background-repeat: no-repeat;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+
+.body header p {
+    font-family: var(--font-goldman);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.body header p span {
+    letter-spacing: 0.2rem;
+    word-spacing: 0.4rem;
+}
+
+.body header p::before {
+    content: "——";
+    margin-right: 1rem;
 }
 
 .body header h1 {
-    text-transform: uppercase;
-    margin-left: 2rem;
-    padding: 1rem;
-    border-radius: 50%;
-    background-color: var(--primary_light_p8_opacity);
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    margin: 0.5rem 0 2rem;
 }
 
-.apps {
-    margin: 4rem 0;
+.body header section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem;
 }
 
-@media screen and (max-width: 480px) {
-    .apps {
-        display: flex;
-        justify-content: center;
+.body header section img {
+    width: 8rem;
+}
+
+@media screen and (max-width: 1280px) {
+    .body header {
+        height: auto;
+        padding-top: 6rem;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: start;
+        gap: 4rem;
+    }
+
+    .body header h1 {
+        font-size: 2rem;
+        max-width: 35rem;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .body header {
+        background-size: 28rem 15.75rem;
+        padding-top: 10rem;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .body header section {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
     }
 }

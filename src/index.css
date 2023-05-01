@@ -44,6 +44,12 @@
   }
 }
 
+@media screen and (max-width: 280px) {
+  :root {
+    font-size: 8px;
+  }
+}
+
 :root {
   --black0: rgb(0, 0, 0);
   --black20: rgb(20, 20, 20);

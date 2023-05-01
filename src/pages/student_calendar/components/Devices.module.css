@@ -1,0 +1,74 @@
+.devices_container {
+    margin: auto;
+}
+
+.devices {
+    position: relative;
+    margin-left: 4rem;
+}
+
+.phone_screen,
+.tablet_screen {
+    border: 0.1rem solid var(--foreground_color3);
+    border-radius: 0.75rem;
+    background-color: var(--background_color1);
+}
+
+.phone_screen {
+    position: absolute;
+    top: 4rem;
+    left: -4rem;
+    z-index: 1;
+    width: 12rem;
+    aspect-ratio: calc(9 / 16);
+}
+
+.tablet_screen {
+    position: relative;
+    width: 30rem;
+    aspect-ratio: calc(3 / 2);
+}
+
+.phone_screen .time {
+    font-size: 0.5rem;
+}
+
+.tablet_screen .time {
+    font-size: 0.6rem;
+}
+
+.time {
+    position: absolute;
+    top: 0.1rem;
+    left: 0.2rem;
+    font-family: var(--font-system);
+    color: var(--foreground_color2);
+}
+
+@media screen and (max-width: 1280px) {
+    .devices_container {
+        margin: 0;
+        width: 100%;
+    }
+
+    .devices {
+        margin-left: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    .phone_screen {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 26%;
+    }
+
+    .tablet_screen {
+        width: 65%;
+    }
+}

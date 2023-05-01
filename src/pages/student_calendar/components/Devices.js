@@ -1,35 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from './Devices.module.css';
+import { useTime } from '../../../hooks/useTime'
 
 export default function Devices() {
-    const [date, setDate] = useState(new Date());
-
-    const pad = n => ((n < 10) && '0') + n;
-
-    var hour = pad(date.getHours())
-    var minute = pad(date.getMinutes())
-
-    useEffect(() => {
-        const updateTime = setInterval(() => {
-            setDate(new Date());
-        }, 1000);
-
-        return () => clearInterval(updateTime);
-    })
-
     return (
         <div className={styles.devices_container}>
             <div className={styles.devices}>
-                <PhoneScreen
-                    hour={hour}
-                    minute={minute}
-                >
+                <PhoneScreen>
                     {/* // TODO: App pictures */}
                 </PhoneScreen>
-                <TabletScreen
-                    hour={hour}
-                    minute={minute}
-                >
+                <TabletScreen>
                     {/* // TODO: App pictures */}
                 </TabletScreen>
             </div>
@@ -38,7 +18,9 @@ export default function Devices() {
 }
 
 
-function PhoneScreen({ children, hour, minute }) {
+function PhoneScreen({ children }) {
+    const [hour, minute] = useTime()
+
     return (
         <div className={styles.phone_screen}>
             <span className={styles.time}>
@@ -49,7 +31,9 @@ function PhoneScreen({ children, hour, minute }) {
     )
 }
 
-function TabletScreen({ children, hour, minute }) {
+function TabletScreen({ children }) {
+    const [hour, minute] = useTime()
+
     return (
         <div className={styles.tablet_screen}>
             <span className={styles.time}>

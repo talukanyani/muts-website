@@ -123,6 +123,16 @@ h6 {
   font-family: var(--font-goldman);
 }
 
+a {
+  font-weight: bold;
+  color: var(--primary_color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 body {
   margin: 0;
   font-family: var(--font-poppins);

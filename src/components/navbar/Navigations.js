@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './Navigations.module.css'
+import { useHideScrollBars } from '../../hooks/useHideScrollBars';
 import { useNavigate } from 'react-router-dom';
-import expandIcon from '../assets/icons/expand_down.svg'
+import HamburgerCrossButton from './HamburgerCrossButton'
+import expandIcon from '../../assets/icons/expand_down.svg'
 
 export default function Navigations({ isVisible, hide }) {
+    useHideScrollBars(isVisible);
+
     const [isAppsExpand, setIsAppsExpand] = useState(false)
 
     let navigate = useNavigate()
@@ -14,14 +18,6 @@ export default function Navigations({ isVisible, hide }) {
         navigate(url)
     }
 
-    useEffect(() => {
-        if (isVisible) {
-            document.body.style.overflowY = 'hidden'
-        } else {
-            document.body.style.overflowY = 'visible'
-        }
-    }, [isVisible])
-
     return (
         <nav
             onClick={hide}
@@ -31,6 +27,15 @@ export default function Navigations({ isVisible, hide }) {
                 isAppsExpand ? styles.navigations_apps_visible : undefined,
             ].join(' ')}
         >
+            <div
+                onClick={event => event.stopPropagation()}
+                className={styles.cross_button_container}
+            >
+                <HamburgerCrossButton
+                    onClick={hide}
+                    isCross={isVisible}
+                />
+            </div>
             <ul onClick={event => event.stopPropagation()}>
                 <li onClick={() => navigateTo('/')}>Home</li>
                 <li onClick={() => setIsAppsExpand(!isAppsExpand)}>

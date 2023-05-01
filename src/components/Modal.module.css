@@ -3,6 +3,7 @@
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 10;
     width: 100%;
     height: 100%;
     background-color: var(--modal_barrier_color);
@@ -28,4 +29,11 @@
 
 .modal_content_visible {
     scale: 1;
+}
+
+.modal_content>img {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
 }

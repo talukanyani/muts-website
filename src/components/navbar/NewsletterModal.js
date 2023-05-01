@@ -1,18 +1,12 @@
 import React from 'react'
 import styles from './NewsletterModal.module.css'
-import FilledButton from './FilledButton'
-import Modal from './Modal'
-import closeIcon from '../assets/icons/close.svg'
+import FilledButton from '../FilledButton'
+import Modal from '../Modal'
 
 export default function NewsLetterModal({ isOpen, close }) {
     return (
         <Modal isOpen={isOpen} close={close}>
             <div className={styles.newsletter}>
-                <img
-                    src={closeIcon}
-                    alt='close icon button'
-                    onClick={close}
-                />
                 <h1>Newsletter</h1>
                 <p>
                     Subscribe to our newsletter to receive weekly

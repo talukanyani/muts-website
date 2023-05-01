@@ -1,14 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styles from './Modal.module.css'
+import { useHideScrollBars } from '../hooks/useHideScrollBars'
+import closeIcon from '../assets/icons/close.svg'
 
 export default function Modal({ children, isOpen, close }) {
-    useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflowY = 'hidden'
-        } else {
-            document.body.style.overflowY = 'visible'
-        }
-    }, [isOpen])
+    useHideScrollBars(isOpen)
 
     return (
         <div
@@ -25,6 +21,11 @@ export default function Modal({ children, isOpen, close }) {
                     isOpen ? styles.modal_content_visible : undefined
                 ].join(' ')}
             >
+                <img
+                    src={closeIcon}
+                    alt='close icon button'
+                    onClick={close}
+                />
                 {children}
             </div>
         </div>

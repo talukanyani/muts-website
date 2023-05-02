@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import styles from './Navigations.module.css'
-import { useHideScrollBars } from '../../hooks/useHideScrollBars';
 import { useNavigate } from 'react-router-dom';
 import HamburgerCrossButton from './HamburgerCrossButton'
 import expandIcon from '../../assets/icons/expand_down.svg'
 
 export default function Navigations({ isVisible, hide }) {
-    useHideScrollBars(isVisible);
-
     const [isAppsExpand, setIsAppsExpand] = useState(false)
 
     let navigate = useNavigate()

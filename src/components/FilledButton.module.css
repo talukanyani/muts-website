@@ -1,11 +1,12 @@
 .button {
     font-size: 0.8rem;
-    font-family: var(--font-goldman);
     letter-spacing: 0.1rem;
     word-spacing: 0.2rem;
     color: var(--background_color1);
     background-color: var(--primary_color);
-    border: none;
+    -webkit-box-shadow: 0.2rem 0.2rem var(--foreground_color1);
+    box-shadow: 0.2rem 0.2rem var(--foreground_color1);
+    border: 0.05rem solid var(--foreground_color1);
     padding: 0.5rem 4rem;
     border-radius: 1rem;
     cursor: pointer;
@@ -19,14 +20,13 @@
 }
 
 .button:hover {
-    -webkit-box-shadow: 0.1rem 0.25rem 4rem -0.75rem var(--primary_color);
-    box-shadow: 0.1rem 0.25rem 4rem -0.75rem var(--primary_color);
+    translate: .2rem .2rem;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .button:active {
-    -webkit-box-shadow: 0.1rem 0.25rem 4rem 0 var(--primary_color);
-    box-shadow: 0.1rem 0.25rem 4rem 0 var(--primary_color);
-    -webkit-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    transform: scale(0.9);
+    -webkit-box-shadow: inset 0 0.4rem 0.8rem -0.2rem var(--foreground_color1);
+    box-shadow: inset 0 0.4rem 0.8rem -0.2rem var(--foreground_color1);
+    scale: 0.9;
 }

@@ -4,8 +4,40 @@
 
 .body_content {
     max-width: 1280px;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
     padding: 5rem 2rem 2rem;
+}
+
+.body header {
+    height: 24rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.body header h1 {
+    font-family: var(--system_font_family);
+    font-size: 3rem;
+    text-transform: capitalize;
+    text-align: center;
+    margin: 0;
+
+}
+
+.body header>img {
+    width: 2rem;
+    cursor: pointer;
 }
 
 .sc_app_card {
@@ -39,31 +71,24 @@
     background: linear-gradient(90deg, var(--sc_app_on_primary_color), transparent);
 }
 
-.sc_app_card h1 {
-    font-size: 1rem;
-    font-weight: normal;
-    text-transform: uppercase;
+.sc_app_card h2 {
+    font-size: 2.5rem;
     margin: 0;
 }
 
-.sc_app_card h1 span {
-    letter-spacing: 0.2rem;
-    word-spacing: 0.3rem;
-}
-
-.sc_app_card h1::before {
-    content: "——";
-    margin-right: 1rem;
-}
-
-.sc_app_card h2 {
-    font-size: 2.5rem;
+.sc_app_card p {
     margin: 0.5rem 0 1.5rem;
 }
-
 
 @media screen and (max-width: 600px) {
     .sc_app_card {
         background-position: bottom right;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: start;
+    }
+
+    .sc_app_card_content {
+        margin-top: 2rem;
     }
 }

@@ -1,12 +1,5 @@
 .newsletter {
-    width: 32rem;
-    padding: 4rem;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    border-radius: 1rem;
-    background: var(--background_color1);
-    -webkit-box-shadow: 0.2rem 0.4rem 2rem var(--grey1);
-    box-shadow: 0.2rem 0.4rem 2rem var(--grey1);
+    max-width: 32rem;
 }
 
 .newsletter h1 {
@@ -43,10 +36,4 @@
 .newsletter form input:focus {
     -webkit-box-shadow: 0 0 2rem var(--grey4);
     box-shadow: 0 0 2rem var(--grey4);
-}
-
-@media screen and (max-width: 480px) {
-    .newsletter {
-        width: 90vw;
-    }
 }

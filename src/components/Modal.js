@@ -1,11 +1,8 @@
 import React from 'react'
 import styles from './Modal.module.css'
-import { useHideScrollBars } from '../hooks/useHideScrollBars'
 import closeIcon from '../assets/icons/close.svg'
 
 export default function Modal({ children, isOpen, close }) {
-    useHideScrollBars(isOpen)
-
     return (
         <div
             onClick={close}

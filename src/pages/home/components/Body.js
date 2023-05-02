@@ -1,21 +1,28 @@
 import React from 'react';
 import styles from './Body.module.css'
 import FilledButton from '../../../components/FilledButton';
+import expandIcon from '../../../assets/icons/expand_down.svg'
 
 export default function Body() {
     return (
         <div className={styles.body}>
             <div className={styles.body_content}>
+                <header>
+                    <h1>Elevate your Digital Experience</h1>
+                    <img
+                        alt='arrow down icon'
+                        src={expandIcon}
+                        onClick={() => window.scrollBy(0, 300)}
+                    />
+                </header>
                 <div className={styles.sc_app_card}>
-                    <div className={styles.sc_app_card_content}>
-                        <h1>
-                            <span>Mobile App</span>
-                        </h1>
+                    <section className={styles.sc_app_card_content}>
                         <h2>Student Calendar</h2>
+                        <p>A mobile application</p>
                         <FilledButton link='/student_calendar'>
                             Show More
                         </FilledButton>
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>

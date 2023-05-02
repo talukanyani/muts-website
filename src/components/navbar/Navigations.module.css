@@ -26,7 +26,7 @@
 
 .cross_button_container {
     position: absolute;
-    left: 2rem;
+    left: 2vw;
     height: 4rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -41,7 +41,7 @@
     width: -moz-fit-content;
     width: fit-content;
     height: 100%;
-    padding: 6rem 8rem 0 2rem;
+    padding: 6rem 8rem 0 2vw;
     margin: 0;
     list-style: none;
     display: -webkit-box;
@@ -71,7 +71,6 @@
 }
 
 .navigations ul li {
-    font-family: var(--font-goldman);
     text-transform: uppercase;
     width: -webkit-fit-content;
     width: -moz-fit-content;

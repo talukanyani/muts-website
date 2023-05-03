@@ -4,15 +4,13 @@ import { useTime } from '../../../hooks/useTime'
 
 export default function Devices() {
     return (
-        <div className={styles.devices_container}>
-            <div className={styles.devices}>
-                <PhoneScreen>
-                    {/* // TODO: App pictures */}
-                </PhoneScreen>
-                <TabletScreen>
-                    {/* // TODO: App pictures */}
-                </TabletScreen>
-            </div>
+        <div className={styles.devices}>
+            <PhoneScreen>
+                {/* // TODO: App pictures */}
+            </PhoneScreen>
+            <TabletScreen>
+                {/* // TODO: App pictures */}
+            </TabletScreen>
         </div>
     );
 }

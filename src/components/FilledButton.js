@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export default function Button({ children, link, onClick, type }) {
     if (link) {
         return (
-            <Link to={link}>
+            <Link to={link} onClick={() => window.scrollTo(0, 0)}>
                 <button className={styles.button}>
                     {children}
                 </button>

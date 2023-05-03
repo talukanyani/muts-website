@@ -26,13 +26,13 @@
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 480px) {
   :root {
     font-size: 12px;
   }
 }
 
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 320px) {
   :root {
     font-size: 8px;
   }

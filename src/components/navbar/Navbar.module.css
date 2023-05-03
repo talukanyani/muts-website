@@ -6,8 +6,8 @@
     z-index: 10;
     height: 4rem;
     padding: 0 2vw;
-    background: -webkit-gradient(linear, left top, left bottom, from(var(--background_color1)), to(transparent));
     background: -o-linear-gradient(top, var(--background_color1), transparent);
+    background: -webkit-gradient(linear, left top, left bottom, from(var(--background_color1)), to(transparent));
     background: linear-gradient(180deg, var(--background_color1), transparent);
     display: -webkit-box;
     display: -ms-flexbox;
@@ -24,8 +24,8 @@
     user-select: none;
 }
 
-.hamburger_button,
-.navbar>ul {
+.navbar>*:first-child,
+.navbar>*:last-child {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
@@ -33,7 +33,7 @@
     flex-basis: 0;
 }
 
-.navbar>ul {
+.navbar>*:last-child {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -42,7 +42,7 @@
     justify-content: flex-end;
 }
 
-.logo a {
+.navbar a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -53,10 +53,7 @@
     height: 3rem;
 }
 
-.navbar>ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.socials {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -66,42 +63,16 @@
     gap: 1rem;
 }
 
-.navbar>ul li {
-    cursor: pointer;
-    -webkit-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+.socials a {
+    -webkit-transition: rotate .5s ease-in-out;
+    -o-transition: rotate .5s ease-in-out;
+    transition: rotate .5s ease-in-out;
 }
 
-.navbar>ul li:hover {
-    scale: 1.1;
+.socials a:hover {
+    rotate: 360deg;
 }
 
-.navbar>ul li:active {
-    rotate: 30deg;
-}
-
-.navbar>ul li a {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.navbar>ul li img {
+.socials a img {
     width: 1.25rem;
-}
-
-.navbar>ul li:first-child img {
-    display: none;
-    width: 1.5rem;
-}
-
-@media screen and (max-width: 840px) {
-    .navbar>ul li:first-child img {
-        display: block;
-    }
-
-    .navbar>ul li:first-child span {
-        display: none;
-    }
 }

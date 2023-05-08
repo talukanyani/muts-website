@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-// import Navbar from '../../components/Navbar'
-// import Footer from '../../components/Footer'
-// import Body from './components/Body'
+import Navbar from '../../components/navbar/Navbar'
+import Footer from '../../components/Footer'
+import Body from './components/Body'
 
 export default function ContactPage() {
     useEffect(() => {
@@ -10,10 +10,9 @@ export default function ContactPage() {
 
     return (
         <>
-            {/* <Navbar /> */}
-            {/* <Body/> */}
-            {/* <Footer /> */}
-            <h1>Contact</h1>
+            <Navbar />
+            <Body />
+            <Footer />
         </>
     )
 }

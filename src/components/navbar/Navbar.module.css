@@ -6,46 +6,61 @@
     z-index: 10;
     height: 4rem;
     padding: 0 2vw;
-    background: -o-linear-gradient(top, var(--background_color1), transparent);
-    background: -webkit-gradient(linear, left top, left bottom, from(var(--background_color1)), to(transparent));
-    background: linear-gradient(180deg, var(--background_color1), transparent);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
 
-.navbar>*:first-child,
-.navbar>*:last-child {
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -ms-flex-preferred-size: 0;
-    flex-basis: 0;
-}
-
-.navbar>*:last-child {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
+.blur_background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    height: 4rem;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    -webkit-mask: -webkit-gradient(linear,
+            left top, left bottom,
+            from(rgba(0, 0, 0, 1)),
+            color-stop(75%, rgba(0, 0, 0, 0.8)),
+            to(rgba(0, 0, 0, 0)));
+    -webkit-mask: linear-gradient(180deg,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0.8) 75%,
+            rgba(0, 0, 0, 0) 100%);
+    mask: -webkit-gradient(linear,
+            left top, left bottom,
+            from(rgba(0, 0, 0, 1)),
+            color-stop(75%, rgba(0, 0, 0, 0.8)),
+            to(rgba(0, 0, 0, 0)));
+    mask: linear-gradient(180deg,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0.8) 75%,
+            rgba(0, 0, 0, 0) 100%);
 }
 
 .navbar a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+}
+
+.logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .logo img {
@@ -57,6 +72,10 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: end;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;

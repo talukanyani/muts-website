@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Navbar.module.css'
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
@@ -6,7 +6,6 @@ import { useHandlePortal } from '../../hooks/useHandlePortal';
 import HamburgerCrossButton from './HamburgerCrossButton'
 import Navigations from './Navigations'
 import logo from '../../assets/images/logo.svg'
-import letterIcon from '../../assets/icons/letter.svg'
 import twitterIcon from '../../assets/icons/twitter.svg'
 import instagramIcon from '../../assets/icons/instagram.svg'
 
@@ -30,6 +29,7 @@ export default function Navbar() {
 
     return (
         <>
+            <div className={styles.blur_background}></div>
             <div className={styles.navbar}>
                 <HamburgerCrossButton
                     onClick={menuToogle}

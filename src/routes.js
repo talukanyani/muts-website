@@ -6,7 +6,7 @@ import Contact from './pages/contact/Contact'
 import Terms from './pages/legal_info/Terms';
 import Privacy from './pages/legal_info/Privacy';
 import PageNotFound from './pages/error/PageNotFound';
-import { sendMessage } from './services/api';
+import { sendMessage, sendEmail } from './services/api';
 
 export const routes = createRoutesFromElements(
     <Route path='/'>
@@ -32,6 +32,16 @@ export const routes = createRoutesFromElements(
                 return res
             }}
         />
+        <Route
+            path='/api/mailing_list_ios_app'
+            action={async ({ request }) => {
+                let formData = await request.formData()
+                let res = sendEmail(formData.get('email'))
+
+                return res
+            }}
+        />
+
         <Route
             path='terms'
             element={<Terms />}

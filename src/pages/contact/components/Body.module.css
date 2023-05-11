@@ -10,20 +10,14 @@
 
 .body>div>div {
     margin: 2rem 0;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
 }
 
 .email {
     margin-top: 2.5rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: start;
+    align-items: flex-start;
     gap: 1rem;
 }
 
@@ -44,7 +38,7 @@
 .message {
     width: 100%;
     max-width: 520px;
-    -webkit-box-sizing: border-box;
+    height: 32rem;
     box-sizing: border-box;
     padding: 2.5rem;
     border-radius: 1rem;
@@ -57,12 +51,7 @@
 
 .message form {
     margin-top: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
     gap: 2rem;
 }
@@ -80,17 +69,11 @@
     border-radius: 0.4rem;
     background-color: var(--background_color1);
     pointer-events: none;
-    -webkit-transform-origin: 0 50%;
-    -ms-transform-origin: 0 50%;
     transform-origin: 0 50%;
-    -webkit-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
 
 .message form label[for='message'] {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     gap: 0.8rem;
 }
@@ -102,10 +85,10 @@
 }
 
 .message form :where(input, textarea) {
+    font-size: 1rem;
     letter-spacing: 0.1rem;
     word-spacing: 0.15rem;
     width: 100%;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 1rem 0.75rem 0.5rem;
     border: none;
@@ -127,22 +110,15 @@
     input:not(:placeholder-shown),
     textarea:not(:placeholder-shown),
 )~label {
-    -webkit-transform: translate(0.6rem, -1rem) scale(0.9);
-    -ms-transform: translate(0.6rem, -1rem) scale(0.9);
     transform: translate(0.6rem, -1rem) scale(0.9);
     letter-spacing: normal;
 }
 
 @media screen and (max-width: 1080px) {
     .body>div>div {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
         gap: 4rem 2rem;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
         justify-content: space-between;
     }
 }

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './DownloadInfo.module.css'
 import { useFetcher } from 'react-router-dom';
 import Modal from '../../../components/Modal';
 import FilledButton from '../../../components/FilledButton'
 import LoadingIndicator from '../../../components/LoadingIndicator';
 import { Success, Error } from '../../../components/PostResponse';
+import { useValidateEmail } from '../../../hooks/useFormValidations';
 
 export default function DownloadInfoModal({ isOpen, close }) {
     var playStoreLink = '/' // TODO: Play Store Link
@@ -12,11 +13,23 @@ export default function DownloadInfoModal({ isOpen, close }) {
     let fetcher = useFetcher()
 
     const isLoading = fetcher.state !== 'idle'
+    const isSent = fetcher.data && fetcher.data.ok
+    const isError = fetcher.data && !fetcher.data.ok
 
-    const res = fetcher.data
+    const [email, setEmail] = useState('')
+    const [isValidEmail, emailError, validateEmail, resetEmailError] = useValidateEmail()
 
-    const isSent = res && res.ok
-    const isError = res && !res.ok
+    const onEmailInputBlur = event => {
+        var value = (event.target.value).trim()
+
+        setEmail(value)
+        if (value) validateEmail(value)
+    }
+
+    const handleSubmit = event => {
+        validateEmail(email)
+        if (!isValidEmail) event.preventDefault()
+    }
 
     return (
         <Modal isOpen={isOpen} close={close}>
@@ -41,16 +54,27 @@ export default function DownloadInfoModal({ isOpen, close }) {
                             message='An error occured'
                             onTryAgain={() => window.location.reload()}
                         />
-                            : <fetcher.Form method='post' action='/api/mailing_list_ios_app'>
+                            : <fetcher.Form
+                                method='post'
+                                action='/api/mailing_list_ios_app'
+                                onSubmit={event => handleSubmit(event)}
+                            >
                                 <input
                                     type='email'
                                     placeholder='Email'
                                     name='email'
+                                    id='email'
+                                    className={emailError ? styles.input_error : undefined}
+                                    maxLength={50}
+                                    value={email}
+                                    onChange={event => setEmail(
+                                        (event.target.value).trimStart()
+                                    )}
+                                    onFocus={resetEmailError}
+                                    onBlur={event => onEmailInputBlur(event)}
                                 />
-                                <FilledButton type='submit'>
-                                    Submit
-                                </FilledButton>
-                                {/* <span>{emailError}</span> */}
+                                <span>{emailError}</span>
+                                <FilledButton type='submit'>Submit</FilledButton>
                             </fetcher.Form>
                 }
             </div>

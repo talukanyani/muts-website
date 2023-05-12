@@ -1,0 +1,139 @@
+.body {
+    background-color: var(--background_color1);
+}
+
+.body>div {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 5rem 2rem 2rem;
+}
+
+.body>div>div {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.email {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.email img {
+    width: 1.5rem;
+}
+
+.email>section h2 {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.email>section a {
+    font-size: 0.8rem;
+}
+
+.message {
+    width: 100%;
+    max-width: 520px;
+    height: 32rem;
+    box-sizing: border-box;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    background-color: var(--background_color3);
+}
+
+.message h2 {
+    margin: 0 0 3rem 0;
+}
+
+.message form {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.message form section {
+    position: relative;
+}
+
+.message form label {
+    position: absolute;
+    top: 0.4rem;
+    left: 0.4rem;
+    letter-spacing: 0.08rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.4rem;
+    background-color: var(--background_color1);
+    pointer-events: none;
+    transform-origin: 0 50%;
+    transition: all 0.2s ease;
+}
+
+.message form label[for='message'] {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.message form label[for='message'] span {
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.4rem;
+    background-color: var(--primary_color);
+}
+
+.message form :where(input, textarea) {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.15rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem 0.75rem 0.5rem;
+    border: none;
+    border-radius: 0.4rem;
+    background: var(--background_color1);
+}
+
+.message form textarea {
+    resize: none;
+}
+
+.message form :where(input, textarea):focus {
+    outline: none;
+}
+
+.message form :where(input:focus,
+    textarea:focus,
+    input:not(:-moz-placeholder-shown),
+    textarea:not(:-moz-placeholder-shown),
+    input:not(:-ms-input-placeholder),
+    textarea:not(:-ms-input-placeholder),
+    input:not(:placeholder-shown),
+    textarea:not(:placeholder-shown),
+)~label {
+    transform: translate(0.6rem, -1rem) scale(0.9);
+    letter-spacing: normal;
+}
+
+.message form section>span {
+    position: absolute;
+    left: 0;
+    bottom: -1.2rem;
+    font-size: 0.9rem;
+    color: var(--error_color);
+}
+
+.input_error {
+    outline: 0.15rem dashed var(--error_container_color);
+}
+
+@media screen and (max-width: 1080px) {
+    .body>div>div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4rem 2rem;
+        justify-content: space-between;
+    }
+}

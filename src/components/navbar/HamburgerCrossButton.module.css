@@ -1,0 +1,54 @@
+.hamburger_button {
+    cursor: pointer;
+}
+
+.hamburger_button span {
+    display: block;
+    width: 2rem;
+    height: 0.1rem;
+    border-radius: 0.1rem;
+    background-color: var(--foreground_color2);
+}
+
+.hamburger_button span:nth-of-type(1) {
+    margin-bottom: 0.25rem;
+    -webkit-transition: rotate 350ms cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    -o-transition: rotate 350ms cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: rotate 350ms cubic-bezier(0.77, 0.2, 0.05, 1.0);
+
+}
+
+.hamburger_button span:nth-of-type(2) {
+    margin-bottom: 0.25rem;
+    -webkit-transition: width 300ms linear,
+        opacity 400ms cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    -o-transition: width 300ms linear,
+        opacity 400ms cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: width 300ms linear,
+        opacity 400ms cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+.hamburger_button span:nth-of-type(3) {
+    -webkit-transition: rotate 250ms cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    -o-transition: rotate 250ms cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: rotate 250ms cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+.cross_button span:nth-of-type(1) {
+    -webkit-transform-origin: left;
+    -ms-transform-origin: left;
+    transform-origin: left;
+    rotate: 21deg;
+}
+
+.cross_button span:nth-of-type(2) {
+    width: 0;
+    opacity: 0;
+}
+
+.cross_button span:nth-of-type(3) {
+    -webkit-transform-origin: left;
+    -ms-transform-origin: left;
+    transform-origin: left;
+    rotate: -21deg;
+}

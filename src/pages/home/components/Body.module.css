@@ -1,0 +1,94 @@
+.body {
+    background-color: var(--background_color1);
+}
+
+.body_content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 5rem 2rem 2rem;
+}
+
+.body header {
+    height: 24rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.body header h1 {
+    font-family: var(--system_font_family);
+    font-size: 3rem;
+    text-transform: capitalize;
+    text-align: center;
+    margin: 0;
+
+}
+
+.body header>img {
+    width: 2rem;
+    cursor: pointer;
+}
+
+.sc_app_card {
+    height: 32rem;
+    margin: 1rem 0;
+    border-radius: 1rem;
+    background: url(../../../assets/images/student_home_desk.png),
+        -webkit-gradient(linear, left top, left bottom, color-stop(24.7rem, var(--sc_app_on_primary_color)), color-stop(24.7rem, var(--background_color2)));
+    background: url(../../../assets/images/student_home_desk.png),
+        -o-linear-gradient(top, var(--sc_app_on_primary_color) 24.7rem, var(--background_color2) 24.7rem);
+    background: url(../../../assets/images/student_home_desk.png),
+        linear-gradient(180deg, var(--sc_app_on_primary_color) 24.7rem, var(--background_color2) 24.7rem);
+    background-size: contain;
+    background-position: center right;
+    background-repeat: no-repeat;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.sc_app_card_content {
+    padding: 2rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    background: -webkit-gradient(linear, left top, right top, from(var(--sc_app_on_primary_color)), to(transparent));
+    background: -o-linear-gradient(left, var(--sc_app_on_primary_color), transparent);
+    background: linear-gradient(90deg, var(--sc_app_on_primary_color), transparent);
+}
+
+.sc_app_card h2 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.sc_app_card p {
+    margin: 0.5rem 0 1.5rem;
+}
+
+@media screen and (max-width: 600px) {
+    .sc_app_card {
+        background-position: bottom right;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: start;
+    }
+
+    .sc_app_card_content {
+        margin-top: 2rem;
+    }
+}

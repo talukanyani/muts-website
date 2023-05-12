@@ -1,0 +1,46 @@
+:is(.success, .error) {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+:is(.success, .error) :where(h3, p) {
+    text-align: center;
+    margin: 0;
+}
+
+:is(.success, .error) span {
+    width: 4rem;
+    height: 4rem;
+}
+
+:is(.success, .error) span img {
+    width: 4rem;
+}
+
+.success h3 {
+    color: var(--success_color);
+}
+
+.error h3 {
+    color: var(--error_color);
+}
+
+.error button {
+    font-size: 1rem;
+    padding: 0.2rem 1rem;
+    background: var(--background_color2);
+    border: 0.1rem solid var(--grey4);
+    border-radius: 0.4rem;
+    transition: all .3s;
+}
+
+.error button:hover {
+    background-color: var(--grey4);
+}
+
+.error button:active {
+    scale: 0.95;
+}

@@ -1,0 +1,45 @@
+.download_info {
+    max-width: 440px;
+}
+
+.download_info h1 {
+    margin: 0 0 1rem;
+}
+
+.download_info>p {
+    margin: 0 0 3rem;
+}
+
+.download_info form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.download_info form input {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: solid 0.15rem var(--foreground_color1);
+    border-radius: 1rem;
+    outline: none;
+    transition: all .3s;
+}
+
+.download_info form input:focus {
+    box-shadow: 0 0 2rem var(--grey4);
+}
+
+.download_info form span {
+    position: absolute;
+    left: 0;
+    top: 2.5rem;
+    font-size: 0.9rem;
+    color: var(--error_color);
+}
+
+.input_error {
+    border-color: var(--error_color) !important;
+}

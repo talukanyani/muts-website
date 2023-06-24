@@ -29,7 +29,6 @@ export default function Navbar() {
 
     return (
         <>
-            <div className={styles.blur_background}></div>
             <div className={styles.navbar}>
                 <HamburgerCrossButton
                     onClick={menuToogle}
@@ -37,21 +36,21 @@ export default function Navbar() {
                 />
                 <section className={styles.logo}>
                     <Link to='/' onClick={() => window.scrollTo(0, 0)}>
-                        <img src={logo} alt='Tmlab Logo' />
+                        <img src={logo} alt='Muts Logo' />
                     </Link>
                 </section>
                 <section className={styles.socials}>
                     <a
                         target='_blank'
                         rel="noopener noreferrer"
-                        href='https://twitter.com/tmlab_dot_tech'
+                        href='https://twitter.com/muts_dot_dev'
                     >
                         <img src={twitterIcon} alt="twitter icon button" />
                     </a>
                     <a
                         target='_blank'
                         rel="noopener noreferrer"
-                        href='https://instagram.com/tmlab.tech'
+                        href='https://instagram.com/muts.dev'
                     >
                         <img src={instagramIcon} alt="instagram icon button" />
                     </a>

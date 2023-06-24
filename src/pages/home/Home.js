@@ -5,7 +5,7 @@ import Body from './components/Body';
 
 export default function HomePage() {
     useEffect(() => {
-        document.title = 'Tmlab'
+        document.title = 'Muts'
     }, [])
 
     return (

@@ -5,7 +5,7 @@ import Body from './components/Body';
 
 export default function StudentCalendarPage() {
     useEffect(() => {
-        document.title = 'Tmlab - Student Calendar'
+        document.title = 'Muts - Student Calendar'
     }, [])
 
     return (

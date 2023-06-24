@@ -67,8 +67,8 @@ export default function Body() {
                         <img alt='email icon' src={emailIcon} />
                         <section>
                             <h2>Email Us</h2>
-                            <a href="mailto:tmlab.tech@outlook.com">
-                                tmlab.tech@outlook.com
+                            <a href='mailto:muts.dev@outlook.com'>
+                                muts.dev@outlook.com
                             </a>
                         </section>
                     </div>

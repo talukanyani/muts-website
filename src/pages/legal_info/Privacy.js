@@ -22,9 +22,9 @@ export default function PrivacyPage() {
                     <h2>Introduction</h2>
 
                     <p>
-                        <b>Tmlab</b> (“us”, “we”, or “our”) operates <b>tmlab.tech</b> and <b>Student Calendar</b> ("Service").
+                        <b>Muts</b> (“us”, “we”, or “our”) operates <b>muts.dev</b> and <b>Student Calendar</b> ("Service").
                         <br />
-                        Our Privacy Policy governs your visit to <b>tmlab.tech</b> or <b>Student Calendar</b>,
+                        Our Privacy Policy governs your visit to <b>muts.dev</b> and/or <b>Student Calendar</b>,
                         and explains how we collect, safeguard and disclose information that results from your use of our Service.
                         <br />
                         Our <Link to='/terms' onClick={() => window.scrollTo(0, 0)}>Terms of Use</Link>  governs all use of our Service and together with
@@ -36,7 +36,7 @@ export default function PrivacyPage() {
 
                     <dl>
                         <dt>Service</dt>
-                        <dd>tmlab.tech website and Student Calendar App operated by Tmlab.</dd>
+                        <dd>Muts.dev website and Student Calendar App operated by Muts.</dd>
                         <dt>Personal Data</dt>
                         <dd>
                             Data about a living individual who can be identified from those data
@@ -87,7 +87,7 @@ export default function PrivacyPage() {
 
                     <h2>Use of Data</h2>
 
-                    <p>Tmlab uses the collected data for various purposes:</p>
+                    <p>Muts uses the collected data for various purposes:</p>
 
                     <ul>
                         <li>To provide and maintain our Service.</li>
@@ -124,7 +124,7 @@ export default function PrivacyPage() {
                         If you are located outside South Africa and choose to provide information to us, please note that we transfer the data,
                         including Personal Data, to South Africa and process it there.
                         <br />
-                        Tmlab will take all the steps reasonably necessary to ensure that your data is treated securely and in
+                        Muts will take all the steps reasonably necessary to ensure that your data is treated securely and in
                         accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organisation or a
                         country unless there are adequate controls in place including the security of your data and other personal information.
                     </p>
@@ -174,7 +174,7 @@ export default function PrivacyPage() {
                     <h2>Contact Us</h2>
                     <p>
                         If you have any questions about this Privacy Policy, please contact us by email:
-                        {' '}<a href='mailto:tmlab.tech@outlook.com'>tmlab.tech@outlook.com</a>.
+                        {' '}<a href='mailto:muts.dev@outlook.com'>muts.dev@outlook.com</a>.
                     </p>
                 </div>
             </div>

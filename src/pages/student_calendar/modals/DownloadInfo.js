@@ -34,16 +34,16 @@ export default function DownloadInfoModal({ isOpen, close }) {
     return (
         <Modal isOpen={isOpen} close={close}>
             <div className={styles.download_info}>
-                <h1>Download</h1>
+                <h1>Download For iOS</h1>
                 <p>
                     For now, Student Calendar is only available on
                     {' '}<a href={playStoreLink}>Play Store</a>.
                     It will be available on App Store soon.
-                    <b>Please leave your email below to get notified
-                        when it is available on App Store.</b>
+                    {' '}<b>Please leave your email below to get notified when
+                        it is available on App Store.</b>
                 </p>
                 {isLoading ? <LoadingIndicator
-                    message='Loading...'
+                    message='Submitting...'
                 />
                     : isSent ? <Success
                         title='Successfully Sent'
@@ -51,7 +51,7 @@ export default function DownloadInfoModal({ isOpen, close }) {
                         we'll email you when Student Calendar becomes available on App Store"
                     />
                         : isError ? <Error
-                            message='An error occured'
+                            message='An error occured while submitting your email.'
                             onTryAgain={() => window.location.reload()}
                         />
                             : <fetcher.Form

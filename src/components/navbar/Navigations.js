@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styles from './Navigations.module.css'
 import { useNavigate } from 'react-router-dom';
 import HamburgerCrossButton from './HamburgerCrossButton'
-import expandIcon from '../../assets/icons/expand_down.svg'
 
 export default function Navigations({ isVisible, hide }) {
     const [isAppsExpand, setIsAppsExpand] = useState(false)
@@ -34,16 +33,20 @@ export default function Navigations({ isVisible, hide }) {
                 />
             </div>
             <ul onClick={event => event.stopPropagation()}>
-                <li onClick={() => navigateTo('/')}>Home</li>
+                <li onClick={() => navigateTo('/')}>
+                    Home
+                </li>
                 <li onClick={() => setIsAppsExpand(!isAppsExpand)}>
-                    Apps <img src={expandIcon} alt='expond icon' />
+                    Apps
                 </li>
                 <ul>
                     <li onClick={() => navigateTo('/student_calendar')}>
                         Student Calendar
                     </li>
                 </ul>
-                <li onClick={() => navigateTo('/contact')}>Contact</li>
+                <li onClick={() => navigateTo('/contact')}>
+                    Contact
+                </li>
             </ul>
         </nav>
     )

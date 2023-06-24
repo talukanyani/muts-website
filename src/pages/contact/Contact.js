@@ -5,7 +5,7 @@ import Body from './components/Body'
 
 export default function ContactPage() {
     useEffect(() => {
-        document.title = 'Tmlab - Contact'
+        document.title = 'Muts - Contact'
     }, [])
 
     return (

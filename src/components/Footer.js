@@ -11,7 +11,7 @@ export default function Footer() {
         <div className={styles.footer}>
             <div className={styles.footer_content}>
                 <p>
-                    &copy; {date.getFullYear()} Tmlab. All rights reserved.
+                    &copy; {date.getFullYear()} Muts. All rights reserved.
                 </p>
                 <Link to='/terms' onClick={scrollToTop}>
                     Terms

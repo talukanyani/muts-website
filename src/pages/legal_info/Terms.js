@@ -22,8 +22,8 @@ export default function TermsPage() {
                     <h2>Introduction</h2>
 
                     <p>
-                        These Terms of Use (“Terms”, “Terms of Service”) govern your use of <b>tmlab.tech</b> website
-                        and/or <b>Student Calendar</b> app (together or individually “Service”) operated by <b>Tmlab</b>.
+                        These Terms of Use (“Terms”, “Terms of Service”) govern your use of <b>muts.dev</b> website
+                        and/or <b>Student Calendar</b> app (“Service”) operated by <b>Muts</b>.
                     </p>
                     <p>
                         Our <Link to='/privacy' onClick={() => window.scrollTo(0, 0)}>Privacy Policy</Link> also governs your
@@ -36,7 +36,7 @@ export default function TermsPage() {
                     </p>
                     <p>
                         If you do not agree with (or cannot comply with) Agreements, then you may not use the Service,
-                        but please let us know by emailing at <a href='mailto:tmlab.tech@outlook.com'>tmlab.tech@outlook.com</a>{' '}
+                        but please let us know by emailing at <a href='mailto:muts.dev@outlook.com'>muts.dev@outlook.com</a>{' '}
                         so we can try to find a solution.
                         These Terms apply to all visitors, users and others who wish to access or use Service.
                     </p>
@@ -68,9 +68,9 @@ export default function TermsPage() {
                         this license includes the right for us to make your Content available to other users of Service, who may also use your
                         Content subject to these Terms.
                         <br />
-                        Tmlab has the right but not the obligation to monitor and edit all Content provided by users.
+                        Muts has the right but not the obligation to monitor and edit all Content provided by users.
                         <br />
-                        In addition, Content found on or through this Service are the property of Tmlab or used with permission.
+                        In addition, Content found on or through this Service are the property of Muts or used with permission.
                         You may not distribute, modify, transmit, reuse, download, repost, copy, or use said Content, whether in whole
                         or in part, for commercial purposes or for personal gain, without express advance written permission from us.
                     </p>
@@ -176,9 +176,9 @@ export default function TermsPage() {
 
                     <p>
                         Service and its original content (excluding Content provided by users),
-                        features and functionality are and will remain the exclusive property of Tmlab and its licensors.
+                        features and functionality are and will remain the exclusive property of Muts and its licensors.
                         Service is protected by copyright, trademark, and other laws of and foreign countries.
-                        Our trademarks may not be used in connection with any product or service without the prior written consent of Tmlab.
+                        Our trademarks may not be used in connection with any product or service without the prior written consent of Muts.
                     </p>
 
 
@@ -190,7 +190,7 @@ export default function TermsPage() {
                         <br />
                         If you are a copyright owner, or authorized on behalf of one, and you believe that the copyrighted work has been
                         copied in a way that constitutes copyright infringement, please submit your claim via email to
-                        {' '}<a href='mailto:tmlab.tech@outlook.com'>tmlab.tech@outlook.com</a>, with the subject line: "Copyright Infringement"
+                        {' '}<a href='mailto:muts.dev@outlook.com'>muts.dev@outlook.com</a>, with the subject line: "Copyright Infringement"
                         and include in your claim a detailed description of the alleged Infringement. You may be held accountable for damages
                         (including costs and attorneys' fees) for misrepresentation or bad-faith claims on the infringement of any Content found
                         on and/or through Service on your copyright.
@@ -200,7 +200,7 @@ export default function TermsPage() {
                     <h2>Error Reporting and Feedback</h2>
 
                     <p>
-                        You may provide us either directly at <a href='mailto:tmlab.tech@outlook.com'>tmlab.tech@outlook.com</a>{' '}
+                        You may provide us either directly at <a href='mailto:muts.dev@outlook.com'>muts.dev@outlook.com</a>{' '}
                         or via third party sites and tools with information and feedback concerning errors, suggestions for improvements,
                         ideas, problems, complaints, and other matters related to our Service ("Feedback").
                         You acknowledge and agree that:
@@ -330,7 +330,7 @@ export default function TermsPage() {
 
                     <p>
                         Please send your feedback, comments, requests for technical support by email:
-                        {' '}<a href='mailto:tmlab.tech@outlook.com'>tmlab.tech@outlook.com</a>.
+                        {' '}<a href='mailto:muts.dev@outlook.com'>muts.dev@outlook.com</a>.
                     </p>
                 </div>
             </div>

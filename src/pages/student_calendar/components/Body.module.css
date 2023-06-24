@@ -32,15 +32,8 @@
     background-size: 40rem 22.5rem;
     background-position: top right;
     background-repeat: no-repeat;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
 }
 
@@ -49,16 +42,18 @@
 }
 
 .download_buttons {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
-.download_buttons>span {
+.download_buttons :where(span, a) {
     cursor: pointer;
+    transition: all .3s;
+}
+
+.download_buttons :where(span, a):active {
+    scale: 0.95;
 }
 
 .download_buttons img {
@@ -67,31 +62,20 @@
 
 .showcase {
     margin: 8rem 0;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 35% 5% 60%;
     grid-template-columns: 35% 60%;
     gap: 5%;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
 }
 
-.features {
+.download {
     margin: 8rem 0 4rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
 }
 
-.features .big_text {
+.download .big_text {
     text-align: center;
 }
 
@@ -105,33 +89,10 @@
         font-size: 2rem;
         max-width: 35rem;
     }
-
-    .showcase {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .showcase .big_text {
-        text-align: center;
-    }
-
-    .showcase>div:nth-of-type(2) {
-        width: 80%;
-    }
 }
 
 @media screen and (max-width: 640px) {
     .body header {
         background-size: 28rem 15.75rem;
-    }
-
-    .showcase>div:nth-of-type(2) {
-        width: 100%;
     }
 }

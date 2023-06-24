@@ -40,7 +40,7 @@ export default function DownloadInfoModal({ isOpen, close }) {
                     {' '}<a href={playStoreLink}>Play Store</a>.
                     It will be available on App Store soon.
                     {' '}<b>Please leave your email below to get notified when
-                        it is available on App Store.</b>
+                        it becomes available on App Store.</b>
                 </p>
                 {isLoading ? <LoadingIndicator
                     message='Submitting...'

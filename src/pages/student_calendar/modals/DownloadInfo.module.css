@@ -1,5 +1,7 @@
 .download_info {
-    max-width: 440px;
+    width: 440px;
+    max-width: 70vw;
+    max-height: 70vh;
 }
 
 .download_info h1 {

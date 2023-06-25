@@ -16,7 +16,7 @@ export async function sendMessage(name, email, message) {
 }
 
 export async function sendEmail(email) {
-    const res = await fetch('/api/mailing_list_ios_app', {
+    const res = await fetch('/api/mailing_list', {
         method: 'POST',
         headers: {
             Accept: 'application/json',

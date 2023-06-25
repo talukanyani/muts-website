@@ -55,6 +55,6 @@
     .content {
         padding-top: 0;
         z-index: 1;
-        background: linear-gradient(90deg, var(--background_color1) 10%, transparent);
+        background: linear-gradient(45deg, var(--background_color1) 25%, transparent);
     }
 }

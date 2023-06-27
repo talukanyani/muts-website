@@ -1,34 +1,19 @@
-# Tmlab Website
+## Muts Website Client
 
-## About The Project
-This is a website to show Tmlab apps.
-Users can find links to downlod specific app in Play Store or App Store. Users can send messages to Tmlab and also subscribe to their newsletter.
+A client/frontend program for Muts website. 
+On this website, users can explore and download 
+[Student Calendar](https://github.com/talukanyani/student_calendar_app) app.
+Users can also send messages. It communicates with its server 
+[muts_website_server](https://github.com/talukanyani/muts_website_server) 
+through RestAPI.
 
-## Folder Structure
-This website contains more than 5 pages you can find under [pages folder](https://github.com/Talukanyani/tmlab-website-client/tree/master/src/pages). 
-Each page file holds 3 or 4 components which can be found under [components folder](https://github.com/Talukanyani/tmlab-website-client/tree/master/src/components). 
-Some of componets files hold small componets which can be found in [elements folder](https://github.com/Talukanyani/tmlab-website-client/tree/master/src/elements).
+### Technologies Used
 
-## Technologies Used
-- React
 - Javascript
+- React
+- React Router
 - HTML/JSX
 - CSS
 
-## Run the Project on Your Localhost
-
-1. Clone or Download the Project
-2. Install Dependecies
-```bash
-npm install
-```
-3. Start the Project
-```bash
-npm start
-```
-
-## Run the Project Online
-Visit [tmlab.tech](https://tmlab.tech)
-
-## Author
-[Talukanyani](https://github.com/Talukanyani)
+### Author
+[Talukanyani](https://github.com/talukanyani)

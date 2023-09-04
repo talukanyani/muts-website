@@ -1,27 +1,23 @@
 .body {
-    background-color: var(--background_color1);
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 5rem 1rem 1rem;
 }
 
 .body>div {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 5rem 2rem 2rem;
-}
-
-.body>div>div {
     margin: 2rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
 .email {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     display: flex;
     align-items: flex-start;
     gap: 1rem;
 }
 
-.email img {
+.email>img {
     width: 1.5rem;
 }
 
@@ -37,23 +33,23 @@
 
 .message {
     width: 100%;
-    max-width: 520px;
-    height: 32rem;
+    max-width: 480px;
+    height: 28rem;
     box-sizing: border-box;
-    padding: 2.5rem;
+    padding: 2rem;
     border-radius: 1rem;
-    background-color: var(--background_color3);
+    background-color: var(--background_color2);
 }
 
 .message h2 {
-    margin: 0 0 3rem 0;
+    margin-top: 0;
+    margin-bottom: 2rem;
 }
 
 .message form {
-    margin-top: auto;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .message form section {
@@ -62,7 +58,7 @@
 
 .message form label {
     position: absolute;
-    top: 0.4rem;
+    top: 0.5rem;
     left: 0.4rem;
     letter-spacing: 0.08rem;
     padding: 0.2rem 0.4rem;
@@ -80,10 +76,10 @@
 
 .message form label[for='message'] span {
     font-size: 0.9rem;
-    color: var(--background_color3);
+    color: var(--background_color1);
     padding: 0.1rem 0.4rem;
     border-radius: 0.4rem;
-    background-color: var(--primary_color);
+    background-color: var(--foreground_color);
 }
 
 .message form :where(input, textarea) {
@@ -92,8 +88,8 @@
     word-spacing: 0.15rem;
     width: 100%;
     box-sizing: border-box;
-    padding: 1rem 0.75rem 0.5rem;
-    border: none;
+    padding: 0.75rem 0.75rem 0.5rem;
+    border: 0.1rem solid var(--background_color3);
     border-radius: 0.4rem;
     background: var(--background_color1);
 }
@@ -115,7 +111,7 @@
     input:not(:placeholder-shown),
     textarea:not(:placeholder-shown),
 )~label {
-    transform: translate(0.6rem, -1rem) scale(0.9);
+    transform: translate(0.6rem, -1.2rem) scale(0.9);
     letter-spacing: normal;
 }
 
@@ -128,14 +124,18 @@
 }
 
 .input_error {
-    outline: 0.15rem dashed var(--error_container_color);
+    outline: 0.1rem dashed var(--error_color);
 }
 
 @media screen and (max-width: 1080px) {
-    .body>div>div {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4rem 2rem;
-        justify-content: space-between;
+    .body>div {
+        grid-template-columns: 1fr 1.5fr;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .body>div {
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
 }

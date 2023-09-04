@@ -9,14 +9,14 @@
 }
 
 .download_info>p {
-    margin: 0 0 3rem;
+    margin: 0 0 2.5rem;
 }
 
 .download_info form {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .download_info form input {
@@ -24,14 +24,14 @@
     letter-spacing: 0.1rem;
     padding: 0.5rem 1rem;
     background-color: transparent;
-    border: solid 0.15rem var(--foreground_color1);
-    border-radius: 1rem;
+    border: solid 0.15rem var(--foreground_color);
+    border-radius: 0.5rem;
     outline: none;
     transition: all .3s;
 }
 
 .download_info form input:focus {
-    border-color: var(--primary_color);
+    border-color: var(--blue1);
 }
 
 .download_info form span {

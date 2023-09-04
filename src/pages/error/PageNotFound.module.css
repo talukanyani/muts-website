@@ -1,14 +1,14 @@
 .body {
-    background-color: var(--background_color1);
-}
-
-.body>div {
     max-width: 640px;
     margin: 0 auto;
-    padding: 5rem 2rem 2rem;
+    padding: 5rem 1rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.body :where(h1, h2, p) {
+    text-align: center;
 }
 
 .body h1 {

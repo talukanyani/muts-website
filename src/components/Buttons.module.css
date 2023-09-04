@@ -1,0 +1,26 @@
+.filled_button {
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.2rem;
+    color: var(--background_color1);
+    background-color: var(--blue1);
+    border: 0.1rem solid var(--blue1);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    user-select: none;
+    transition: all .3s;
+}
+
+.filled_button:hover {
+    background-color: var(--blue2);
+    border-color: var(--blue2);
+}
+
+.filled_button:active {
+    scale: 0.95;
+}
+
+.filled_button:disabled {
+    background-color: var(--grey1);
+    border-color: var(--grey1);
+}

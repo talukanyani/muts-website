@@ -1,11 +1,7 @@
 .body {
-    background-color: var(--background_color1);
-}
-
-.body>div {
     max-width: 960px;
     margin: 0 auto;
-    padding: 5rem 2rem 2rem;
+    padding: 5rem 1.5rem 2rem;
     font-size: 0.9rem;
     font-family: var(--system_font_family);
 }

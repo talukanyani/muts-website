@@ -29,16 +29,17 @@
 }
 
 .error button {
-    font-size: 1rem;
-    padding: 0.2rem 1rem;
-    background: var(--background_color2);
+    font-size: 0.9rem;
+    color: inherit;
+    padding: 0.4rem 1rem;
+    background: transparent;
     border: 0.1rem solid var(--grey4);
     border-radius: 0.4rem;
     transition: all .3s;
 }
 
 .error button:hover {
-    background-color: var(--grey4);
+    background-color: var(--background_color3);
 }
 
 .error button:active {

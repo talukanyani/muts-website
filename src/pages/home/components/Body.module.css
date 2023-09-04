@@ -1,94 +1,110 @@
 .body {
-    background-color: var(--background_color1);
-}
-
-.body_content {
-    max-width: 1280px;
     margin: 0 auto;
-    padding: 5rem 2rem 2rem;
+    padding: 5rem 0 1rem;
 }
 
 .body header {
-    height: 24rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 4rem 0 2rem;
 }
 
 .body header h1 {
-    font-family: var(--system_font_family);
     font-size: 3rem;
     text-transform: capitalize;
-    text-align: center;
     margin: 0;
-
+    max-width: 600px;
 }
 
-.body header>img {
-    width: 2rem;
-    cursor: pointer;
+.body header p {
+    font-size: 1.25rem;
 }
 
-.sc_app_card {
-    height: 32rem;
-    margin: 1rem 0;
-    border-radius: 1rem;
-    background: url(../../../assets/images/student_home_desk.png),
-        -webkit-gradient(linear, left top, left bottom, color-stop(24.7rem, var(--sc_app_on_primary_color)), color-stop(24.7rem, var(--background_color2)));
-    background: url(../../../assets/images/student_home_desk.png),
-        -o-linear-gradient(top, var(--sc_app_on_primary_color) 24.7rem, var(--background_color2) 24.7rem);
-    background: url(../../../assets/images/student_home_desk.png),
-        linear-gradient(180deg, var(--sc_app_on_primary_color) 24.7rem, var(--background_color2) 24.7rem);
+.body header>section:nth-child(1) {
+    margin: auto 1rem;
+}
+
+.body header>section:nth-child(2) {
+    width: 95%;
+    aspect-ratio: 32/21;
+    margin: auto 0 auto auto;
+    border-radius: 0.5rem 0 0 0.5rem;
+    background: url(../../../assets/images/header_picture.png),
+        var(--background_color2);
     background-size: contain;
-    background-position: center right;
     background-repeat: no-repeat;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
 }
 
-.sc_app_card_content {
-    padding: 2rem;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    background: -webkit-gradient(linear, left top, right top, from(var(--sc_app_on_primary_color)), to(transparent));
-    background: -o-linear-gradient(left, var(--sc_app_on_primary_color), transparent);
-    background: linear-gradient(90deg, var(--sc_app_on_primary_color), transparent);
+.apps {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
-.sc_app_card h2 {
-    font-size: 2.5rem;
+.apps h2 {
+    font-size: 2rem;
+    margin: 2rem 0 3rem;
+}
+
+.sc_app {
+    height: 28rem;
+    width: 24rem;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: url(../../../assets/images/student_home_desk.png),
+        var(--sc_app_on_primary_color);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.sc_app h3 {
+    font-size: 1.5rem;
     margin: 0;
 }
 
-.sc_app_card p {
+.sc_app p {
     margin: 0.5rem 0 1.5rem;
 }
 
-@media screen and (max-width: 600px) {
-    .sc_app_card {
-        background-position: bottom right;
-        -webkit-box-align: start;
-        -ms-flex-align: start;
-        align-items: start;
+.sc_app>section {
+    width: 3rem;
+    aspect-ratio: 1;
+    margin-bottom: 0.75rem;
+}
+
+.sc_app>section img {
+    width: 100%;
+}
+
+@media screen and (min-width: 1280px) {
+    .body header>section:nth-child(1) {
+        margin-left: calc((100vw - 1280px) / 2);
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .body header {
+        grid-template-columns: 1fr;
     }
 
-    .sc_app_card_content {
-        margin-top: 2rem;
+    .body header>section:nth-child(2) {
+        width: 100%;
+        aspect-ratio: 32/15;
+        border-radius: 0;
+        background-size: cover;
+    }
+
+    .body header>section:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 4rem;
+    }
+
+    .body header :where(h1, p) {
+        text-align: center;
     }
 }

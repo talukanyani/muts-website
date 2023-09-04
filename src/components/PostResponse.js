@@ -15,7 +15,7 @@ export function Success({ title, message }) {
     )
 }
 
-export function Error({ message, onTryAgain }) {
+export function Error({ message }) {
     return (
         <div className={styles.error}>
             <span>
@@ -23,7 +23,7 @@ export function Error({ message, onTryAgain }) {
             </span>
             <h3>Something Went Wrong</h3>
             <p>{message}</p>
-            <button onClick={onTryAgain}>
+            <button onClick={() => window.location.reload()}>
                 Try Again
             </button>
         </div>

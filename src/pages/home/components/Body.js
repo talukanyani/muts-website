@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Body.module.css'
 import FilledButton from '../../../components/FilledButton';
-import expandIcon from '../../../assets/icons/expand_down.svg'
+import arrow_icon from '../../../assets/icons/arrow.svg'
 
 export default function Body() {
     return (
@@ -11,7 +11,7 @@ export default function Body() {
                     <h1>Elevate your Digital Experience</h1>
                     <img
                         alt='arrow down icon'
-                        src={expandIcon}
+                        src={arrow_icon}
                         onClick={() => window.scrollBy(0, 300)}
                     />
                 </header>

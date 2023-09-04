@@ -40,7 +40,7 @@ function DownloadButtons() {
         closeDownloadInfoModal,
     ] = useHandlePortal()
 
-    var playStoreLink = '/' // TODO: Play Store Link
+    const playStoreLink = 'https://play.google.com/store/apps/details?id=com.muts.studentcalendar'
 
     return (
         <>

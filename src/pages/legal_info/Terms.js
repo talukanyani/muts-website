@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './LegalInfo.module.css'
 import { Link } from 'react-router-dom'
-import Navbar from '../../components/navbar/Navbar';
+import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 export default function TermsPage() {

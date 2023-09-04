@@ -8,7 +8,7 @@ import { Success, Error } from '../../../components/PostResponse';
 import { useValidateEmail } from '../../../hooks/useFormValidations';
 
 export default function DownloadInfoModal({ isOpen, close }) {
-    var playStoreLink = '/' // TODO: Play Store Link
+    const playStoreLink = 'https://play.google.com/store/apps/details?id=com.muts.studentcalendar'
 
     let fetcher = useFetcher()
 

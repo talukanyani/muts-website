@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from './PageNotFound.module.css'
-import Navbar from '../../components/navbar/Navbar'
+import Navbar from '../../components/Navbar'
 import FilledButton from '../../components/FilledButton'
 
 export default function PageNotFoundPage() {

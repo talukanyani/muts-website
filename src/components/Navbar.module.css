@@ -1,0 +1,86 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    height: 5rem;
+    padding: 0 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    background: linear-gradient(180deg,
+            var(--background_color1) 25%,
+            transparent);
+}
+
+.logo img {
+    width: 5rem;
+    vertical-align: bottom;
+}
+
+.navigations ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.8rem;
+}
+
+.navigations li {
+    position: relative;
+    font-weight: 500;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.navigations li:hover {
+    background-color: var(--background_color2);
+}
+
+.navigations>ul>li img {
+    width: 1rem;
+    margin-left: 0.25rem;
+    vertical-align: middle;
+    transition: all 0.3s;
+}
+
+.navigations li>ul {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 2.5rem;
+    right: 0;
+    width: max-content;
+    /* width: 12rem; */
+    /* padding: 1rem 0.5rem; */
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--background_color2);
+    /* box-shadow: 0.1rem 0.2rem 2rem -1rem var(--grey4); */
+    background-color: var(--background_color1);
+    transition: all 0.4s;
+}
+
+.navigations li:hover>ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu_button {
+    display: none;
+    width: 2.5rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    .navigations {
+        display: none;
+    }
+
+    .menu_button {
+        display: block;
+    }
+}

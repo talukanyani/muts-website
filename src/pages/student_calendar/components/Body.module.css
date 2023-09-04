@@ -1,34 +1,15 @@
 .body {
-    background-color: var(--background_color1);
-}
-
-.body_content {
     max-width: 1280px;
     margin: 0 auto 0 auto;
-    padding: 5rem 2rem 2rem;
-}
-
-.body :where(h1, h2, h3) {
-    font-size: 1.25rem;
-    font-weight: normal;
-    text-transform: capitalize;
-    margin: 0;
-}
-
-.big_text {
-    font-size: 2rem;
-    font-weight: bold;
-    text-transform: capitalize;
-    margin: 0.5rem 0 2rem;
-    max-width: 44rem;
+    padding: 5rem 1rem 1rem;
 }
 
 .body header {
-    height: 24rem;
     margin: 2rem 0;
-    padding: 2rem;
+    padding: 8rem 2rem;
     border-radius: 1rem;
-    background: url(../../../assets/images/student_room.png), var(--background_color2);
+    background: url(../../../assets/images/student_room.png),
+        var(--background_color2);
     background-size: 40rem 22.5rem;
     background-position: top right;
     background-repeat: no-repeat;
@@ -37,8 +18,60 @@
     justify-content: center;
 }
 
-.body header .big_text {
+.body header h2 {
     font-size: 2.5rem;
+    font-weight: bold;
+    max-width: 680px;
+    margin-top: 0.5rem;
+}
+
+.body header h1,
+:is(.efficient_app, .download) h2 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    text-transform: capitalize;
+    color: var(--sc_app_primary_color);
+    margin: 0;
+}
+
+.efficient_app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 4rem 0;
+}
+
+.efficient_app>section:nth-child(1) {
+    width: 16rem;
+    aspect-ratio: 10/19;
+    margin: 0 auto;
+    border: 0.1rem solid var(--grey4);
+    border-radius: 0.5rem;
+    background-color: var(--background_color2);
+}
+
+.efficient_app>section:nth-child(1) img {
+    width: 100%;
+}
+
+.efficient_app>section:nth-child(2) {
+    margin: auto;
+}
+
+.efficient_app h3 {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+.download {
+    margin: 6rem 0 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.download h2 {
+    margin-bottom: 1.5rem;
 }
 
 .download_buttons {
@@ -60,39 +93,42 @@
     width: 8rem;
 }
 
-.showcase {
-    margin: 8rem 0;
-    display: grid;
-    grid-template-columns: 35% 60%;
-    gap: 5%;
-    align-items: center;
-}
-
-.download {
-    margin: 8rem 0 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.download .big_text {
-    text-align: center;
-}
-
 @media screen and (max-width: 1080px) {
     .body header {
-        height: 28rem;
-        padding-top: 6rem;
-    }
-
-    .body header .big_text {
-        font-size: 2rem;
-        max-width: 35rem;
+        padding: 12rem 2rem 4rem;
     }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 920px) {
+    .efficient_app {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .efficient_app>section:nth-child(1) {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 680px) {
     .body header {
         background-size: 28rem 15.75rem;
+    }
+
+    .body header h2 {
+        font-size: 2rem;
+    }
+
+    .efficient_app {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+    .efficient_app :where(h2, h3, p) {
+        text-align: center;
+    }
+
+    .efficient_app h3 {
+        font-size: 1.5rem;
     }
 }

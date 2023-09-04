@@ -20,7 +20,7 @@
     left: 50%;
     translate: -50% -50%;
     overflow: auto;
-    padding: 3rem;
+    padding: 2.5rem;
     box-sizing: border-box;
     border-radius: 1rem;
     background-color: var(--background_color1);
@@ -35,7 +35,7 @@
 
 .modal_content>img {
     position: absolute;
-    top: 1rem;
+    top: 0.75rem;
     right: 1rem;
     cursor: pointer;
 }

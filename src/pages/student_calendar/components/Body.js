@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Body.module.css'
 import { createPortal } from 'react-dom';
+import { SC_PLAY_STORE_LINK } from '../../../utils/constants';
 import { useHandlePortal } from '../../../hooks/useHandlePortal'
 import DownloadInfoModal from '../modals/DownloadInfo'
 
@@ -57,12 +58,10 @@ function DownloadButtons() {
         closeDownloadInfoModal,
     ] = useHandlePortal()
 
-    const playStoreLink = 'https://play.google.com/store/apps/details?id=com.muts.studentcalendar'
-
     return (
         <>
             <section className={styles.download_buttons}>
-                <a href={playStoreLink}>
+                <a href={SC_PLAY_STORE_LINK}>
                     <img
                         alt='Play Store icon buttton'
                         src={playStoreImage}

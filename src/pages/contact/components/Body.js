@@ -1,23 +1,17 @@
 import React, { useState } from 'react';
 import styles from './Body.module.css'
-import { useFetcher } from 'react-router-dom';
 import { FilledButton } from '../../../components/Buttons';
 import { Success, Error } from '../../../components/PostResponse';
+import { API_BASE_URL, SUPPORT_EMAIL } from '../../../utils/constants';
 import {
     useValidateName,
     useValidateEmail,
     useValidateMessage,
 } from '../../../hooks/useFormValidations';
+import usePost from '../../../hooks/usePost';
 import email_icon from '../../../assets/icons/letter.svg';
 
-
 export default function Body() {
-    let fetcher = useFetcher()
-
-    const isLoading = fetcher.state !== 'idle'
-    const isSent = fetcher.data && fetcher.data.ok
-    const isError = fetcher.data && !fetcher.data.ok
-
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
@@ -26,34 +20,20 @@ export default function Body() {
     const [isValidEmail, emailError, validateEmail, resetEmailError] = useValidateEmail()
     const [isValidMessage, messageError, validateMessage, resetMessageError] = useValidateMessage()
 
-    const onNameInputBlur = event => {
-        var value = (event.target.value).trim()
-
-        setName(value)
-        if (value) validateName(value)
-    }
-
-    const onEmailInputBlur = event => {
-        var value = (event.target.value).trim()
-
-        setEmail(value)
-        if (value) validateEmail(value)
-    }
-
-    const onMessageInputBlur = event => {
-        var value = (event.target.value).trim()
-
-        setMessage(value)
-        if (value) validateMessage(value)
-    }
+    const [submit, isLoading, isSent, isError] = usePost();
 
     const handleSubmit = event => {
+        event.preventDefault();
+
         validateName(name)
         validateEmail(email)
         validateMessage(message)
 
-        if (!(isValidName && isValidEmail && isValidMessage)) {
-            event.preventDefault()
+        if (isValidName && isValidEmail && isValidMessage) {
+            submit(
+                `${API_BASE_URL}/contact`,
+                { senderName: name, senderEmail: email, messageBody: message },
+            );
         }
     }
 
@@ -65,8 +45,8 @@ export default function Body() {
                     <img alt='email icon' src={email_icon} />
                     <section>
                         <h2>Email Us</h2>
-                        <a href='mailto:muts.dev@outlook.com'>
-                            muts.dev@outlook.com
+                        <a href={`mailto:${SUPPORT_EMAIL}`}>
+                            {SUPPORT_EMAIL}
                         </a>
                     </section>
                 </div>
@@ -79,10 +59,7 @@ export default function Body() {
                         : isError ? <Error
                             message='An error occured while sending your message.'
                         />
-                            : <fetcher.Form
-                                method='post'
-                                onSubmit={(event) => handleSubmit(event)}
-                            >
+                            : <form onSubmit={handleSubmit}>
                                 <section>
                                     <input
                                         type='text'
@@ -91,12 +68,11 @@ export default function Body() {
                                         id='name'
                                         className={nameError ? styles.input_error : undefined}
                                         maxLength={30}
-                                        value={name}
                                         onChange={event => setName(
-                                            (event.target.value).trimStart().replace(/[ ]{2,}/g, ' ')
+                                            (event.target.value).trim().replace(/[ ]{2,}/g, ' ')
                                         )}
                                         onFocus={resetNameError}
-                                        onBlur={event => onNameInputBlur(event)}
+                                        onBlur={() => { if (name) validateName(name) }}
                                     />
                                     <label htmlFor='name'>Name</label>
                                     <span>{nameError}</span>
@@ -109,10 +85,9 @@ export default function Body() {
                                         id='email'
                                         className={emailError ? styles.input_error : undefined}
                                         maxLength={50}
-                                        value={email}
-                                        onChange={event => setEmail((event.target.value).trimStart())}
+                                        onChange={event => setEmail((event.target.value).trim())}
                                         onFocus={resetEmailError}
-                                        onBlur={event => onEmailInputBlur(event)}
+                                        onBlur={() => { if (email) validateEmail(email) }}
                                     />
                                     <label htmlFor='email'>Email</label>
                                     <span>{emailError}</span>
@@ -125,10 +100,9 @@ export default function Body() {
                                         id='message'
                                         className={messageError ? styles.input_error : undefined}
                                         maxLength={250}
-                                        value={message}
-                                        onChange={event => setMessage((event.target.value).trimStart())}
+                                        onChange={event => setMessage((event.target.value).trim())}
                                         onFocus={resetMessageError}
-                                        onBlur={event => onMessageInputBlur(event)}
+                                        onBlur={() => { if (message) validateMessage(message) }}
                                     ></textarea>
                                     <label htmlFor='message'>
                                         Message
@@ -139,7 +113,7 @@ export default function Body() {
                                 <FilledButton type='submit' disabled={isLoading}>
                                     {isLoading ? 'Sending...' : 'Send'}
                                 </FilledButton>
-                            </fetcher.Form>
+                            </form>
                     }
                 </div>
             </div>

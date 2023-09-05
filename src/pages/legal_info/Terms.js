@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './LegalInfo.module.css'
 import { Link } from 'react-router-dom'
+import { SUPPORT_EMAIL } from '../../utils/constants';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
@@ -35,7 +36,7 @@ export default function TermsPage() {
                 </p>
                 <p>
                     If you do not agree with (or cannot comply with) Agreements, then you may not use the Service,
-                    but please let us know by emailing at <a href='mailto:muts.dev@outlook.com'>muts.dev@outlook.com</a>{' '}
+                    but please let us know by emailing at <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>{' '}
                     so we can try to find a solution.
                     These Terms apply to all visitors, users and others who wish to access or use Service.
                 </p>
@@ -189,7 +190,7 @@ export default function TermsPage() {
                     <br />
                     If you are a copyright owner, or authorized on behalf of one, and you believe that the copyrighted work has been
                     copied in a way that constitutes copyright infringement, please submit your claim via email to
-                    {' '}<a href='mailto:muts.dev@outlook.com'>muts.dev@outlook.com</a>, with the subject line: "Copyright Infringement"
+                    {' '}<a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>, with the subject line: "Copyright Infringement"
                     and include in your claim a detailed description of the alleged Infringement. You may be held accountable for damages
                     (including costs and attorneys' fees) for misrepresentation or bad-faith claims on the infringement of any Content found
                     on and/or through Service on your copyright.
@@ -199,7 +200,7 @@ export default function TermsPage() {
                 <h2>Error Reporting and Feedback</h2>
 
                 <p>
-                    You may provide us either directly at <a href='mailto:muts.dev@outlook.com'>muts.dev@outlook.com</a>{' '}
+                    You may provide us either directly at <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>{' '}
                     or via third party sites and tools with information and feedback concerning errors, suggestions for improvements,
                     ideas, problems, complaints, and other matters related to our Service ("Feedback").
                     You acknowledge and agree that:
@@ -329,7 +330,7 @@ export default function TermsPage() {
 
                 <p>
                     Please send your feedback, comments, requests for technical support by email:
-                    {' '}<a href='mailto:muts.dev@outlook.com'>muts.dev@outlook.com</a>.
+                    {' '}<a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
                 </p>
             </div>
             <Footer />

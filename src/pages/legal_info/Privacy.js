@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './LegalInfo.module.css'
 import { Link } from 'react-router-dom'
+import { SUPPORT_EMAIL } from '../../utils/constants';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
@@ -173,7 +174,7 @@ export default function PrivacyPage() {
                 <h2>Contact Us</h2>
                 <p>
                     If you have any questions about this Privacy Policy, please contact us by email:
-                    {' '}<a href='mailto:muts.dev@outlook.com'>muts.dev@outlook.com</a>.
+                    {' '}<a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
                 </p>
             </div>
             <Footer />

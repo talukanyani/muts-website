@@ -1,33 +1,29 @@
 import React, { useState } from 'react';
 import styles from './DownloadInfo.module.css'
-import { useFetcher } from 'react-router-dom';
 import Modal from '../../../components/Modal';
 import { FilledButton } from '../../../components/Buttons'
 import { Success, Error } from '../../../components/PostResponse';
 import { useValidateEmail } from '../../../hooks/useFormValidations';
+import usePost from '../../../hooks/usePost';
+import { API_BASE_URL, SC_PLAY_STORE_LINK } from '../../../utils/constants';
 
 export default function DownloadInfoModal({ isOpen, close }) {
-    const playStoreLink = 'https://play.google.com/store/apps/details?id=com.muts.studentcalendar'
-
-    let fetcher = useFetcher()
-
-    const isLoading = fetcher.state !== 'idle'
-    const isSent = fetcher.data && fetcher.data.ok
-    const isError = fetcher.data && !fetcher.data.ok
-
     const [email, setEmail] = useState('')
+
     const [isValidEmail, emailError, validateEmail, resetEmailError] = useValidateEmail()
-
-    const onEmailInputBlur = event => {
-        var value = (event.target.value).trim()
-
-        setEmail(value)
-        if (value) validateEmail(value)
-    }
+    const [submit, isLoading, isSent, isError] = usePost();
 
     const handleSubmit = event => {
+        event.preventDefault();
+
         validateEmail(email)
-        if (!isValidEmail) event.preventDefault()
+
+        if (isValidEmail) {
+            submit(
+                `${API_BASE_URL}/mailing_list`,
+                { email: email },
+            );
+        }
     }
 
     return (
@@ -36,7 +32,7 @@ export default function DownloadInfoModal({ isOpen, close }) {
                 <h1>Download For iOS</h1>
                 <p>
                     For now, Student Calendar is only available on
-                    {' '}<a href={playStoreLink}>Play Store</a>.
+                    {' '}<a href={SC_PLAY_STORE_LINK}>Play Store</a>.
                     It will be available on App Store soon.
                     {' '}<b>Please leave your email below to get notified when
                         it becomes available on App Store.</b>
@@ -49,11 +45,7 @@ export default function DownloadInfoModal({ isOpen, close }) {
                     : isError ? <Error
                         message='An error occured while submitting your email.'
                     />
-                        : <fetcher.Form
-                            method='post'
-                            action='/api/mailing_list_ios_app'
-                            onSubmit={event => handleSubmit(event)}
-                        >
+                        : <form onSubmit={handleSubmit}>
                             <input
                                 type='email'
                                 placeholder='Email'
@@ -61,18 +53,15 @@ export default function DownloadInfoModal({ isOpen, close }) {
                                 id='email'
                                 className={emailError ? styles.input_error : undefined}
                                 maxLength={50}
-                                value={email}
-                                onChange={event => setEmail(
-                                    (event.target.value).trimStart()
-                                )}
+                                onChange={event => setEmail((event.target.value).trim())}
                                 onFocus={resetEmailError}
-                                onBlur={event => onEmailInputBlur(event)}
+                                onBlur={() => { if (email) validateEmail(email) }}
                             />
                             <span>{emailError}</span>
                             <FilledButton type='submit' disabled={isLoading}>
                                 {isLoading ? 'Submiting...' : 'Submit'}
                             </FilledButton>
-                        </fetcher.Form>
+                        </form>
                 }
             </div>
         </Modal>

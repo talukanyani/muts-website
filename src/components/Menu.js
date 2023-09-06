@@ -1,20 +1,11 @@
 import React, { useState } from 'react';
 import styles from './Menu.module.css'
-import { useNavigate } from 'react-router-dom';
 
 import close_icon from '../assets/icons/close.svg';
 import arrow_icon from '../assets/icons/arrow.svg'
 
 export default function Menu({ isOpen, close }) {
     const [isProductsExpand, setIsProductsExpand] = useState(false);
-
-    let navigate = useNavigate();
-
-    const navigateTo = (url) => {
-        window.scrollTo(0, 0);
-        close();
-        navigate(url)
-    }
 
     return (
         <div className={isOpen ? styles.is_menu : undefined}>
@@ -29,29 +20,31 @@ export default function Menu({ isOpen, close }) {
                 </section>
                 <nav>
                     <ul>
-                        <li onClick={() => navigateTo('/')}>
-                            Home
+                        <li>
+                            <a href='/'>Home</a>
                         </li>
                         <li onClick={() => {
                             setIsProductsExpand((currentValue) => !currentValue);
                         }}>
-                            Products
-                            <img
-                                src={arrow_icon}
-                                alt='expand arrow'
-                                className={isProductsExpand ? styles.arrow_rotate : undefined}
-                            />
+                            <span>
+                                Products
+                                <img
+                                    src={arrow_icon}
+                                    alt='expand arrow'
+                                    className={isProductsExpand ? styles.arrow_rotate : undefined}
+                                />
+                            </span>
                         </li>
                         <ul className={[
                             styles.nested_ul,
                             isProductsExpand ? styles.products_expand : undefined,
                         ].join(' ')}>
-                            <li onClick={() => navigateTo('/student_calendar')}>
-                                Student calendar
+                            <li>
+                                <a href='/student-calendar'>Student Calendar</a>
                             </li>
                         </ul>
-                        <li onClick={() => navigateTo('/contact')}>
-                            Contact
+                        <li>
+                            <a href='/contact'>Contact</a>
                         </li>
                     </ul>
                 </nav>

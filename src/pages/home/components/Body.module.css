@@ -1,12 +1,12 @@
 .body {
     margin: 0 auto;
-    padding: 5rem 0 1rem;
+    padding: 6rem 0 1rem;
 }
 
 .body header {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 4rem 0 2rem;
+    margin: 2rem 0;
 }
 
 .body header h1 {
@@ -38,12 +38,12 @@
 .apps {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 1rem;
 }
 
 .apps h2 {
     font-size: 2rem;
-    margin: 2rem 0 3rem;
+    margin-bottom: 2rem;
 }
 
 .sc_app {

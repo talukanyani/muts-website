@@ -54,15 +54,18 @@
     margin: 0;
 }
 
-.menu_content li {
+.menu_content li :where(a, span) {
+    display: block;
     font-size: 1.5rem;
     font-weight: 500;
+    color: inherit;
     padding: 1rem;
     border-radius: 0.5rem;
     transition: all 0.2s;
 }
 
-.menu_content li:hover {
+.menu_content li :where(a, span):hover {
+    text-decoration: none;
     background-color: var(--background_color2);
 }
 
@@ -94,6 +97,6 @@
     transition: all 0.3s;
 }
 
-.nested_ul li {
+.nested_ul li a {
     font-size: 1.25rem;
 }

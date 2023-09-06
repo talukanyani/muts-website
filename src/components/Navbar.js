@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Navbar.module.css'
 import { createPortal } from 'react-dom';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useHandlePortal } from '../hooks/useHandlePortal';
 import Menu from './Menu'
 
@@ -17,14 +17,6 @@ export default function Navbar() {
         closeMenu,
     ] = useHandlePortal();
 
-    let navigate = useNavigate();
-
-    const navigateTo = (url) => {
-        window.scrollTo(0, 0);
-        closeMenu();
-        navigate(url)
-    }
-
     return (
         <>
             <div className={styles.navbar}>
@@ -35,20 +27,22 @@ export default function Navbar() {
                 </section>
                 <nav className={styles.navigations}>
                     <ul>
-                        <li onClick={() => navigateTo('/')}>
-                            Home
+                        <li>
+                            <a href='/'>Home</a>
                         </li>
                         <li>
-                            Products
-                            <img src={arrow_icon} alt='expand arrow' />
+                            <span>
+                                Products
+                                <img src={arrow_icon} alt='expand arrow' />
+                            </span>
                             <ul>
-                                <li onClick={() => navigateTo('/student_calendar')}>
-                                    Student calendar
+                                <li>
+                                    <a href='/student-calendar'>Student Calendar</a>
                                 </li>
                             </ul>
                         </li>
-                        <li onClick={() => navigateTo('/contact')}>
-                            Contact
+                        <li>
+                            <a href='/contact'>Contact</a>
                         </li>
                     </ul>
                 </nav>

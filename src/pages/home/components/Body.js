@@ -26,7 +26,7 @@ export default function Body() {
                     <h3>Student Calendar</h3>
                     <p>A mobile application</p>
                     <Link
-                        to='/student_calendar'
+                        to='/student-calendar'
                         onClick={() => window.scrollTo(0, 0)}
                     >
                         <FilledButton>Show More</FilledButton>

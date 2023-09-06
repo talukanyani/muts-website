@@ -30,22 +30,26 @@
 
 .navigations li {
     position: relative;
+}
+
+.navigations li :where(a, span) {
+    display: block;
     font-weight: 500;
+    color: inherit;
     padding: 0.5rem 0.8rem;
     border-radius: 0.5rem;
-    cursor: pointer;
     transition: all 0.2s;
 }
 
-.navigations li:hover {
+.navigations li :where(a, span):hover {
+    text-decoration: none;
     background-color: var(--background_color2);
 }
 
-.navigations>ul>li img {
+.navigations li img {
     width: 1rem;
     margin-left: 0.25rem;
     vertical-align: middle;
-    transition: all 0.3s;
 }
 
 .navigations li>ul {
@@ -57,8 +61,8 @@
     width: max-content;
     /* width: 12rem; */
     /* padding: 1rem 0.5rem; */
-    border-radius: 0.5rem;
     border: 0.1rem solid var(--background_color2);
+    border-radius: 0.5rem;
     /* box-shadow: 0.1rem 0.2rem 2rem -1rem var(--grey4); */
     background-color: var(--background_color1);
     transition: all 0.4s;

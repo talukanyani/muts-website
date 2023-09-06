@@ -31,15 +31,23 @@ export default function Body() {
                     <h2>Efficient App</h2>
                     <h3>
                         Developed to revolutionise the way students
-                        manage their assessments and activities.
+                        manage their academic activities.
                     </h3>
                     <p>
-                        Student Calendar simplifies the process of organising, tracking,
-                        and prioritising tasks.
-                        Seamlessly integrate your assessments, exams, project due dates,
-                        and extracurricular activities all in one place.
-                        Visualise your academic schedule in table, list and calendar views.
+                        Student Calendar simplifies the process of organising,
+                        tracking, and prioritising tasks.
                     </p>
+                    <ul>
+                        <li>
+                            Seamlessly integrate your assessments, exams,
+                            project due dates, and other academic activities
+                            in one place.
+                        </li>
+                        <li>
+                            Visualise your academic schedule in table,
+                            list and calendar views.
+                        </li>
+                    </ul>
                 </section>
             </div>
             <div className={styles.download}>

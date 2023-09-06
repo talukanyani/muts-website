@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './Footer.module.css'
 import { Link } from 'react-router-dom';
+
 import twitter_icon from '../assets/icons/twitter.svg'
+import facebook_icon from '../assets/icons/facebook.svg'
 import instagram_icon from '../assets/icons/instagram.svg'
 
 export default function Footer() {
@@ -29,6 +31,13 @@ export default function Footer() {
                     href='https://twitter.com/muts_dev'
                 >
                     <img src={twitter_icon} alt="twitter icon button" />
+                </a>
+                <a
+                    target='_blank'
+                    rel="noopener noreferrer"
+                    href='https://facebook.com/muts_dev'
+                >
+                    <img src={facebook_icon} alt="facebook icon button" />
                 </a>
                 <a
                     target='_blank'

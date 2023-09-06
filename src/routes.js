@@ -15,7 +15,7 @@ var userAgent = navigator.userAgent;
 export const routes = createRoutesFromElements(
     <Route path='/'>
         <Route index element={<Home />} />
-        <Route path='student_calendar'>
+        <Route path='student-calendar'>
             <Route index element={<StudentCalendar />} />
             <Route
                 path='download'
@@ -25,7 +25,7 @@ export const routes = createRoutesFromElements(
                         // } else if (userAgent.match(/iOS/i)) {
                         //     return redirect(SC_APP_STORE_LINK);
                     } else {
-                        return redirect('/student_calendar');
+                        return redirect('/student-calendar');
                     }
                 }}
             />

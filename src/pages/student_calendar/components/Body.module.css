@@ -59,6 +59,7 @@
 
 .efficient_app h3 {
     font-size: 2rem;
+    text-transform: capitalize;
     margin-top: 0.5rem;
     margin-bottom: 0;
 }
@@ -101,7 +102,7 @@
 
 @media screen and (max-width: 920px) {
     .efficient_app {
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr 1.5fr;
     }
 
     .efficient_app>section:nth-child(1) {
@@ -122,6 +123,11 @@
         display: flex;
         flex-direction: column-reverse;
         gap: 2rem;
+    }
+
+    .efficient_app>section:nth-child(1) {
+        width: 16rem;
+        max-width: 80%;
     }
 
     .efficient_app :where(h2, h3, p) {

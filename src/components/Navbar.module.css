@@ -41,9 +41,11 @@
     transition: all 0.2s;
 }
 
-.navigations li :where(a, span):hover {
-    text-decoration: none;
-    background-color: var(--background_color2);
+@media (hover: hover) {
+    .navigations li :where(a, span):hover {
+        text-decoration: none;
+        background-color: var(--background_color2);
+    }
 }
 
 .navigations li img {
@@ -76,7 +78,16 @@
 .menu_button {
     display: none;
     width: 2.5rem;
+    padding: 0.5rem;
+    border-radius: 50%;
     cursor: pointer;
+    transition: all 0.2s;
+}
+
+@media (hover: hover) {
+    .menu_button:hover {
+        background-color: var(--background_color2);
+    }
 }
 
 @media screen and (max-width: 480px) {

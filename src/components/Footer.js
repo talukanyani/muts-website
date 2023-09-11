@@ -35,7 +35,7 @@ export default function Footer() {
                 <a
                     target='_blank'
                     rel="noopener noreferrer"
-                    href='https://facebook.com/muts_dev'
+                    href='https://facebook.com/muts.dev'
                 >
                     <img src={facebook_icon} alt="facebook icon button" />
                 </a>

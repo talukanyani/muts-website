@@ -28,11 +28,7 @@ export default function Menu({ isOpen, close }) {
                         }}>
                             <span>
                                 Products
-                                <img
-                                    src={arrow_icon}
-                                    alt='expand arrow'
-                                    className={isProductsExpand ? styles.arrow_rotate : undefined}
-                                />
+                                <img src={arrow_icon} alt='expand arrow' />
                             </span>
                         </li>
                         <ul className={[

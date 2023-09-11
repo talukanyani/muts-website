@@ -81,7 +81,7 @@
 
 @media screen and (min-width: 1280px) {
     .body header>section:nth-child(1) {
-        margin-left: calc((100vw - 1280px) / 2);
+        margin-left: calc(((100vw - 1280px) / 2) + 1rem);
     }
 }
 

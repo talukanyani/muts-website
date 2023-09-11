@@ -21,6 +21,7 @@
 .body header h2 {
     font-size: 2.5rem;
     font-weight: bold;
+    text-transform: capitalize;
     max-width: 680px;
     margin-top: 0.5rem;
 }
@@ -42,10 +43,9 @@
 
 .efficient_app>section:nth-child(1) {
     width: 16rem;
-    aspect-ratio: 10/19;
+    aspect-ratio: 48/95;
     margin: 0 auto;
-    border: 0.1rem solid var(--grey4);
-    border-radius: 0.5rem;
+    border-radius: 2rem;
     background-color: var(--background_color2);
 }
 
@@ -65,7 +65,7 @@
 }
 
 .download {
-    margin: 6rem 0 3rem;
+    margin: 3rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,6 +82,11 @@
 }
 
 .download_buttons :where(span, a) {
+    display: block;
+    width: 8rem;
+    aspect-ratio: 45/13;
+    border-radius: 0.5rem;
+    background-color: var(--background_color3);
     cursor: pointer;
     transition: all .3s;
 }
@@ -91,7 +96,8 @@
 }
 
 .download_buttons img {
-    width: 8rem;
+    width: 100%;
+    vertical-align: bottom;
 }
 
 @media screen and (max-width: 1080px) {

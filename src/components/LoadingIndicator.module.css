@@ -1,0 +1,32 @@
+.loading_indicator {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading_indicator p {
+  font-size: 0.9rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.spinner {
+  border: 0.3rem solid var(--blue1);
+  border-left-color: transparent;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  animation: spin 750ms linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

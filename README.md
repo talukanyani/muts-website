@@ -5,7 +5,7 @@ A website that stylishly showcases
 It also contain contact page for user inquiries and support requests. It communicates with
 [Muts Server](https://github.com/talukanyani/muts-server-v1) through RESTful API.
 
-### Instalation
+### Installation
 
 ```bash
 # Clone the repository
